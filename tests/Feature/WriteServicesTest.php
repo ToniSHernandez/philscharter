@@ -13,13 +13,6 @@ class WriteServicesTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function an_unauthenticated_user_cannot_create_a_service()
-    {
-        $service = factory(Service::class)->make();
-        $this->post('/services', $service->toArray())->assertRedirect();
-    }
-
-    /** @test */
     public function an_authenticated_user_can_create_a_service()
     {
         $this->login();

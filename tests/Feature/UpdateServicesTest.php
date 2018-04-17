@@ -13,21 +13,6 @@ class UpdateServicesTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function an_unauthenticated_user_cannot_update_services()
-    {
-        $updatedTitle = 'Here is the updated title';
-        $service = factory(Service::class)->create();
-
-        $this->patch('/services/'. $service->id, [
-            'title' => $updatedTitle
-        ])->assertRedirect();
-        $this->assertDatabaseMissing('services', [
-            'id' => $service->id,
-            'title' => $updatedTitle
-        ]);
-    }
-
-    /** @test */
     public function an_authenticated_user_can_update_services()
     {
         $this->login();

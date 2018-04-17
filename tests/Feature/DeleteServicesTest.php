@@ -13,14 +13,6 @@ class DeleteServicesTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function an_unauthenticated_user_cannot_delete_services()
-    {
-        $service = factory(Service::class)->create();
-
-        $this->delete('/services/'. $service->id)->assertRedirect();
-    }
-
-    /** @test */
     public function an_authenticated_user_can_delete_services()
     {
         $this->login();
