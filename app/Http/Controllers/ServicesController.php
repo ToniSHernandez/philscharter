@@ -48,9 +48,11 @@ class ServicesController extends Controller
         ]);
         $service = Service::create([
             'title'             => $request->title,
+            'subtitle'          => $request->subtitle,
             'rate'              => $request->rate,
-            'short_description' => $request->short_description,
-            'long_description'  => $request->long_description
+            'rate_info'         => $request->rate_info,
+            'description'       => $request->description,
+            'photo_url'         => $request->photo
         ]);
     }
 

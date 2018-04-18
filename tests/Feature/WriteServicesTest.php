@@ -17,12 +17,7 @@ class WriteServicesTest extends TestCase
     {
         $this->login();
         $service = factory(Service::class)->make();
-        $this->post('/services', [
-            'title'             => $service->title,
-            'rate'              => $service->rate,
-            'short_description' => $service->short_description,
-            'long_description'  => $service->long_description
-        ])->assertSuccessful();
+        $this->post('/services', $service->toArray())->assertSuccessful();
         $this->assertDatabaseHas('services', $service->toArray());
     }
 
@@ -30,28 +25,22 @@ class WriteServicesTest extends TestCase
     public function a_service_must_have_a_title()
     {
         $this->login();
-        $service = factory(Service::class)->make();
+        $service = factory(Service::class)->make([
+            'title' => ''
+        ]);
 
-        $this->post('/services', [
-            'title'             => '',
-            'rate'              => $service->rate,
-            'short_description' => $service->short_description,
-            'long_description'  => $service->long_description
-        ])->assertSessionHasErrors();
+        $this->post('/services', $service->toArray())->assertSessionHasErrors();
     }
 
     /** @test */
     public function a_service_must_have_a_rate()
     {
         $this->login();
-        $service = factory(Service::class)->make();
+        $service = factory(Service::class)->make([
+            'rate' => ''
+        ]);
 
-        $this->post('/services', [
-            'title'             => $service->title,
-            'rate'              => '',
-            'short_description' => $service->short_description,
-            'long_description'  => $service->long_description
-        ])->assertSessionHasErrors();
+        $this->post('/services', $service->toArray())->assertSessionHasErrors();
     }
 
     /** @test */
