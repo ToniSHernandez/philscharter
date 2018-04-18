@@ -13,7 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
-<body class="bg-brand-lightest font-sans font-normal">
+<body class="bg-white font-sans font-normal">
     <div class="flex flex-col">
         @if(Route::has('login'))
             <div class="absolute pin-t pin-r mt-4 mr-4">

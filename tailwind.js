@@ -56,9 +56,9 @@ let colors = {
   white: "#ffffff",
 
   "red-darkest": "#3b0d0c",
-  "red-darker": "#621b18",
+  "red-darker": "#951727",
   "red-dark": "#cc1f1a",
-  red: "#e3342f",
+  red: "#d0021b",
   "red-light": "#ef5753",
   "red-lighter": "#f9acaa",
   "red-lightest": "#fcebea",
@@ -128,25 +128,25 @@ let colors = {
   "pink-lightest": "#ffebef",
 
   get ["brand-darkest"]() {
-    return this["orange-darkest"];
+    return this["red-darkest"];
   },
   get ["brand-darker"]() {
-    return this["orange-darker"];
+    return this["red-darker"];
   },
   get ["brand-dark"]() {
-    return this["orange-dark"];
+    return this["red-dark"];
   },
   get ["brand"]() {
-    return this["orange"];
+    return this["red"];
   },
   get ["brand-light"]() {
-    return this["orange-light"];
+    return this["red-light"];
   },
   get ["brand-lighter"]() {
-    return this["orange-lighter"];
+    return this["red-lighter"];
   },
   get ["brand-lightest"]() {
-    return this["orange-lightest"];
+    return this["red-lightest"];
   }
 };
 
