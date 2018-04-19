@@ -1,24 +1,26 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
 @section('content')
-<div class="flex items-center">
-    <div class="md:w-1/2 md:mx-auto">
-        <div class="rounded shadow">
-            <div class="font-medium text-lg text-brand-darker bg-brand-lighter p-3 rounded-t">
-                Dashboard
+    <div class="container mx-auto h-full py-2 px-1">
+        <div class="flex items-center justify-center flex-wrap">
+            <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1" >
+                <a class="h-full flex flex-col items-center justify-center bg-grey-dark text-white text-lg uppercase no-underline hover:bg-grey-darker" href="#" >Leads</a>
             </div>
-            <div class="bg-white p-3 rounded-b">
-                @if (session('status'))
-                    <div class="bg-green-lightest border border-green-light text-green-dark text-sm px-4 py-3 rounded mb-4">
-                        {{ session('status') }}
-                    </div>
-                @endif
-
-                <p class="text-grey-dark text-sm">
-                    You are logged in!
-                </p>
+            <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1" >
+                <a class="h-full flex flex-col items-center justify-center bg-grey-dark text-white text-lg uppercase no-underline hover:bg-grey-darker" href="#" >Reviews</a>
+            </div>
+            <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1" >
+                <a class="h-full flex flex-col items-center justify-center bg-grey-dark text-white text-lg uppercase no-underline hover:bg-grey-darker" href="#" >Services</a>
+            </div>
+            <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1" >
+                <a class="h-full flex flex-col items-center justify-center bg-grey-dark text-white text-lg uppercase no-underline hover:bg-grey-darker" href="#" >Home page</a>
+            </div>
+            <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1" >
+                <a class="h-full flex flex-col items-center justify-center bg-grey-dark text-white text-lg uppercase no-underline hover:bg-grey-darker" href="#" >About page</a>
+            </div>
+            <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1" >
+                <a class="h-full flex flex-col items-center justify-center bg-grey-dark text-white text-lg uppercase no-underline hover:bg-grey-darker" href="#" >Contact info</a>
             </div>
         </div>
     </div>
-</div>
 @endsection
