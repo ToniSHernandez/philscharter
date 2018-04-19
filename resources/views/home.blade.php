@@ -21,7 +21,6 @@
             <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1" >
                 <a class="h-full flex flex-col items-center justify-center bg-grey-dark text-white text-lg uppercase no-underline hover:bg-grey-darker" href="#" >Contact info</a>
             </div>
-
         </div>
     </div>
 @endsection

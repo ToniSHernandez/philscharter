@@ -32,9 +32,16 @@
         @yield('content')
         </div>
 
-        <div class="bot bg-brand-darker">
-            <nav class="">
-            </nav>
+        <div class="bot bg-brand-darker py-6">
+            <div class="container mx-auto">
+                <nav class="text-center flex justify-center flex-wrap items-center">
+                    <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-white" href="/about" >About</a>
+                    <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-white" href="/charters-rates">Charters & Rates</a>
+                    <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-white" href="/reviews">Reviews</a>
+                    <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-white" href="/contact">Contact</a>
+                    <a class="rounded-full bg-white py-3 px-4 no-underline font-bold text-brand-darker uppercase mx-3 my-2" href="/contact">Request a Trip</a>
+                </nav>
+            </div>
         </div>
         <div class="bot-bot bg-brand-darkest text-center py-4">
             <p class="text-white text-xs">&copy; @php echo date('Y'); @endphp {{ config('app.name', 'Business Name') }}. All&nbsp;rights&nbsp;reserved | <a class="text-white" href="/dashboard/">Dashboard</a>
