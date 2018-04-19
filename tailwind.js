@@ -147,7 +147,29 @@ let colors = {
   },
   get ["brand-lightest"]() {
     return this["red-lightest"];
+  },
+  get ["secondary-darkest"]() {
+      return this["blue-darkest"];
+  },
+  get ["secondary-darker"]() {
+      return this["blue-darker"];
+  },
+  get ["secondary-dark"]() {
+      return this["blue-dark"];
+  },
+  get ["secondary"]() {
+      return this["blue"];
+  },
+  get ["secondary-light"]() {
+      return this["blue-light"];
+  },
+  get ["secondary-lighter"]() {
+      return this["blue-lighter"];
+  },
+  get ["secondary-lightest"]() {
+      return this["blue-lightest"];
   }
+
 };
 
 module.exports = {

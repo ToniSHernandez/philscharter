@@ -990,8 +990,7 @@ window.Vue = __webpack_require__(33);
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-Vue.component('example-component', __webpack_require__(36));
+__webpack_require__(49);
 
 var app = new Vue({
   el: '#app'
@@ -30290,53 +30289,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(4)))
 
 /***/ }),
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(37)
-/* script */
-var __vue_script__ = __webpack_require__(38)
-/* template */
-var __vue_template__ = __webpack_require__(39)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources\\assets\\js\\components\\ExampleComponent.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0ca92eac", Component.options)
-  } else {
-    hotAPI.reload("data-v-0ca92eac", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
+/* 36 */,
 /* 37 */
 /***/ (function(module, exports) {
 
@@ -30446,7 +30399,67 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 38 */
+/* 38 */,
+/* 39 */,
+/* 40 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(37)
+/* script */
+var __vue_script__ = __webpack_require__(47)
+/* template */
+var __vue_template__ = __webpack_require__(48)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\Services.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0b29d7d5", Component.options)
+  } else {
+    hotAPI.reload("data-v-0b29d7d5", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 47 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30467,44 +30480,198 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            services: [],
+            addingService: false,
+            newService: {}
+        };
+    },
     mounted: function mounted() {
-        console.log('Component mounted.');
+        this.services = [{
+            'name': 'Test Service',
+            'price': '$100'
+        }, {
+            'name': 'Test Service 2',
+            'price': '$200'
+        }, {
+            'name': 'Test Service 3',
+            'price': '$300'
+        }];
+    },
+
+    methods: {
+        openService: function openService(service) {
+            console.info(this.services[service]);
+        },
+        deleteService: function deleteService(service) {
+            console.info(this.services[service]);
+        },
+        openNewServicePanel: function openNewServicePanel() {
+            this.addingService = true;
+        },
+        closeNewServicePanel: function closeNewServicePanel() {
+            this.addingService = false;
+        },
+        addService: function addService() {
+            console.log('adding service');
+        }
     }
+
 });
 
 /***/ }),
-/* 39 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c(
+      "div",
+      { staticClass: "services-list border-b border-grey-dark pt-4 pb-3" },
+      _vm._l(_vm.services, function(service) {
+        return _c(
+          "div",
+          {
+            staticClass:
+              "p-2 mb-1 bg-grey-lighter rounded flex flex-wrap justify-between items-center"
+          },
+          [
+            _c("p", { staticClass: "text-grey-darkest" }, [
+              _vm._v(_vm._s(service.name))
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "actions flex items-center" }, [
+              _c(
+                "a",
+                {
+                  staticClass:
+                    "bg-grey-darker text-sm rounded-full no-underline py-1 px-2 cursor-pointer mx-1 text-white",
+                  on: {
+                    click: function($event) {
+                      _vm.openService(service.id)
+                    }
+                  }
+                },
+                [_vm._v("edit")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass:
+                    "bg-red text-sm rounded-full no-underline py-1 px-2 cursor-pointer mx-1 text-white",
+                  on: {
+                    click: function($event) {
+                      _vm.deleteService(service.id)
+                    }
+                  }
+                },
+                [_vm._v("delete")]
+              )
+            ])
+          ]
+        )
+      })
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "new-service py-4" }, [
+      !_vm.addingService
+        ? _c(
+            "a",
+            {
+              staticClass:
+                "inline-block bg-kma text-white rounded-full py-2 px-3 no-underline cursor-pointer",
+              on: { click: _vm.openNewServicePanel }
+            },
+            [_vm._v("Add a Service")]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.addingService
+        ? _c("div", { staticClass: "bg-grey-lightest rounded p-4" }, [
+            _c("h2", { staticClass: "font-normal mb-2" }, [
+              _vm._v("New Service")
+            ]),
+            _vm._v(" "),
+            _vm._m(0),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "flex justify-between items-center pt-2" },
+              [
+                _c(
+                  "a",
+                  {
+                    staticClass:
+                      "inline-block bg-grey text-white rounded-full py-2 px-3 no-underline cursor-pointer",
+                    on: { click: _vm.closeNewServicePanel }
+                  },
+                  [_vm._v("nevermind")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass:
+                      "inline-block bg-kma text-white rounded-full py-2 px-3 no-underline cursor-pointer",
+                    on: { click: _vm.addService }
+                  },
+                  [_vm._v("Add Service")]
+                )
+              ]
+            )
+          ])
+        : _vm._e()
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card card-default" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
-          ])
-        ])
-      ])
+    return _c("div", { staticClass: "form-inputs" }, [
+      _c("input", {
+        staticClass: "input-text",
+        attrs: {
+          type: "text",
+          name: "service_name",
+          placeholder: "Service Name"
+        }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "input-text",
+        attrs: {
+          type: "text",
+          name: "service_subtitle",
+          placeholder: "Subtitle"
+        }
+      }),
+      _vm._v(" "),
+      _c("input", {
+        staticClass: "input-text",
+        attrs: { type: "text", name: "service_price", placeholder: "Price" }
+      })
     ])
   }
 ]
@@ -30513,15 +30680,15 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0ca92eac", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-0b29d7d5", module.exports)
   }
 }
 
 /***/ }),
-/* 40 */
-/***/ (function(module, exports) {
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+Vue.component('services', __webpack_require__(46));
 
 /***/ })
 /******/ ]);

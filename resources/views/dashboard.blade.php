@@ -1,11 +1,11 @@
-@extends('layouts.account')
+@extends('layouts.admin')
 
 @section('content')
     <div class="container mx-auto h-full py-2 px-1">
         <div class="flex items-center justify-center flex-wrap">
             <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1">
                 <a class="h-full flex flex-col items-center justify-center bg-kma text-white text-lg uppercase no-underline rounded shadow"
-                   href="#">
+                   href="/dashboard/leads">
                     <svg class="fill-current h-8 mb-1" version="1.1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 55.867 55.867" style="enable-background:new 0 0 55.867 55.867;"
@@ -24,7 +24,7 @@
             </div>
             <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1">
                 <a class="h-full flex flex-col items-center justify-center bg-kma text-white text-lg uppercase no-underline rounded shadow"
-                   href="#">
+                   href="/dashboard/reviews">
                     <svg class="fill-current h-8 mb-1" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
@@ -55,7 +55,7 @@
             </div>
             <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1">
                 <a class="h-full flex flex-col items-center justify-center bg-kma text-white text-lg uppercase no-underline rounded shadow"
-                   href="#">
+                   href="/dashboard/services">
                     <svg class="fill-current h-8 mb-1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
                         <path d="M56.99,13.5H55v-3H45v3h-4V7.706C41,5.938,39.562,4.5,37.794,4.5H22.206C20.438,4.5,19,5.938,19,7.706V13.5h-4v-3H5v3H3.01
@@ -69,7 +69,7 @@
             </div>
             <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1">
                 <a class="h-full flex flex-col items-center justify-center bg-kma text-white text-lg uppercase no-underline rounded shadow"
-                   href="#">
+                   href="/dashboard/pages/home">
                     <svg class="fill-current h-8 mb-1" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve">
@@ -103,7 +103,7 @@
             </div>
             <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1">
                 <a class="h-full flex flex-col items-center justify-center bg-kma text-white text-lg uppercase no-underline rounded shadow"
-                   href="#">
+                   href="/dashboard/pages/about">
                     <svg class="fill-current h-8 mb-1" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve">
@@ -137,7 +137,7 @@
             </div>
             <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1">
                 <a class="h-full flex flex-col items-center justify-center bg-kma text-white text-lg uppercase no-underline rounded shadow"
-                   href="#">
+                   href="/dashboard/contact">
                     <svg class="fill-current h-8 mb-1" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
                     <path d="M30,26c3.86,0,7-3.141,7-7s-3.14-7-7-7s-7,3.141-7,7S26.14,26,30,26z M30,14c2.757,0,5,2.243,5,5s-2.243,5-5,5

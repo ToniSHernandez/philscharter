@@ -1,4 +1,4 @@
-<div class="sm:rounded-lg p-4 sm:p-8 bg-red-90 sm:my-6 lg:my-8 xl:my-11">
+<div class="sm:rounded-lg p-4 sm:p-8 bg-brand-90 sm:my-6 lg:my-8 xl:my-11">
     <h2 class="font-bold text-white uppercase lg:text-3xl xl:text-4xl mb-4 text-center">Request a Trip</h2>
     <div class="flex">
         <div class="w-1/2 p-2">
