@@ -13,39 +13,44 @@
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
-<body class="bg-brand-lightest h-screen">
-    <div id="app">
-        <nav class="bg-white h-12 shadow mb-8 px-6 md:px-0">
+<body class="bg-white h-screen">
+    <div id="app" class="flex flex-col min-h-full">
+        <nav class="bg-white h-16 shadow px-6 md:px-0">
             <div class="container mx-auto h-full">
-                <div class="flex items-center justify-center h-12">
+                <div class="flex items-center justify-center h-full">
                     <div class="mr-6">
-                        <a href="{{ url('/') }}" class="no-underline">
-                            {{ config('app.name', 'Laravel') }}
-                        </a>
+                        @include('partials.logo')
                     </div>
                     <div class="flex-1 text-right">
-                        @guest
-                            <a class="no-underline hover:underline text-grey-darker pr-3 text-sm" href="{{ url('/login') }}">Login</a>
-                            <a class="no-underline hover:underline text-grey-darker text-sm" href="{{ url('/register') }}">Register</a>
-                        @else
-                            <span class="text-grey-darker text-sm pr-4">{{ Auth::user()->name }}</span>
 
-                            <a href="{{ route('logout') }}"
-                                class="no-underline hover:underline text-grey-darker text-sm"
-                                onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">Logout</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                                {{ csrf_field() }}
-                            </form>
-                        @endguest
                     </div>
                 </div>
             </div>
         </nav>
 
+        <div class="mid flex-grow">
         @yield('content')
-    </div>
+        </div>
 
+        <div class="bot bg-brand-darker py-6">
+            <div class="container mx-auto">
+                <nav class="text-center flex justify-center flex-wrap items-center">
+                    <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-white" href="/about" >About</a>
+                    <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-white" href="/charters-rates">Charters & Rates</a>
+                    <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-white" href="/reviews">Reviews</a>
+                    <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-white" href="/contact">Contact</a>
+                    <a class="rounded-full bg-white py-3 px-4 no-underline font-bold text-brand-darker uppercase mx-3 my-2" href="/contact">Request a Trip</a>
+                </nav>
+            </div>
+        </div>
+        <div class="bot-bot bg-brand-darkest text-center py-4">
+            <p class="text-white text-xs">&copy; @php echo date('Y'); @endphp {{ config('app.name', 'Business Name') }}. All&nbsp;rights&nbsp;reserved | <a class="text-white" href="/dashboard/">Dashboard</a>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.5 8.7" class="h-2 ml-3">
+                    <path fill="#b4be35" d="M6.4,0.1c0,0,0.1,0.3,0.2,0.9c1,3,3,5.6,5.7,7.2l-0.1,0.5c0,0-0.4-0.2-1-0.4C7.7,7,3.7,7,0.2,8.5L0.1,8.1 c2.8-1.5,4.8-4.2,5.7-7.2C6,0.4,6.1,0.1,6.1,0.1H6.4L6.4,0.1z"></path>
+                </svg> <a class="text-white no-underline" href="https://keriganmarketing.com" target="_blank" >Site by KMA</a>.
+            </p>
+        </div>
+    </div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
