@@ -13,10 +13,13 @@
 
 Auth::routes();
 
+//guest content
 Route::get('/', 'FrontPageController@index')->name('frontpage');
-Route::get('/dashboard', 'DashboardController@index')->name('home');
-
+Route::get('/about', 'SupportPageController@index')->name('support');
 Route::resource('/services', 'ServicesController');
 Route::resource('/reviews', 'ReviewsController');
 Route::resource('/leads', 'LeadsController');
 
+//dashboard
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/dashboard/leads', 'LeadsController@dashboard')->name('leads');

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class FrontPageController extends Controller
+class SupportPageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -11,6 +11,6 @@ class FrontPageController extends Controller
      */
     public function index()
     {
-        return view('StaticPages.front');
+        return view('StaticPages.support', compact('realtor', 'content'));
     }
 }

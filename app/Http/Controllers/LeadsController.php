@@ -85,4 +85,9 @@ class LeadsController extends Controller
     {
         //
     }
+
+    public function dashboard(Request $request)
+    {
+        return view('dashboard.leads');
+    }
 }
