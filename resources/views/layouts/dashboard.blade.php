@@ -13,8 +13,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
-<body class="h-screen text-smoke-darkest bg-brand-darker">
-<div id="app" class="relative">
+<body class="h-screen text-grey-darkest bg-grey-darkest">
+<div id="app" class="flex flex-col min-h-full">
     <nav class="bg-white h-12 shadow px-6 md:px-0">
         <div class="container mx-auto h-full">
             <div class="flex items-center justify-center h-12">
@@ -35,9 +35,10 @@
             </div>
         </div>
     </nav>
-    <div class="bg-brand-dark pb-16 shadow-inner">
+    <div class="mid flex-grow">
         @yield('content')
     </div>
+
 </div>
 
 <!-- Scripts -->
