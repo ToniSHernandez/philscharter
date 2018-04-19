@@ -147,7 +147,29 @@ let colors = {
   },
   get ["brand-lightest"]() {
     return this["red-lightest"];
+  },
+  get ["secondary-darkest"]() {
+      return this["blue-darkest"];
+  },
+  get ["secondary-darker"]() {
+      return this["blue-darker"];
+  },
+  get ["secondary-dark"]() {
+      return this["blue-dark"];
+  },
+  get ["secondary"]() {
+      return this["blue"];
+  },
+  get ["secondary-light"]() {
+      return this["blue-light"];
+  },
+  get ["secondary-lighter"]() {
+      return this["blue-lighter"];
+  },
+  get ["secondary-lightest"]() {
+      return this["blue-lightest"];
   }
+
 };
 
 module.exports = {
@@ -537,6 +559,8 @@ module.exports = {
     "32": "8rem",
     "48": "12rem",
     "64": "16rem",
+    "80": "31rem",
+    "100": "38rem",
     full: "100%",
     screen: "100vh"
   },
@@ -650,7 +674,8 @@ module.exports = {
     "3": "0.75rem",
     "4": "1rem",
     "6": "1.5rem",
-    "8": "2rem"
+    "8": "2rem",
+    "10": "4rem"
   },
 
   /*
@@ -677,7 +702,10 @@ module.exports = {
     "3": "0.75rem",
     "4": "1rem",
     "6": "1.5rem",
-    "8": "2rem"
+    "8": "2rem",
+    "10": "4rem",
+    "11": "5rem",
+    "12": "6rem"
   },
 
   /*

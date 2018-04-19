@@ -23,6 +23,31 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('dashboard');
+    }
+
+    public function leads()
+    {
+        return view('dashboard.leads');
+    }
+
+    public function reviews()
+    {
+        return view('dashboard.reviews');
+    }
+
+    public function services()
+    {
+        return view('dashboard.services');
+    }
+
+    public function contact()
+    {
+        return view('dashboard.contact');
+    }
+
+    public function pages()
+    {
+        return view('dashboard.pages');
     }
 }
