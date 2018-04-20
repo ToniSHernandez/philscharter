@@ -6,7 +6,7 @@
             <h1 class="text-white text-5xl font-normal mt-4">Reviews</h1>
             <a href="/dashboard" class="bg-kma text-white rounded-full text-sm float-right py-1 px-3 no-underline mb-2" >Dashboard</a>
         </div>
-
+        <reviews></reviews>
 
     </div>
 @endsection
