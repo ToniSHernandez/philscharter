@@ -1076,7 +1076,7 @@ module.exports = function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(11);
-module.exports = __webpack_require__(43);
+module.exports = __webpack_require__(44);
 
 
 /***/ }),
@@ -30874,9 +30874,9 @@ if (false) {
 var disposed = false
 var normalizeComponent = __webpack_require__(9)
 /* script */
-var __vue_script__ = __webpack_require__(49)
+var __vue_script__ = __webpack_require__(42)
 /* template */
-var __vue_template__ = __webpack_require__(42)
+var __vue_template__ = __webpack_require__(43)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -30893,7 +30893,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Reviews.vue"
+Component.options.__file = "resources/assets/js/components/Reviews.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -30902,9 +30902,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6a723574", Component.options)
+    hotAPI.createRecord("data-v-d93eea98", Component.options)
   } else {
-    hotAPI.reload("data-v-6a723574", Component.options)
+    hotAPI.reload("data-v-d93eea98", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -30916,6 +30916,106 @@ module.exports = Component.exports
 
 /***/ }),
 /* 42 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            reviews: [],
+            addingReview: false,
+            newReview: {},
+            editingReview: null
+        };
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        window.axios.get('/reviews').then(function (response) {
+            _this.reviews = response.data;
+        });
+    },
+
+    methods: {
+        openReview: function openReview(review, index) {
+            this.editingReview = index;
+        },
+        editReview: function editReview(review, index) {
+            this.reviews[index] = review;
+            this.editingReview = null;
+        },
+        closeReview: function closeReview() {
+            this.editingReview = null;
+        },
+        deleteReview: function deleteReview(review) {
+            this.reviews.splice(review, 1);
+        },
+        openNewReviewPanel: function openNewReviewPanel() {
+            this.addingReview = true;
+        },
+        closeNewReviewPanel: function closeNewReviewPanel() {
+            this.addingReview = false;
+        },
+        addReview: function addReview() {
+            this.reviews.push(this.newReview);
+
+            axios.post('/addreview', this.newReview).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
+
+            this.newReview = {};
+            this.closeNewReviewPanel();
+        }
+    }
+
+});
+
+/***/ }),
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -31157,120 +31257,15 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-6a723574", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-d93eea98", module.exports)
   }
 }
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            reviews: [],
-            addingReview: false,
-            newReview: {},
-            editingReview: null
-        };
-    },
-    mounted: function mounted() {
-        var _this = this;
-
-        window.axios.get('/reviews').then(function (response) {
-            _this.reviews = response.data;
-        });
-    },
-
-    methods: {
-        openReview: function openReview(review, index) {
-            this.editingReview = index;
-        },
-        editReview: function editReview(review, index) {
-            this.reviews[index] = review;
-            this.editingReview = null;
-        },
-        closeReview: function closeReview() {
-            this.editingReview = null;
-        },
-        deleteReview: function deleteReview(review) {
-            this.reviews.splice(review, 1);
-        },
-        openNewReviewPanel: function openNewReviewPanel() {
-            this.addingReview = true;
-        },
-        closeNewReviewPanel: function closeNewReviewPanel() {
-            this.addingReview = false;
-        },
-        addReview: function addReview() {
-            this.reviews.push(this.newReview);
-
-            axios.post('/addreview', this.newReview).then(function (response) {
-                console.log(response);
-            }).catch(function (error) {
-                console.log(error);
-            });
-
-            this.newReview = {};
-            this.closeNewReviewPanel();
-        }
-    }
-
-});
 
 /***/ })
 /******/ ]);
