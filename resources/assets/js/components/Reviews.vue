@@ -2,7 +2,7 @@
     <div>
         <div class="reviews-list border-b border-grey-dark pt-4 pb-3">
             <div v-for="(review, index) in reviews" >
-                <div v-if="editingService !== index" class="p-2 mb-1 bg-grey-lighter rounded flex flex-wrap justify-between items-center" >
+                <div v-if="editingReview !== index" class="p-2 mb-1 bg-grey-lighter rounded flex flex-wrap justify-between items-center" >
                     <p class="text-grey-darkest">{{ review.author }}</p>
                     <div class="actions flex items-center">
                         <a @click="openReview(review, index)" class="bg-grey-darker text-sm rounded-full no-underline py-1 px-2 cursor-pointer mx-1 text-white" >edit</a>
@@ -11,8 +11,8 @@
                 </div>
                 <div v-if="editingReview === index" class="bg-grey-lightest rounded p-4 mb-1" >
                     <div class="form-inputs">
-                        <textarea v-model="review.body" type="text" class="input-text" placeholder="Review Name" >
-                        <input v-model="review.author" type="text" class="input-text" placeholder="Subtitle" >
+                        <textarea v-model="review.body" type="text" class="input-text" placeholder="Review Text" ></textarea>
+                        <input v-model="review.author" type="text" class="input-text" placeholder="Author" >
                     </div>
                     <div class="flex justify-between items-center pt-2">
                         <a class="inline-block bg-grey text-white rounded-full py-2 px-3 no-underline cursor-pointer" @click="closeReview" >nevermind</a>
@@ -26,9 +26,8 @@
             <div v-if="addingReview" class="bg-grey-lightest rounded p-4" >
                 <h2 class="font-normal mb-2">New Review</h2>
                 <div class="form-inputs">
-                    <input v-model="newReview.title" type="text" class="input-text" name="review_name" placeholder="Review Name" >
-                    <input v-model="newReview.subtitle" type="text" class="input-text" name="review_subtitle" placeholder="Subtitle" >
-                    <input v-model="newReview.rate" type="text" class="input-text" name="review_price" placeholder="Price" >
+                    <textarea v-model="newReview.body" type="text" class="input-text" placeholder="Review Text" ></textarea>
+                    <input v-model="newReview.author" type="text" class="input-text" placeholder="Author" >
                 </div>
                 <div class="flex justify-between items-center pt-2">
                     <a class="inline-block bg-grey text-white rounded-full py-2 px-3 no-underline cursor-pointer" @click="closeNewReviewPanel" >nevermind</a>
@@ -87,6 +86,7 @@
                         console.log(error);
                     });
 
+                this.newReview = {};
                 this.closeNewReviewPanel();
             }
         }
