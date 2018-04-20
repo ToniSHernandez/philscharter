@@ -49,7 +49,14 @@ class ReviewsController extends Controller
             'author' => 'required|max:191'
         ]);
 
-        $review = Review::create($request->all());
+        $review = Review::create([
+            'author'            => $request->author,
+            'body'              => $request->body,
+            'featured'          => (isset($request->featured) ? $request->featured : 0),
+            'submitted_on'      => date("Y-m-d H:i:s"),
+            'source'            => (isset($request->source) ? $request->source : ''),
+            'rating'            => (isset($request->rating) ? $request->rating : 0)
+        ]);
 
         return $review;
     }
