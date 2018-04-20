@@ -85,4 +85,10 @@ class LeadsController extends Controller
     {
         //
     }
+
+    public function dashboard()
+    {
+        $leads = '';
+        return view('dashboard.leads', compact('leads'));
+    }
 }

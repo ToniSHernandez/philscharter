@@ -14,6 +14,13 @@ class ReviewsController extends Controller
      */
     public function index()
     {
+        $reviews = Review::all();
+
+        return $reviews;
+    }
+
+    public function latest()
+    {
         $reviews = Review::latest()->get();
 
         return $reviews;
@@ -92,5 +99,11 @@ class ReviewsController extends Controller
     public function destroy(Review $review)
     {
         $review->delete();
+    }
+
+    public function dashboard()
+    {
+        $reviews = $this->index();
+        return view('dashboard.reviews', compact('reviews'));
     }
 }

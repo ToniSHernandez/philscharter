@@ -11,6 +11,6 @@ class SupportPageController extends Controller
      */
     public function index()
     {
-        return view('StaticPages.support', compact('realtor', 'content'));
+        return view('StaticPages.support','page','content');
     }
 }
