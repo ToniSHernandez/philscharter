@@ -16,6 +16,7 @@ Auth::routes();
 //public
 Route::get('/', 'FrontPageController@index')->name('frontpage');
 Route::get('/about', 'SupportPageController@index')->name('support');
+Route::get('/contact', 'SupportPageController@index')->name('support');
 
 //dashboard
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');

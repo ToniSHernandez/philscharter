@@ -16,14 +16,7 @@ class ReviewsController extends Controller
     {
         $reviews = Review::all();
 
-        return $reviews;
-    }
-
-    public function latest()
-    {
-        $reviews = Review::latest()->get();
-
-        return $reviews;
+        return view('StaticPages.reviews', compact('reviews'));
     }
 
     /**

@@ -21,7 +21,7 @@ class ServicesController extends Controller
     {
         $services = Service::all();
 
-        return $services;
+        return view('StaticPages.services', compact('services'));
     }
 
     /**

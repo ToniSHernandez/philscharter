@@ -10,6 +10,14 @@ class Service extends Model
         'title',
         'rate',
         'short_description',
-        'long_description'
+        'long_description',
+        'popular'
     ];
+
+    public function getPopular()
+    {
+        $service = Service::where('popular', 1)->orderBy('order', 'asc')->limit(4);
+
+        return $service;
+    }
 }
