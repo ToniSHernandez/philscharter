@@ -30485,31 +30485,47 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             services: [],
             addingService: false,
-            newService: {}
+            newService: {},
+            editingService: null
         };
     },
     mounted: function mounted() {
-        this.services = [{
-            'name': 'Test Service',
-            'price': '$100'
-        }, {
-            'name': 'Test Service 2',
-            'price': '$200'
-        }, {
-            'name': 'Test Service 3',
-            'price': '$300'
-        }];
+        var _this = this;
+
+        window.axios.get('/services').then(function (response) {
+            _this.services = response.data;
+        });
     },
 
     methods: {
-        openService: function openService(service) {
-            console.info(this.services[service]);
+        openService: function openService(service, index) {
+            this.editingService = index;
+        },
+        editService: function editService(service, index) {
+            this.services[index] = service;
+            this.editingService = null;
+        },
+        closeService: function closeService() {
+            this.editingService = null;
         },
         deleteService: function deleteService(service) {
             this.services.splice(service, 1);
@@ -30521,10 +30537,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.addingService = false;
         },
         addService: function addService() {
-            this.services.push({
-                'name': this.newService.name,
-                'price': this.newService.price
+            this.services.push(this.newService);
+
+            axios.post('/addservice', this.newService).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
             });
+
             this.closeNewServicePanel();
         }
     }
@@ -30544,48 +30564,166 @@ var render = function() {
       "div",
       { staticClass: "services-list border-b border-grey-dark pt-4 pb-3" },
       _vm._l(_vm.services, function(service, index) {
-        return _c(
-          "div",
-          {
-            staticClass:
-              "p-2 mb-1 bg-grey-lighter rounded flex flex-wrap justify-between items-center"
-          },
-          [
-            _c("p", { staticClass: "text-grey-darkest" }, [
-              _vm._v(_vm._s(service.name))
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "actions flex items-center" }, [
-              _c(
-                "a",
+        return _c("div", [
+          _vm.editingService !== index
+            ? _c(
+                "div",
                 {
                   staticClass:
-                    "bg-grey-darker text-sm rounded-full no-underline py-1 px-2 cursor-pointer mx-1 text-white",
-                  on: {
-                    click: function($event) {
-                      _vm.openService(index)
-                    }
-                  }
+                    "p-2 mb-1 bg-grey-lighter rounded flex flex-wrap justify-between items-center"
                 },
-                [_vm._v("edit")]
-              ),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass:
-                    "bg-red text-sm rounded-full no-underline py-1 px-2 cursor-pointer mx-1 text-white",
-                  on: {
-                    click: function($event) {
-                      _vm.deleteService(index)
-                    }
-                  }
-                },
-                [_vm._v("delete")]
+                [
+                  _c("p", { staticClass: "text-grey-darkest" }, [
+                    _vm._v(_vm._s(service.title))
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "actions flex items-center" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "bg-grey-darker text-sm rounded-full no-underline py-1 px-2 cursor-pointer mx-1 text-white",
+                        on: {
+                          click: function($event) {
+                            _vm.openService(service, index)
+                          }
+                        }
+                      },
+                      [_vm._v("edit")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "bg-red text-sm rounded-full no-underline py-1 px-2 cursor-pointer mx-1 text-white",
+                        on: {
+                          click: function($event) {
+                            _vm.deleteService(service, index)
+                          }
+                        }
+                      },
+                      [_vm._v("delete")]
+                    )
+                  ])
+                ]
               )
-            ])
-          ]
-        )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.editingService === index
+            ? _c("div", { staticClass: "bg-grey-lightest rounded p-4 mb-1" }, [
+                _c("div", { staticClass: "form-inputs" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: service.title,
+                        expression: "service.title"
+                      }
+                    ],
+                    staticClass: "input-text",
+                    attrs: {
+                      type: "text",
+                      name: "service_name",
+                      placeholder: "Service Name"
+                    },
+                    domProps: { value: service.title },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(service, "title", $event.target.value)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: service.subtitle,
+                        expression: "service.subtitle"
+                      }
+                    ],
+                    staticClass: "input-text",
+                    attrs: {
+                      type: "text",
+                      name: "service_subtitle",
+                      placeholder: "Subtitle"
+                    },
+                    domProps: { value: service.subtitle },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(service, "subtitle", $event.target.value)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: service.rate,
+                        expression: "service.rate"
+                      }
+                    ],
+                    staticClass: "input-text",
+                    attrs: {
+                      type: "text",
+                      name: "service_price",
+                      placeholder: "Price"
+                    },
+                    domProps: { value: service.rate },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(service, "rate", $event.target.value)
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "flex justify-between items-center pt-2" },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "inline-block bg-grey text-white rounded-full py-2 px-3 no-underline cursor-pointer",
+                        on: { click: _vm.closeService }
+                      },
+                      [_vm._v("nevermind")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "inline-block bg-kma text-white rounded-full py-2 px-3 no-underline cursor-pointer",
+                        on: {
+                          click: function($event) {
+                            _vm.editService(service)
+                          }
+                        }
+                      },
+                      [_vm._v("Edit Service")]
+                    )
+                  ]
+                )
+              ])
+            : _vm._e()
+        ])
       })
     ),
     _vm._v(" "),
@@ -30614,8 +30752,8 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.newService.name,
-                    expression: "newService.name"
+                    value: _vm.newService.title,
+                    expression: "newService.title"
                   }
                 ],
                 staticClass: "input-text",
@@ -30624,13 +30762,13 @@ var render = function() {
                   name: "service_name",
                   placeholder: "Service Name"
                 },
-                domProps: { value: _vm.newService.name },
+                domProps: { value: _vm.newService.title },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.newService, "name", $event.target.value)
+                    _vm.$set(_vm.newService, "title", $event.target.value)
                   }
                 }
               }),
@@ -30666,8 +30804,8 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.newService.price,
-                    expression: "newService.price"
+                    value: _vm.newService.rate,
+                    expression: "newService.rate"
                   }
                 ],
                 staticClass: "input-text",
@@ -30676,13 +30814,13 @@ var render = function() {
                   name: "service_price",
                   placeholder: "Price"
                 },
-                domProps: { value: _vm.newService.price },
+                domProps: { value: _vm.newService.rate },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.newService, "price", $event.target.value)
+                    _vm.$set(_vm.newService, "rate", $event.target.value)
                   }
                 }
               })

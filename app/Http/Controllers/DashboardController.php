@@ -26,10 +26,7 @@ class DashboardController extends Controller
         return view('dashboard');
     }
 
-    public function leads()
-    {
-        return view('dashboard.leads');
-    }
+
 
     public function reviews()
     {
