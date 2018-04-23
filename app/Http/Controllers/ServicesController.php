@@ -21,7 +21,7 @@ class ServicesController extends Controller
     {
         $services = Service::all();
 
-        return view('StaticPages.services', compact('services'));
+        return $services;
     }
 
     /**
@@ -60,9 +60,10 @@ class ServicesController extends Controller
      * @param  \App\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function show(Service $service)
+    public function show()
     {
-        return $service;
+        $services = $this->index();
+        return view('StaticPages.services', compact('services'));
     }
 
     /**

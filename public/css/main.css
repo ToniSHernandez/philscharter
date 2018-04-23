@@ -5192,6 +5192,14 @@ button,
   margin-bottom: .25rem;
 }
 
+.quote {
+  font-size: 8em;
+  font-weight: bold;
+  padding: 0 1rem;
+  line-height: 1em;
+  margin-bottom: -2.5rem;
+}
+
 @media (min-width: 576px) {
   .sm\:list-reset {
     list-style: none;

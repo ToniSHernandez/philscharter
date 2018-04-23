@@ -16,7 +16,7 @@ class ReviewsController extends Controller
     {
         $reviews = Review::all();
 
-        return view('StaticPages.reviews', compact('reviews'));
+        return $reviews;
     }
 
     /**
@@ -62,7 +62,8 @@ class ReviewsController extends Controller
      */
     public function show(Review $review)
     {
-        //
+        $reviews = $this->index();
+        return view('StaticPages.reviews', compact('reviews'));
     }
 
     /**
@@ -73,7 +74,8 @@ class ReviewsController extends Controller
      */
     public function edit(Review $review)
     {
-        //
+        $reviews = $this->index();
+        return view('StaticPages.reviews', compact('reviews'));
     }
 
     /**

@@ -86,3 +86,11 @@
 .input-text {
     @apply .p-2 .border-grey .border .text-grey-darkest .bg-white .w-full .mb-1
 }
+
+.quote {
+    font-size: 8em;
+    font-weight: bold;
+    padding: 0 1rem;
+    line-height: 1em;
+    margin-bottom: -2.5rem;
+}
