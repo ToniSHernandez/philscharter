@@ -83,7 +83,7 @@ class LeadsController extends Controller
      */
     public function destroy(Lead $lead)
     {
-        //
+        $lead->delete();
     }
 
     public function dashboard()

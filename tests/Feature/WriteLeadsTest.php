@@ -8,7 +8,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Lead;
 use PHPUnit\Framework\OutputError;
 
-class CreateLeadTest extends TestCase
+class WriteLeadsTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -24,6 +24,5 @@ class CreateLeadTest extends TestCase
 
         $this->post('/leads', $lead)->assertSuccessful();
         $this->assertDatabaseHas('leads', $lead);
-        $this->fail('Do lead update tests next');
     }
 }

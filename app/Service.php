@@ -8,10 +8,12 @@ class Service extends Model
 {
     protected $fillable = [
         'title',
+        'subtitle',
         'rate',
-        'short_description',
-        'long_description',
-        'popular'
+        'rate_info',
+        'description',
+        'featured',
+        'photo_url'
     ];
 
     public function getPopular()
