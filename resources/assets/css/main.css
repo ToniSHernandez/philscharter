@@ -32,6 +32,8 @@
  * @import "components/forms";
  */
 
+@import "fonts.css";
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
@@ -56,3 +58,31 @@
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
+
+* {
+    font-family: 'Montserrat';
+}
+
+.bg-kma {
+    background-color: #b4be35;
+}
+
+.text-kma {
+    color: #b4be35;
+}
+
+.border-kma {
+    border-color: #b4be35;
+}
+
+.bg-brand-90 {
+    background-color: rgba(149,23,39,.9);
+}
+
+.bg-secondary-80 {
+    background-color: rgba(0,43,96,.8)
+}
+
+.input-text {
+    @apply .p-2 .border-grey .border .text-grey-darkest .bg-white .w-full .mb-1
+}

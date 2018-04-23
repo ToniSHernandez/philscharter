@@ -56,9 +56,9 @@ let colors = {
   white: "#ffffff",
 
   "red-darkest": "#3b0d0c",
-  "red-darker": "#621b18",
+  "red-darker": "#951727",
   "red-dark": "#cc1f1a",
-  red: "#e3342f",
+  red: "#d0021b",
   "red-light": "#ef5753",
   "red-lighter": "#f9acaa",
   "red-lightest": "#fcebea",
@@ -128,26 +128,48 @@ let colors = {
   "pink-lightest": "#ffebef",
 
   get ["brand-darkest"]() {
-    return this["orange-darkest"];
+    return this["red-darkest"];
   },
   get ["brand-darker"]() {
-    return this["orange-darker"];
+    return this["red-darker"];
   },
   get ["brand-dark"]() {
-    return this["orange-dark"];
+    return this["red-dark"];
   },
   get ["brand"]() {
-    return this["orange"];
+    return this["red"];
   },
   get ["brand-light"]() {
-    return this["orange-light"];
+    return this["red-light"];
   },
   get ["brand-lighter"]() {
-    return this["orange-lighter"];
+    return this["red-lighter"];
   },
   get ["brand-lightest"]() {
-    return this["orange-lightest"];
+    return this["red-lightest"];
+  },
+  get ["secondary-darkest"]() {
+      return this["blue-darkest"];
+  },
+  get ["secondary-darker"]() {
+      return this["blue-darker"];
+  },
+  get ["secondary-dark"]() {
+      return this["blue-dark"];
+  },
+  get ["secondary"]() {
+      return this["blue"];
+  },
+  get ["secondary-light"]() {
+      return this["blue-light"];
+  },
+  get ["secondary-lighter"]() {
+      return this["blue-lighter"];
+  },
+  get ["secondary-lightest"]() {
+      return this["blue-lightest"];
   }
+
 };
 
 module.exports = {
@@ -212,6 +234,7 @@ module.exports = {
 
   fonts: {
     sans: [
+      "Montserrat",
       "system-ui",
       "BlinkMacSystemFont",
       "-apple-system",
@@ -536,6 +559,8 @@ module.exports = {
     "32": "8rem",
     "48": "12rem",
     "64": "16rem",
+    "80": "31rem",
+    "100": "38rem",
     full: "100%",
     screen: "100vh"
   },
@@ -649,7 +674,8 @@ module.exports = {
     "3": "0.75rem",
     "4": "1rem",
     "6": "1.5rem",
-    "8": "2rem"
+    "8": "2rem",
+    "10": "4rem"
   },
 
   /*
@@ -676,7 +702,10 @@ module.exports = {
     "3": "0.75rem",
     "4": "1rem",
     "6": "1.5rem",
-    "8": "2rem"
+    "8": "2rem",
+    "10": "4rem",
+    "11": "5rem",
+    "12": "6rem"
   },
 
   /*

@@ -102,4 +102,10 @@ class ServicesController extends Controller
     {
         $service->delete();
     }
+
+    public function dashboard()
+    {
+        $services = $this->index();
+        return view('dashboard.services', compact('services'));
+    }
 }
