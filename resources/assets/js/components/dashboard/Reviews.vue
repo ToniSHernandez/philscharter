@@ -16,7 +16,7 @@
                     </div>
                     <div class="flex justify-between items-center pt-2">
                         <a class="inline-block bg-grey text-white rounded-full py-2 px-3 no-underline cursor-pointer" @click="closeReview" >nevermind</a>
-                        <a class="inline-block bg-kma text-white rounded-full py-2 px-3 no-underline cursor-pointer" @click="editReview(review)" >Edit Review</a>
+                        <a class="button-kma" @click="editReview(review)" >Edit Review</a>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="flex justify-between items-center pt-2">
                     <a class="inline-block bg-grey text-white rounded-full py-2 px-3 no-underline cursor-pointer" @click="closeNewReviewPanel" >nevermind</a>
-                    <a class="inline-block bg-kma text-white rounded-full py-2 px-3 no-underline cursor-pointer" @click="addReview" >Add Review</a>
+                    <a class="button-kma" @click="addReview" >Add Review</a>
                 </div>
             </div>
         </div>
@@ -78,7 +78,7 @@
             addReview(){
                 this.reviews.push(this.newReview);
 
-                axios.post('/addreview', this.newReview)
+                axios.post('/reviews', this.newReview)
                     .then(function (response) {
                         console.log(response);
                     })

@@ -71,6 +71,18 @@
     color: #b4be35;
 }
 
+.button-kma-sm {
+    @apply .bg-kma .text-white .rounded-full .text-sm .py-1 .px-3 .no-underline .cursor-pointer
+}
+
+.button-kma {
+    @apply .bg-kma .text-white .rounded-full .py-2 .px-3 .no-underline .cursor-pointer
+}
+
+.button-kma-xl {
+    @apply .h-full .flex .flex-col .items-center .justify-center .bg-kma .text-white .text-lg .uppercase .no-underline .rounded .shadow .cursor-pointer
+}
+
 .border-kma {
     border-color: #b4be35;
 }
@@ -85,4 +97,12 @@
 
 .input-text {
     @apply .p-2 .border-grey .border .text-grey-darkest .bg-white .w-full .mb-1
+}
+
+.quote {
+    font-size: 8em;
+    font-weight: bold;
+    padding: 0 1rem;
+    line-height: 1em;
+    margin-bottom: -2.5rem;
 }

@@ -17,7 +17,7 @@
                     </div>
                     <div class="flex justify-between items-center pt-2">
                         <a class="inline-block bg-grey text-white rounded-full py-2 px-3 no-underline cursor-pointer" @click="closeService" >nevermind</a>
-                        <a class="inline-block bg-kma text-white rounded-full py-2 px-3 no-underline cursor-pointer" @click="editService(service)" >Edit Service</a>
+                        <a class="button-kma" @click="editService(service)" >Edit Service</a>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="flex justify-between items-center pt-2">
                     <a class="inline-block bg-grey text-white rounded-full py-2 px-3 no-underline cursor-pointer" @click="closeNewServicePanel" >nevermind</a>
-                    <a class="inline-block bg-kma text-white rounded-full py-2 px-3 no-underline cursor-pointer" @click="addService" >Add Service</a>
+                    <a class="button-kma" @click="addService" >Add Service</a>
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@
             addService(){
                 this.services.push(this.newService);
 
-                axios.post('/addservice', this.newService)
+                axios.post('/services', this.newService)
                     .then(function (response) {
                         console.log(response);
                     })

@@ -9,7 +9,7 @@ class ServicesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -101,11 +101,5 @@ class ServicesController extends Controller
     public function destroy(Service $service)
     {
         $service->delete();
-    }
-
-    public function dashboard()
-    {
-        $services = $this->index();
-        return view('dashboard.services', compact('services'));
     }
 }

@@ -14,4 +14,11 @@ class Review extends Model
         'source',
         'rating'
     ];
+
+    public function scopeLatest()
+    {
+        $review = Review::where('featured', 1)->orderBy('created_at', 'desc')->first();
+
+        return $review;
+    }
 }

@@ -19,13 +19,6 @@ class ReviewsController extends Controller
         return $reviews;
     }
 
-    public function latest()
-    {
-        $reviews = Review::latest()->get();
-
-        return $reviews;
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -69,7 +62,7 @@ class ReviewsController extends Controller
      */
     public function show(Review $review)
     {
-        //
+        return $review;
     }
 
     /**
@@ -106,11 +99,5 @@ class ReviewsController extends Controller
     public function destroy(Review $review)
     {
         $review->delete();
-    }
-
-    public function dashboard()
-    {
-        $reviews = $this->index();
-        return view('dashboard.reviews', compact('reviews'));
     }
 }
