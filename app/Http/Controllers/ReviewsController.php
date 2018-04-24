@@ -102,10 +102,4 @@ class ReviewsController extends Controller
     {
         $review->delete();
     }
-
-    public function dashboard()
-    {
-        $reviews = $this->index();
-        return view('dashboard.reviews', compact('reviews'));
-    }
 }

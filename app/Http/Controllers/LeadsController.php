@@ -85,10 +85,4 @@ class LeadsController extends Controller
     {
         $lead->delete();
     }
-
-    public function dashboard()
-    {
-        $leads = '';
-        return view('dashboard.leads', compact('leads'));
-    }
 }
