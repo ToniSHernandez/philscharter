@@ -5171,9 +5171,12 @@ button,
 }
 
 .button-kma-sm {
+  display: inline-block;
   background-color: #b4be35;
   color: #fff;
   border-radius: 9999px;
+  font-size: .75rem;
+  text-transform: uppercase;
   font-size: .875rem;
   padding-top: .25rem;
   padding-bottom: .25rem;
@@ -5184,8 +5187,11 @@ button,
 }
 
 .button-kma {
+  display: inline-block;
   background-color: #b4be35;
   color: #fff;
+  font-size: .875rem;
+  text-transform: uppercase;
   border-radius: 9999px;
   padding-top: .5rem;
   padding-bottom: .5rem;
@@ -5196,6 +5202,7 @@ button,
 }
 
 .button-kma-xl {
+  display: inline-block;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5219,6 +5226,23 @@ button,
   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
           box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
   cursor: pointer;
+}
+
+.button-outlined {
+  display: inline-block;
+  background-color: transparent;
+  color: #951727;
+  font-size: .875rem;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  border-width: 1px;
+  border-color: #b8c2cc;
 }
 
 .border-kma {

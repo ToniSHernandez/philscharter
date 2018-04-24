@@ -32884,8 +32884,8 @@ var staticRenderFns = [
       _c(
         "a",
         {
-          staticClass: "button-outlined",
-          attrs: { href: "/services/#half-day-inshore-trip" }
+          staticClass: "button-outlined my-4",
+          attrs: { href: "/charters-rates#half-day-inshore-trip" }
         },
         [_vm._v("View Details")]
       )
