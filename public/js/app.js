@@ -30864,6 +30864,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -30871,7 +30879,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             services: [],
             addingService: false,
             newService: {},
-            editingService: null
+            editingService: null,
+            isInitial: true
         };
     },
     mounted: function mounted() {
@@ -30912,6 +30921,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
 
             this.closeNewServicePanel();
+        },
+        filesChange: function filesChange(name, file) {
+            this.isInitial = false;
+            console.log(name);
+            console.log(file);
         }
     }
 
@@ -31101,6 +31115,7 @@ var render = function() {
                           expression: "service.description"
                         }
                       ],
+                      staticClass: "input-textarea w-full block h-24",
                       attrs: {
                         name: "service_description",
                         placeholder: "Description"
@@ -31117,7 +31132,7 @@ var render = function() {
                     })
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "w-full px-1" }, [
+                  _c("div", { staticClass: "w-full px-1 py-4" }, [
                     _c("input", {
                       directives: [
                         {
@@ -31229,8 +31244,8 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.service.title,
-                      expression: "service.title"
+                      value: _vm.newService.title,
+                      expression: "newService.title"
                     }
                   ],
                   staticClass: "input-text w-full",
@@ -31239,13 +31254,13 @@ var render = function() {
                     name: "service_title",
                     placeholder: "Service Name"
                   },
-                  domProps: { value: _vm.service.title },
+                  domProps: { value: _vm.newService.title },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.$set(_vm.service, "title", $event.target.value)
+                      _vm.$set(_vm.newService, "title", $event.target.value)
                     }
                   }
                 })
@@ -31257,23 +31272,23 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.service.subtitle,
-                      expression: "service.subtitle"
+                      value: _vm.newService.subtitle,
+                      expression: "newService.subtitle"
                     }
                   ],
-                  staticClass: "input-text w-full",
+                  staticClass: "input-text",
                   attrs: {
                     type: "text",
                     name: "service_subtitle",
                     placeholder: "Subtitle"
                   },
-                  domProps: { value: _vm.service.subtitle },
+                  domProps: { value: _vm.newService.subtitle },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.$set(_vm.service, "subtitle", $event.target.value)
+                      _vm.$set(_vm.newService, "subtitle", $event.target.value)
                     }
                   }
                 })
@@ -31285,8 +31300,8 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.service.rate,
-                      expression: "service.rate"
+                      value: _vm.newService.rate,
+                      expression: "newService.rate"
                     }
                   ],
                   staticClass: "input-text w-8",
@@ -31295,13 +31310,13 @@ var render = function() {
                     name: "service_price",
                     placeholder: "Rate"
                   },
-                  domProps: { value: _vm.service.rate },
+                  domProps: { value: _vm.newService.rate },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.$set(_vm.service, "rate", $event.target.value)
+                      _vm.$set(_vm.newService, "rate", $event.target.value)
                     }
                   }
                 })
@@ -31313,23 +31328,23 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.service.rate_info,
-                      expression: "service.rate_info"
+                      value: _vm.newService.rate_info,
+                      expression: "newService.rate_info"
                     }
                   ],
-                  staticClass: "input-text w-full",
+                  staticClass: "input-text",
                   attrs: {
                     type: "text",
                     name: "service_rate_info",
                     placeholder: "Additional rate information"
                   },
-                  domProps: { value: _vm.service.rate_info },
+                  domProps: { value: _vm.newService.rate_info },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.$set(_vm.service, "rate_info", $event.target.value)
+                      _vm.$set(_vm.newService, "rate_info", $event.target.value)
                     }
                   }
                 })
@@ -31341,46 +31356,51 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.service.description,
-                      expression: "service.description"
+                      value: _vm.newService.description,
+                      expression: "newService.description"
                     }
                   ],
+                  staticClass: "input-textarea w-full block h-24",
                   attrs: {
                     name: "service_description",
                     placeholder: "Description"
                   },
-                  domProps: { value: _vm.service.description },
+                  domProps: { value: _vm.newService.description },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.$set(_vm.service, "description", $event.target.value)
+                      _vm.$set(
+                        _vm.newService,
+                        "description",
+                        $event.target.value
+                      )
                     }
                   }
                 })
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "w-full px-1" }, [
+              _c("div", { staticClass: "w-full px-1 py-4" }, [
                 _c("label", [
                   _c("input", {
                     directives: [
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.service.featured,
-                        expression: "service.featured"
+                        value: _vm.newService.featured,
+                        expression: "newService.featured"
                       }
                     ],
                     attrs: { type: "checkbox", name: "service_featured" },
                     domProps: {
-                      checked: Array.isArray(_vm.service.featured)
-                        ? _vm._i(_vm.service.featured, null) > -1
-                        : _vm.service.featured
+                      checked: Array.isArray(_vm.newService.featured)
+                        ? _vm._i(_vm.newService.featured, null) > -1
+                        : _vm.newService.featured
                     },
                     on: {
                       change: function($event) {
-                        var $$a = _vm.service.featured,
+                        var $$a = _vm.newService.featured,
                           $$el = $event.target,
                           $$c = $$el.checked ? true : false
                         if (Array.isArray($$a)) {
@@ -31389,20 +31409,20 @@ var render = function() {
                           if ($$el.checked) {
                             $$i < 0 &&
                               _vm.$set(
-                                _vm.service,
+                                _vm.newService,
                                 "featured",
                                 $$a.concat([$$v])
                               )
                           } else {
                             $$i > -1 &&
                               _vm.$set(
-                                _vm.service,
+                                _vm.newService,
                                 "featured",
                                 $$a.slice(0, $$i).concat($$a.slice($$i + 1))
                               )
                           }
                         } else {
-                          _vm.$set(_vm.service, "featured", $$c)
+                          _vm.$set(_vm.newService, "featured", $$c)
                         }
                       }
                     }
@@ -31410,6 +31430,30 @@ var render = function() {
                   _vm._v(
                     "\n                        Feature on the Home page?\n                    "
                   )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "w-full px-1 py-4" }, [
+                _c("div", { staticClass: "dropbox" }, [
+                  _c("input", {
+                    staticClass: "input-file",
+                    attrs: { type: "file", accept: "image/*" },
+                    on: {
+                      change: function($event) {
+                        _vm.filesChange($event.target.name, $event.target.files)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _vm.isInitial
+                    ? _c("p", [
+                        _vm._v(
+                          "\n                            Drag your file(s) here to begin"
+                        ),
+                        _c("br"),
+                        _vm._v(" or click to browse\n                        ")
+                      ])
+                    : _vm._e()
                 ])
               ])
             ]),
