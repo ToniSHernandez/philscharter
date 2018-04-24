@@ -18,8 +18,6 @@ class Service extends Model
 
     public function scopePopular()
     {
-        $service = Service::where('popular', 1)->orderBy('order', 'asc')->limit(4);
-
-        return $service;
+        return Service::where('popular', 1)->orderBy('order', 'asc')->limit(4);
     }
 }
