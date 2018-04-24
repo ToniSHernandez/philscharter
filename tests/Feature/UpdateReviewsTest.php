@@ -17,7 +17,7 @@ class UpdateReviewsTest extends TestCase
         $review       = factory(Review::class)->create();
         $newBody      = 'Here is the new body';
 
-        $this->patch('/reviews/'. $review->id, [
+        $this->patch('api/reviews/'. $review->id, [
             'author'       => $review->author,
             'body'         => $newBody,
             'featured'     => $review->featured,

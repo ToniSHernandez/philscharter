@@ -19,7 +19,7 @@ class UpdateServicesTest extends TestCase
         $updatedTitle = 'Here is the updated title';
         $service = factory(Service::class)->create();
 
-        $this->patch('/services/'. $service->id, [
+        $this->patch('api/services/'. $service->id, [
             'title' => $updatedTitle
         ])->assertSuccessful();
         $this->assertDatabaseHas('services', [

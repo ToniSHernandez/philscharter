@@ -21,7 +21,8 @@ Route::get('/contact', 'SupportPageController@index')->name('support');
 //dashboard
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
-// Resourceful routes
-Route::resource('/services', 'ServicesController');
-Route::resource('/reviews', 'ReviewsController');
-Route::resource('/leads', 'LeadsController');
+Route::prefix('api/')->name('api.')->namespace('Backend')->group(function () {
+    Route::resource('leads', 'LeadsController');
+    Route::resource('reviews', 'ReviewsController');
+    Route::resource('services', 'ServicesController');
+});

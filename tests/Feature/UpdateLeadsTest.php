@@ -17,7 +17,7 @@ class UpdateLeadsTest extends TestCase
         $lead = factory(Lead::class)->create();
         $name = 'Leady McLeaderton';
 
-        $this->patch('/leads/'. $lead->id, [
+        $this->patch('api/leads/'. $lead->id, [
             'name' => $name
         ])->assertSuccessful();
         $this->assertDatabaseHas('leads', [

@@ -16,7 +16,7 @@ class DeleteReviewsTest extends TestCase
     {
         $review = factory(Review::class)->create();
 
-        $this->delete('/reviews/'. $review->id)->assertSuccessful();
+        $this->delete('api/reviews/'. $review->id)->assertSuccessful();
         $this->assertDatabaseMissing('reviews', [
             'id' => $review->id
         ]);

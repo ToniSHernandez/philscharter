@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
 use App\Lead;
 use App\User;
@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use App\Mail\LeadCreated;
 use App\Mail\LeadReceived;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 
 class LeadsController extends Controller

@@ -22,7 +22,7 @@ class WriteLeadsTest extends TestCase
             'message' => 'Message contents',
         ];
 
-        $this->post('/leads', $lead)->assertSuccessful();
+        $this->post('api/leads', $lead)->assertSuccessful();
         $this->assertDatabaseHas('leads', $lead);
     }
 }

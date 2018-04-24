@@ -21,7 +21,7 @@ class DeleteServicesTest extends TestCase
         $this->assertDatabaseHas('services', [
             'id' => $service->id
         ]);
-        $this->delete('/services/'. $service->id)->assertSuccessful();
+        $this->delete('api/services/'. $service->id)->assertSuccessful();
         $this->assertDatabaseMissing('services', [
             'id' => $service->id
         ]);
