@@ -10,11 +10,27 @@
                     </div>
                 </div>
                 <div v-if="editingService === index" class="bg-grey-lightest rounded p-4 mb-1" >
-                    <div class="form-inputs">
-                        <input v-model="service.title" type="text" class="input-text" name="service_name" placeholder="Service Name" >
-                        <input v-model="service.subtitle" type="text" class="input-text" name="service_subtitle" placeholder="Subtitle" >
-                        <input v-model="service.rate" type="text" class="input-text" name="service_price" placeholder="Price" >
-                    </div>
+                    <form class="form-inputs flex flex-wrap">
+                        <div class="w-full px-1">
+                            <input v-model="service.title" type="text" class="input-text w-full" name="service_title" placeholder="Service Name" >
+                        </div>
+                        <div class="w-full px-1">
+                            <input v-model="service.subtitle" type="text" class="input-text w-full" name="service_subtitle" placeholder="Subtitle" >
+                        </div>
+                        <div class="w-full md:w-1/4 px-1">
+                            <input v-model="service.rate" type="text" class="input-text w-8" name="service_price" placeholder="Rate" >
+                        </div>
+                        <div class="w-full md:w-3/4 px-1">
+                            <input v-model="service.rate_info" type="text" class="input-text w-full" name="service_rate_info" placeholder="Additional rate information" >
+                        </div>
+                        <div class="w-full px-1">
+                            <textarea v-model="service.description" name="service_description" placeholder="Description"></textarea>
+                        </div>
+                        <div class="w-full px-1">
+                            <input type="checkbox" id="featured" name="service_featured" v-model="service.featured">
+                            <label for="featured">Feature on the Home page?</label>
+                        </div>
+                    </form>
                     <div class="flex justify-between items-center pt-2">
                         <a class="inline-block bg-grey text-white rounded-full py-2 px-3 no-underline cursor-pointer" @click="closeService" >nevermind</a>
                         <a class="button-kma" @click="editService(service)" >Edit Service</a>
@@ -26,11 +42,29 @@
             <a v-if="!addingService" class="inline-block bg-kma text-white rounded-full py-2 px-3 no-underline cursor-pointer" @click="openNewServicePanel" >Add a Service</a>
             <div v-if="addingService" class="bg-grey-lightest rounded p-4" >
                 <h2 class="font-normal mb-2">New Service</h2>
-                <div class="form-inputs">
-                    <input v-model="newService.title" type="text" class="input-text" name="service_name" placeholder="Service Name" >
-                    <input v-model="newService.subtitle" type="text" class="input-text" name="service_subtitle" placeholder="Subtitle" >
-                    <input v-model="newService.rate" type="text" class="input-text" name="service_price" placeholder="Price" >
-                </div>
+                <form class="form-inputs flex flex-wrap">
+                    <div class="w-full px-1">
+                        <input v-model="service.title" type="text" class="input-text w-full" name="service_title" placeholder="Service Name" >
+                    </div>
+                    <div class="w-full px-1">
+                        <input v-model="service.subtitle" type="text" class="input-text w-full" name="service_subtitle" placeholder="Subtitle" >
+                    </div>
+                    <div class="w-full md:w-1/4 px-1">
+                        <input v-model="service.rate" type="text" class="input-text w-8" name="service_price" placeholder="Rate" >
+                    </div>
+                    <div class="w-full md:w-3/4 px-1">
+                        <input v-model="service.rate_info" type="text" class="input-text w-full" name="service_rate_info" placeholder="Additional rate information" >
+                    </div>
+                    <div class="w-full px-1">
+                        <textarea v-model="service.description" name="service_description" placeholder="Description"></textarea>
+                    </div>
+                    <div class="w-full px-1">
+                        <label>
+                            <input type="checkbox" name="service_featured" v-model="service.featured">
+                            Feature on the Home page?
+                        </label>
+                    </div>
+                </form>
                 <div class="flex justify-between items-center pt-2">
                     <a class="inline-block bg-grey text-white rounded-full py-2 px-3 no-underline cursor-pointer" @click="closeNewServicePanel" >nevermind</a>
                     <a class="button-kma" @click="addService" >Add Service</a>

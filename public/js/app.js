@@ -30830,6 +30830,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -30944,84 +30978,195 @@ var render = function() {
           _vm._v(" "),
           _vm.editingService === index
             ? _c("div", { staticClass: "bg-grey-lightest rounded p-4 mb-1" }, [
-                _c("div", { staticClass: "form-inputs" }, [
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: service.title,
-                        expression: "service.title"
-                      }
-                    ],
-                    staticClass: "input-text",
-                    attrs: {
-                      type: "text",
-                      name: "service_name",
-                      placeholder: "Service Name"
-                    },
-                    domProps: { value: service.title },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
+                _c("form", { staticClass: "form-inputs flex flex-wrap" }, [
+                  _c("div", { staticClass: "w-full px-1" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: service.title,
+                          expression: "service.title"
                         }
-                        _vm.$set(service, "title", $event.target.value)
+                      ],
+                      staticClass: "input-text w-full",
+                      attrs: {
+                        type: "text",
+                        name: "service_title",
+                        placeholder: "Service Name"
+                      },
+                      domProps: { value: service.title },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(service, "title", $event.target.value)
+                        }
                       }
-                    }
-                  }),
+                    })
+                  ]),
                   _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: service.subtitle,
-                        expression: "service.subtitle"
-                      }
-                    ],
-                    staticClass: "input-text",
-                    attrs: {
-                      type: "text",
-                      name: "service_subtitle",
-                      placeholder: "Subtitle"
-                    },
-                    domProps: { value: service.subtitle },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
+                  _c("div", { staticClass: "w-full px-1" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: service.subtitle,
+                          expression: "service.subtitle"
                         }
-                        _vm.$set(service, "subtitle", $event.target.value)
+                      ],
+                      staticClass: "input-text w-full",
+                      attrs: {
+                        type: "text",
+                        name: "service_subtitle",
+                        placeholder: "Subtitle"
+                      },
+                      domProps: { value: service.subtitle },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(service, "subtitle", $event.target.value)
+                        }
                       }
-                    }
-                  }),
+                    })
+                  ]),
                   _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: service.rate,
-                        expression: "service.rate"
-                      }
-                    ],
-                    staticClass: "input-text",
-                    attrs: {
-                      type: "text",
-                      name: "service_price",
-                      placeholder: "Price"
-                    },
-                    domProps: { value: service.rate },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
+                  _c("div", { staticClass: "w-full md:w-1/4 px-1" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: service.rate,
+                          expression: "service.rate"
                         }
-                        _vm.$set(service, "rate", $event.target.value)
+                      ],
+                      staticClass: "input-text w-8",
+                      attrs: {
+                        type: "text",
+                        name: "service_price",
+                        placeholder: "Rate"
+                      },
+                      domProps: { value: service.rate },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(service, "rate", $event.target.value)
+                        }
                       }
-                    }
-                  })
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "w-full md:w-3/4 px-1" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: service.rate_info,
+                          expression: "service.rate_info"
+                        }
+                      ],
+                      staticClass: "input-text w-full",
+                      attrs: {
+                        type: "text",
+                        name: "service_rate_info",
+                        placeholder: "Additional rate information"
+                      },
+                      domProps: { value: service.rate_info },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(service, "rate_info", $event.target.value)
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "w-full px-1" }, [
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: service.description,
+                          expression: "service.description"
+                        }
+                      ],
+                      attrs: {
+                        name: "service_description",
+                        placeholder: "Description"
+                      },
+                      domProps: { value: service.description },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(service, "description", $event.target.value)
+                        }
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "w-full px-1" }, [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: service.featured,
+                          expression: "service.featured"
+                        }
+                      ],
+                      attrs: {
+                        type: "checkbox",
+                        id: "featured",
+                        name: "service_featured"
+                      },
+                      domProps: {
+                        checked: Array.isArray(service.featured)
+                          ? _vm._i(service.featured, null) > -1
+                          : service.featured
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$a = service.featured,
+                            $$el = $event.target,
+                            $$c = $$el.checked ? true : false
+                          if (Array.isArray($$a)) {
+                            var $$v = null,
+                              $$i = _vm._i($$a, $$v)
+                            if ($$el.checked) {
+                              $$i < 0 &&
+                                _vm.$set(service, "featured", $$a.concat([$$v]))
+                            } else {
+                              $$i > -1 &&
+                                _vm.$set(
+                                  service,
+                                  "featured",
+                                  $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                                )
+                            }
+                          } else {
+                            _vm.$set(service, "featured", $$c)
+                          }
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("label", { attrs: { for: "featured" } }, [
+                      _vm._v("Feature on the Home page?")
+                    ])
+                  ])
                 ]),
                 _vm._v(" "),
                 _c(
@@ -31077,84 +31222,196 @@ var render = function() {
               _vm._v("New Service")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "form-inputs" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.newService.title,
-                    expression: "newService.title"
-                  }
-                ],
-                staticClass: "input-text",
-                attrs: {
-                  type: "text",
-                  name: "service_name",
-                  placeholder: "Service Name"
-                },
-                domProps: { value: _vm.newService.title },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+            _c("form", { staticClass: "form-inputs flex flex-wrap" }, [
+              _c("div", { staticClass: "w-full px-1" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.service.title,
+                      expression: "service.title"
                     }
-                    _vm.$set(_vm.newService, "title", $event.target.value)
+                  ],
+                  staticClass: "input-text w-full",
+                  attrs: {
+                    type: "text",
+                    name: "service_title",
+                    placeholder: "Service Name"
+                  },
+                  domProps: { value: _vm.service.title },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.service, "title", $event.target.value)
+                    }
                   }
-                }
-              }),
+                })
+              ]),
               _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.newService.subtitle,
-                    expression: "newService.subtitle"
-                  }
-                ],
-                staticClass: "input-text",
-                attrs: {
-                  type: "text",
-                  name: "service_subtitle",
-                  placeholder: "Subtitle"
-                },
-                domProps: { value: _vm.newService.subtitle },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+              _c("div", { staticClass: "w-full px-1" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.service.subtitle,
+                      expression: "service.subtitle"
                     }
-                    _vm.$set(_vm.newService, "subtitle", $event.target.value)
+                  ],
+                  staticClass: "input-text w-full",
+                  attrs: {
+                    type: "text",
+                    name: "service_subtitle",
+                    placeholder: "Subtitle"
+                  },
+                  domProps: { value: _vm.service.subtitle },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.service, "subtitle", $event.target.value)
+                    }
                   }
-                }
-              }),
+                })
+              ]),
               _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.newService.rate,
-                    expression: "newService.rate"
-                  }
-                ],
-                staticClass: "input-text",
-                attrs: {
-                  type: "text",
-                  name: "service_price",
-                  placeholder: "Price"
-                },
-                domProps: { value: _vm.newService.rate },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
+              _c("div", { staticClass: "w-full md:w-1/4 px-1" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.service.rate,
+                      expression: "service.rate"
                     }
-                    _vm.$set(_vm.newService, "rate", $event.target.value)
+                  ],
+                  staticClass: "input-text w-8",
+                  attrs: {
+                    type: "text",
+                    name: "service_price",
+                    placeholder: "Rate"
+                  },
+                  domProps: { value: _vm.service.rate },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.service, "rate", $event.target.value)
+                    }
                   }
-                }
-              })
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "w-full md:w-3/4 px-1" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.service.rate_info,
+                      expression: "service.rate_info"
+                    }
+                  ],
+                  staticClass: "input-text w-full",
+                  attrs: {
+                    type: "text",
+                    name: "service_rate_info",
+                    placeholder: "Additional rate information"
+                  },
+                  domProps: { value: _vm.service.rate_info },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.service, "rate_info", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "w-full px-1" }, [
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.service.description,
+                      expression: "service.description"
+                    }
+                  ],
+                  attrs: {
+                    name: "service_description",
+                    placeholder: "Description"
+                  },
+                  domProps: { value: _vm.service.description },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.service, "description", $event.target.value)
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "w-full px-1" }, [
+                _c("label", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.service.featured,
+                        expression: "service.featured"
+                      }
+                    ],
+                    attrs: { type: "checkbox", name: "service_featured" },
+                    domProps: {
+                      checked: Array.isArray(_vm.service.featured)
+                        ? _vm._i(_vm.service.featured, null) > -1
+                        : _vm.service.featured
+                    },
+                    on: {
+                      change: function($event) {
+                        var $$a = _vm.service.featured,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = null,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 &&
+                              _vm.$set(
+                                _vm.service,
+                                "featured",
+                                $$a.concat([$$v])
+                              )
+                          } else {
+                            $$i > -1 &&
+                              _vm.$set(
+                                _vm.service,
+                                "featured",
+                                $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                              )
+                          }
+                        } else {
+                          _vm.$set(_vm.service, "featured", $$c)
+                        }
+                      }
+                    }
+                  }),
+                  _vm._v(
+                    "\n                        Feature on the Home page?\n                    "
+                  )
+                ])
+              ])
             ]),
             _vm._v(" "),
             _c(
@@ -31668,7 +31925,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -31712,6 +31969,12 @@ module.exports = function listToStyles (parentId, list) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -32086,7 +32349,7 @@ var render = function() {
                       staticClass: "button-kma-xl",
                       on: {
                         click: function($event) {
-                          _vm.switchto("pages")
+                          _vm.switchto("photoalbums")
                         }
                       }
                     },
@@ -32123,7 +32386,7 @@ var render = function() {
                           })
                         ]
                       ),
-                      _vm._v("\n                        Home page")
+                      _vm._v("\n                        Photos")
                     ]
                   )
                 ]
@@ -32176,7 +32439,7 @@ var render = function() {
                           })
                         ]
                       ),
-                      _vm._v("\n                        About page")
+                      _vm._v("\n                        Pages")
                     ]
                   )
                 ]
@@ -32434,6 +32697,38 @@ var render = function() {
                   "h1",
                   { staticClass: "text-white text-5xl font-normal mt-4" },
                   [_vm._v("Pages")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "button-kma-sm float-right mb-2",
+                    on: {
+                      click: function($event) {
+                        _vm.switchto("dashboard")
+                      }
+                    }
+                  },
+                  [_vm._v("Dashboard")]
+                )
+              ]
+            )
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.section == "photoalbums"
+        ? _c("div", [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "flex pb-1 border-b border-grey-dark items-end justify-between"
+              },
+              [
+                _c(
+                  "h1",
+                  { staticClass: "text-white text-5xl font-normal mt-4" },
+                  [_vm._v("Photo Albums")]
                 ),
                 _vm._v(" "),
                 _c(

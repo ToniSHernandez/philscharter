@@ -64,7 +64,7 @@
                         Services</a>
                 </div>
                 <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1">
-                    <a @click="switchto('pages')" class="button-kma-xl" >
+                    <a @click="switchto('photoalbums')" class="button-kma-xl" >
                         <svg class="fill-current h-8 mb-1" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve">
@@ -94,7 +94,7 @@
                         <path d="M27,18c-4.963,0-9,4.037-9,9s4.037,9,9,9s9-4.037,9-9S31.963,18,27,18z M27,34c-3.859,0-7-3.141-7-7s3.141-7,7-7
 		s7,3.141,7,7S30.859,34,27,34z"></path>
                     </svg>
-                        Home page</a>
+                        Photos</a>
                 </div>
                 <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1">
                     <a @click="switchto('pages')" class="button-kma-xl" >
@@ -127,7 +127,7 @@
                         <path d="M27,18c-4.963,0-9,4.037-9,9s4.037,9,9,9s9-4.037,9-9S31.963,18,27,18z M27,34c-3.859,0-7-3.141-7-7s3.141-7,7-7
                         s7,3.141,7,7S30.859,34,27,34z"></path>
                     </svg>
-                        About page</a>
+                        Pages</a>
                 </div>
                 <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1">
                     <a @click="switchto('contactinfo')" class="button-kma-xl" >
@@ -180,6 +180,12 @@
             <div v-if="section == 'pages'">
                 <div class="flex pb-1 border-b border-grey-dark items-end justify-between">
                     <h1 class="text-white text-5xl font-normal mt-4">Pages</h1>
+                    <a @click="switchto('dashboard')" class="button-kma-sm float-right mb-2" >Dashboard</a>
+                </div>
+            </div>
+            <div v-if="section == 'photoalbums'">
+                <div class="flex pb-1 border-b border-grey-dark items-end justify-between">
+                    <h1 class="text-white text-5xl font-normal mt-4">Photo Albums</h1>
                     <a @click="switchto('dashboard')" class="button-kma-sm float-right mb-2" >Dashboard</a>
                 </div>
             </div>
