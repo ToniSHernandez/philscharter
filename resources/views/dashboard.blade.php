@@ -1,5 +1,5 @@
 @extends('layouts.admin')
 
 @section('content')
-    <dashboard></dashboard>
+    <dashboard @switchto="changesection" :section="section" ></dashboard>
 @endsection

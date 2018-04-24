@@ -21,12 +21,17 @@ const app = new Vue({
 
     data(){
         return {
-            mobileMenuOpen: false
+            mobileMenuOpen: false,
+            section: 'dashboard'
         }
     },
     methods: {
         toggleMobileMenu(){
             this.mobileMenuOpen = !this.mobileMenuOpen;
+        },
+        changesection(section){
+            this.mobileMenuOpen = false;
+            this.section = section;
         }
     }
 });
