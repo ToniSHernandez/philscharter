@@ -9,7 +9,7 @@ class ServicesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -62,10 +62,9 @@ class ServicesController extends Controller
      * @param  \App\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(Service $service)
     {
-        $services = $this->index();
-        return view('StaticPages.services', compact('services'));
+        return $service;
     }
 
     /**

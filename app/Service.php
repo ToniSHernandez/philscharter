@@ -16,7 +16,7 @@ class Service extends Model
         'photo_url'
     ];
 
-    public function getPopular()
+    public function scopePopular()
     {
         $service = Service::where('popular', 1)->orderBy('order', 'asc')->limit(4);
 

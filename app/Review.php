@@ -15,7 +15,7 @@ class Review extends Model
         'rating'
     ];
 
-    public function getLatest()
+    public function scopeLatest()
     {
         $review = Review::where('featured', 1)->orderBy('created_at', 'desc')->first();
 
