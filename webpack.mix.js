@@ -1,40 +1,43 @@
 let mix = require("laravel-mix");
 let tailwindcss = require("tailwindcss");
-require("laravel-mix-purgecss");
+let glob = require('glob-all')
+let purgeCss = require("laravel-mix-purgecss");
+let postcssImport = require('postcss-import');
 
-/*
- |--------------------------------------------------------------------------
- | Mix Asset Management
- |--------------------------------------------------------------------------
- |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
- |
- */
+mix.js('resources/assets/js/app.js', 'public/js')
+    .postCss('resources/assets/css/main.css', 'public/css', [
+        postcssImport(),
+        tailwindcss('tailwind.js')
+    ]);
 
-mix
-  .js("resources/assets/js/app.js", "public/js")
-  .postCss("resources/assets/css/main.css", "public/css", [
-    tailwindcss("./tailwind.js")
-  ])
-  .purgeCss();
+mix.options({
+    postCss: [
+        require('autoprefixer')({
+            grid: true,
+            browsers: ['last 2 versions', 'IE 9', 'Safari 9']
+        })
+    ]
+});
 
 if (mix.inProduction()) {
-  mix.version();
+    mix.webpackConfig({
+        plugins: [
+            new purgeCss({
+                paths: glob.sync([
+                    path.join(__dirname, 'resources/views/**/*.blade.php'),
+                    path.join(__dirname, 'resources/assets/js/**/*.vue')
+                ]),
+                extractors: [
+                    {
+                        extractor: class {
+                            static extract(content) {
+                                return content.match(/[A-z0-9-:\/]+/g)
+                            }
+                        },
+                        extensions: ['html', 'js', 'php', 'vue']
+                    }
+                ]
+            })
+        ]
+    })
 }
-
-// If you want to use LESS for your preprocessing
-// mix.less('resources/assets/less/main.less', 'public/css')
-//   .options({
-//     postCss: [
-//       tailwindcss('./tailwind.js'),
-//     ]
-//   })
-
-// If you want to use SASS for preprocessing
-// mix.sass('resources/assets/sass/app.scss', 'public/css')
-//    .options({
-//       processCssUrls: false,
-//       postCss: [ tailwindcss('tailwind.js') ],
-//    });

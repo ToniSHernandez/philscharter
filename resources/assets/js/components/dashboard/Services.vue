@@ -51,7 +51,7 @@
             }
         },
         mounted() {
-            window.axios.get('/services')
+            window.axios.get('/api/services')
                 .then(response => {
                     this.services = response.data
                 });
@@ -80,7 +80,7 @@
             addService(){
                 this.services.push(this.newService);
 
-                axios.post('/services', this.newService)
+                axios.post('/api/services', this.newService)
                     .then(function (response) {
                         console.log(response);
                     })
