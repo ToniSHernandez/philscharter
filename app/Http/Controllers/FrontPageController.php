@@ -14,8 +14,8 @@ class FrontPageController extends Controller
      */
     public function index()
     {
-        $services = (new Service())->getPopular();
-        $review = (new Review())->getLatest();
+        $services = Service::popular();
+        $review = Review::latest();
         return view('StaticPages.front', compact('review', 'services'));
     }
 }
