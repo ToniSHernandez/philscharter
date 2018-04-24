@@ -16,7 +16,7 @@ class WriteReviewsTest extends TestCase
     {
         $review = factory(Review::class)->make();
 
-        $this->post('/reviews', $review->toArray())->assertSuccessful();
+        $this->post('api/reviews', $review->toArray())->assertSuccessful();
         $this->assertDatabaseHas('reviews', [
             'body' => $review->body,
             'rating' => $review->rating
@@ -28,7 +28,7 @@ class WriteReviewsTest extends TestCase
     {
         $review = factory(Review::class)->make(['author' => '']);
 
-        $this->post('/reviews', $review->toArray())->assertSessionHasErrors();
+        $this->post('api/reviews', $review->toArray())->assertSessionHasErrors();
         $this->assertDatabaseMissing('reviews', ['body' => $review->body]);
     }
 
@@ -37,7 +37,7 @@ class WriteReviewsTest extends TestCase
     {
         $review = factory(Review::class)->make(['body' => '']);
 
-        $this->post('/reviews', $review->toArray())->assertSessionHasErrors();
+        $this->post('api/reviews', $review->toArray())->assertSessionHasErrors();
         $this->assertDatabaseMissing('reviews', ['author' => $review->author]);
     }
 }

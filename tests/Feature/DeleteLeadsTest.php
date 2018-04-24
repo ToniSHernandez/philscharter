@@ -21,11 +21,11 @@ class DeleteLeadsTest extends TestCase
             'message' => 'Message contents',
         ];
 
-        $this->post('leads', $lead)->assertSuccessful();
+        $this->post('/api/leads', $lead)->assertSuccessful();
         $lead = Lead::first();
 
         $this->assertDatabaseHas('leads', ['id' => $lead->id]);
-        $this->delete('/leads/'. $lead->id)->assertSuccessful();
+        $this->delete('api/leads/'. $lead->id)->assertSuccessful();
         $this->assertDatabaseMissing('leads', ['id' => $lead->id]);
     }
 }

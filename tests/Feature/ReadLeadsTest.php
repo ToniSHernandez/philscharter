@@ -15,7 +15,7 @@ class ReadLeadsTest extends TestCase
     public function a_user_can_view_a_list_of_leads()
     {
         $lead = factory(Lead::class)->create();
-        $this->get('/leads')->assertSuccessful()
+        $this->get('api/leads')->assertSuccessful()
             ->assertJsonFragment([
                 'id' => $lead->id
             ]);
@@ -25,7 +25,7 @@ class ReadLeadsTest extends TestCase
     public function a_user_can_view_a_single_lead()
     {
         $lead = factory(Lead::class)->create();
-        $this->get('/leads/'. $lead->id)->assertSuccessful()
+        $this->get('api/leads/'. $lead->id)->assertSuccessful()
             ->assertJsonFragment([
                 'id' => $lead->id
         ]);

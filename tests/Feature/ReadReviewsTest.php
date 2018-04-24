@@ -15,7 +15,7 @@ class ReadReviewsTest extends TestCase
     public function a_user_can_read_reviews()
     {
         $review = factory(Review::class)->create();
-        $this->get('/reviews')->assertSuccessful()->assertJsonFragment([
+        $this->get('api/reviews')->assertSuccessful()->assertJsonFragment([
             'id' => $review->id,
             'body' => $review->body
         ]);

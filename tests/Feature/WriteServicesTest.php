@@ -17,7 +17,7 @@ class WriteServicesTest extends TestCase
     {
         $this->login();
         $service = factory(Service::class)->make();
-        $this->post('/services', $service->toArray())->assertSuccessful();
+        $this->post('api/services', $service->toArray())->assertSuccessful();
         $this->assertDatabaseHas('services', $service->toArray());
     }
 
@@ -29,7 +29,7 @@ class WriteServicesTest extends TestCase
             'title' => ''
         ]);
 
-        $this->post('/services', $service->toArray())->assertSessionHasErrors();
+        $this->post('api/services', $service->toArray())->assertSessionHasErrors();
     }
 
     /** @test */
@@ -40,7 +40,7 @@ class WriteServicesTest extends TestCase
             'rate' => ''
         ]);
 
-        $this->post('/services', $service->toArray())->assertSessionHasErrors();
+        $this->post('api/services', $service->toArray())->assertSessionHasErrors();
     }
 
     /** @test */
@@ -49,7 +49,7 @@ class WriteServicesTest extends TestCase
         $this->login();
         $service = factory(Service::class)->make();
 
-        $this->post('/services', [
+        $this->post('api/services', [
             'title'             => str_repeat('a', 192),
             'rate'              => $service->rate,
             'short_description' => $service->short_description,
@@ -57,7 +57,7 @@ class WriteServicesTest extends TestCase
         ])->assertSessionHasErrors();
 
 
-        $this->post('/services', [
+        $this->post('api/services', [
             'title'             => str_repeat('a', 191),
             'rate'              => $service->rate,
             'short_description' => $service->short_description,
@@ -71,14 +71,14 @@ class WriteServicesTest extends TestCase
         $this->login();
         $service = factory(Service::class)->make();
 
-        $this->post('/services', [
+        $this->post('api/services', [
             'title'             => $service->title,
             'rate'              => 'Johnny Foureyes',
             'short_description' => $service->short_description,
             'long_description'  => $service->long_description
         ])->assertSessionHasErrors();
 
-        $this->post('/services', [
+        $this->post('api/services', [
             'title'             => $service->title,
             'rate'              => 300,
             'short_description' => $service->short_description,

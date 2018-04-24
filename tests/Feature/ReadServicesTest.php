@@ -16,7 +16,7 @@ class ReadServicesTest extends TestCase
     public function an_authenticated_user_can_view_the_services_list()
     {
         $this->login();
-        $this->get('/services')->assertSuccessful();
+        $this->get('api/services')->assertSuccessful();
     }
 
     /** @test */
@@ -26,7 +26,7 @@ class ReadServicesTest extends TestCase
 
         $service = factory(Service::class)->create();
 
-        $this->get('/services')
+        $this->get('api/services')
             ->assertJsonFragment([
                 'id' => $service->id,
                 'title' => $service->title
@@ -40,7 +40,7 @@ class ReadServicesTest extends TestCase
 
         $service = factory(Service::class)->create();
 
-        $this->get('/services/'. $service->id)
+        $this->get('api/services/'. $service->id)
             ->assertJsonFragment([
                 'title' => $service->title
             ]);
