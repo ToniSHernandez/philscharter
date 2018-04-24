@@ -13,13 +13,6 @@ class ReadServicesTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function an_authenticated_user_can_view_the_services_list()
-    {
-        $this->login();
-        $this->get('api/services')->assertSuccessful();
-    }
-
-    /** @test */
     public function an_authenticated_user_can_see_the_services_list()
     {
         $this->login();

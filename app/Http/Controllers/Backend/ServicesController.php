@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Service;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Exceptions\NoServicesException;
 
 class ServicesController extends Controller
 {
@@ -16,6 +17,10 @@ class ServicesController extends Controller
     public function index()
     {
         $services = Service::all();
+
+        if (count($services) == 0 ) {
+            throw new NoServicesException();
+        }
 
         return $services;
     }

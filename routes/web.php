@@ -25,4 +25,8 @@ Route::prefix('api/')->name('api.')->namespace('Backend')->group(function () {
     Route::resource('leads', 'LeadsController');
     Route::resource('reviews', 'ReviewsController');
     Route::resource('services', 'ServicesController');
+    Route::resource('service-requests', 'ServiceRequestsController');
 });
+
+// misc
+Route::post('quick-start', 'QuickStartController@init');

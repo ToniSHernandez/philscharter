@@ -8,7 +8,11 @@
         <div class="w-full lg:absolute md:pin-t" >
             <div class="container mx-auto">
                 <div class="lg:w-1/3 ml-auto" >
-                    @include('partials.mini-bookingform')
+                    <mini-form
+                        class="sm:rounded-lg p-4 sm:p-8 bg-brand-90 sm:my-6 lg:my-8 xl:my-11"
+                        csrf="{{ csrf_token() }}"
+                    >
+                    </mini-form>
                 </div>
             </div>
         </div>
