@@ -32917,7 +32917,7 @@ if (false) {
 /* 67 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: Unexpected format (inline) \"components/fonts.css\" (696:1)\n\n  694 |  * @import \"components/forms\";\n  695 |  */\n> 696 | @import (inline) \"components/fonts.css\";\n      | ^\n  697 | @import (inline) \"components/buttons.css\";\n  698 | @import (inline) \"components/dashboard.css\";\n  699 | \n\n    at runLoaders (D:\\dev\\philscharter\\node_modules\\webpack\\lib\\NormalModule.js:195:19)\n    at D:\\dev\\philscharter\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at D:\\dev\\philscharter\\node_modules\\loader-runner\\lib\\LoaderRunner.js:230:18\n    at context.callback (D:\\dev\\philscharter\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Object.<anonymous> (D:\\dev\\philscharter\\node_modules\\css-loader\\lib\\loader.js:50:18)\n    at D:\\dev\\philscharter\\node_modules\\css-loader\\lib\\processCss.js:234:4\n    at <anonymous>\n    at runMicrotasksCallback (internal/process/next_tick.js:86:5)\n    at _combinedTickCallback (internal/process/next_tick.js:95:7)\n    at process._tickCallback (internal/process/next_tick.js:161:9)");
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

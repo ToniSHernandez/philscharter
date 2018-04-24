@@ -1,78 +1,22 @@
-/**
- * This injects Tailwind's base styles, which is a combination of
- * Normalize.css and some additional base styles.
- *
- * You can see the styles here:
- * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
- */
-@tailwind preflight;
+@import "./preflight.css";
+@import "./components.css";
 
-/**
- * This injects any component classes registered by plugins.
- *
- * If using `postcss-import`, use this import instead:
- *
- * @import "tailwindcss/components";
- */
-@tailwind components;
+@import "./components/fonts.css";
+@import "./components/buttons.css";
+@import "./components/dashboard.css";
 
-/**
- * Here you would add any of your custom component classes; stuff that you'd
- * want loaded *before* the utilities so that the utilities could still
- * override them.
- *
- * Example:
- *
- * .btn { ... }
- * .form-input { ... }
- *
- * Or if using a preprocessor:
- *
- * @import "components/buttons";
- * @import "components/forms";
- */
-
-@import (inline) "components/fonts.css";
-@import (inline) "components/buttons.css";
-@import (inline) "components/dashboard.css";
-
-/**
- * This injects all of Tailwind's utility classes, generated based on your
- * config file.
- *
- * If using `postcss-import`, use this import instead:
- *
- * @import "tailwindcss/utilities";
- */
-@tailwind utilities;
-
-/**
- * Here you would add any custom utilities you need that don't come out of the
- * box with Tailwind.
- *
- * Example :
- *
- * .bg-pattern-graph-paper { ... }
- * .skew-45 { ... }
- *
- * Or if using a preprocessor or `postcss-import`:
- *
- * @import "utilities/background-patterns";
- * @import "utilities/skew-transforms";
- */
+@import "./utilities.css";
 
 * {
     font-family: 'Montserrat';
 }
-
-/*theme*/
 
 .bg-brand-90 {
     background-color: rgba(149,23,39,.9);
 }
 
 .bg-secondary-80 {
-    background-color: rgba(0,43,96,.8)
+    background-color: rgba(0,43,96,.8);
 }
 
 .input-text {
@@ -85,13 +29,4 @@
     padding: 0 1rem;
     line-height: 1em;
     margin-bottom: -2.5rem;
-}
-
-.mobile-menu {
-    width: 210px
-}
-
-.site-wrapper.menu-open {
-    transition: margin .25s linear;
-    margin-left: -210px;
 }

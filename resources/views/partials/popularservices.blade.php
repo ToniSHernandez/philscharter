@@ -8,7 +8,7 @@
             <mini-service class="w-full sm:w-1/2 lg:w-1/4 pb-4 px-4 sm:pt-4" ></mini-service>
         </div>
         <div class="text-center mt-8" >
-            <a class="button-outlined font-bold" href="/charters-rates" >view all trips</a>
+            <a class="button-brand-outlined font-bold" href="/charters-rates" >view all trips</a>
         </div>
     </div>
 </div>

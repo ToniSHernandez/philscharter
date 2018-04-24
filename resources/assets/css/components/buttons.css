@@ -1,19 +1,26 @@
 /*button*/
 .button {
-    @apply .inline-block .uppercase .rounded-full .no-underline .cursor-pointer
+    display: inline-block;
+    text-transform: uppercase;
+    border-radius: 9999px;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /*button sizes*/
 .button-sm {
-    @apply .button .text-xs .py-2 .px-3
+    @apply .button .text-xs;
+    padding: .5rem .75rem;
 }
 
 .button-md {
-    @apply .button .text-sm .py-3 .px-4
+    @apply .button .text-sm;
+    padding: .75rem 1rem;
 }
 
 .button-lg {
-    @apply .button .text-base .py-4 .px-5
+    @apply .button .text-base;
+    padding: 1rem 1.25rem;
 }
 
 /*button colors*/

@@ -29,8 +29,7 @@
                 'overflow-hidden': mobileMenuOpen
             }"
         >
-            <div class="overlay absolute pin h-screen w-screen z-20 bg-secondary-80" :class="{'hidden': !mobileMenuOpen}" ></div>
-            <nav class="w-full bg-white h-16 shadow px-6 md:px-0 relative lg:fixed">
+            <nav class="w-full bg-white h-16 shadow px-6 md:px-0 relative lg:fixed z-20">
                 <div class="container mx-auto h-full">
                     <div class="flex items-center justify-center h-full">
                         <div class="text-left">
@@ -38,7 +37,8 @@
                         </div>
                         <div class="flex-1 text-right">
                             <div class="inline-block lg:hidden">
-                                <button @click="toggleMobileMenu" class="flex items-center bg-white px-3 py-2 border rounded text-brand-darker border-brand-darker hover:text-brand hover:border-brand relative z-30">
+                                <div class="overlay absolute pin h-screen w-screen z-30 bg-secondary-80" :class="{'hidden': !mobileMenuOpen}" ></div>
+                                <button @click="toggleMobileMenu" class="flex items-center bg-white px-3 py-2 border rounded text-brand-darker border-brand-darker hover:text-brand hover:border-brand relative z-40">
                                     <span class="text-blue-darker mr-2 hidden sm:inline-block" >MENU</span>
                                     <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
@@ -91,6 +91,7 @@
             <nav>
                 <a class="block w-full inline-block w-full my-2 px-3 no-underline uppercase font-bold text-grey-dark" href="/about" >About</a>
                 <a class="block w-full inline-block w-full my-2 px-3 no-underline uppercase font-bold text-grey-dark" href="/services">Charters & Rates</a>
+                <a class="block w-full inline-block w-full my-2 px-3 no-underline uppercase font-bold text-grey-dark" href="/photos">Photos</a>
                 <a class="block w-full inline-block w-full my-2 px-3 no-underline uppercase font-bold text-grey-dark" href="/reviews">Reviews</a>
                 <a class="block w-full inline-block w-full my-2 px-3 no-underline uppercase font-bold text-grey-dark" href="/contact">Contact</a>
                 <a class="inline-block rounded-full bg-brand-darker py-3 px-4 no-underline font-bold text-white uppercase mx-3 my-3" href="/contact">Request a Trip</a>
