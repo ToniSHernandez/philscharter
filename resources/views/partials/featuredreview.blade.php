@@ -7,7 +7,7 @@
             </div>
             <div class="max-w-full lg:max-w-lg px-2">
                 <p class="review-post">
-                    {{ $review->body }}
+{{--                    {{ $review->body }}--}}
                 </p>
             </div>
             <div class="quote text-left text-brand-darker">
@@ -16,7 +16,7 @@
         </div>
         <!--end grid-->
         <p class="reviewer font-semibold italic pb-6">
-            &mdash; {{ $review->author }}
+{{--            &mdash; {{ $review->author }}--}}
         </p>
         <a class="facebook block" href="https://www.facebook.com/#" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34.02 34.02" class="h-10" style="enable-background:new 0 0 50 50;" xml:space="preserve">

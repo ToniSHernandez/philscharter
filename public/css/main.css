@@ -5170,6 +5170,57 @@ button,
   color: #b4be35;
 }
 
+.button-kma-sm {
+  background-color: #b4be35;
+  color: #fff;
+  border-radius: 9999px;
+  font-size: .875rem;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+  padding-left: .75rem;
+  padding-right: .75rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-kma {
+  background-color: #b4be35;
+  color: #fff;
+  border-radius: 9999px;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  padding-left: .75rem;
+  padding-right: .75rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-kma-xl {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #b4be35;
+  color: #fff;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: .25rem;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  cursor: pointer;
+}
+
 .border-kma {
   border-color: #b4be35;
 }
