@@ -62,9 +62,10 @@ class ServicesController extends Controller
      * @param  \App\Service  $service
      * @return \Illuminate\Http\Response
      */
-    public function show(Service $service)
+    public function show()
     {
-        return $service;
+        $services = $this->index();
+        return view('StaticPages.services', compact('services'));
     }
 
     /**
@@ -101,11 +102,5 @@ class ServicesController extends Controller
     public function destroy(Service $service)
     {
         $service->delete();
-    }
-
-    public function dashboard()
-    {
-        $services = $this->index();
-        return view('dashboard.services', compact('services'));
     }
 }

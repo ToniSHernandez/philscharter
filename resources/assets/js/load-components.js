@@ -1,2 +1,5 @@
-Vue.component('services', require('./components/Services.vue'));
-Vue.component('reviews', require('./components/Reviews.vue'));
+Vue.component('services', require('./components/dashboard/Services.vue'));
+Vue.component('reviews', require('./components/dashboard/Reviews.vue'));
+Vue.component('dashboard', require('./components/dashboard/Dashboard.vue'));
+Vue.component('contact-info', require('./components/dashboard/ContactInfo.vue'));
+Vue.component('leads', require('./components/dashboard/Leads.vue'));
