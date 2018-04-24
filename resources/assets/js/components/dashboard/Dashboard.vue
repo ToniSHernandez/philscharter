@@ -3,7 +3,7 @@
         <div class="container mx-auto min-h-full py-2 px-1">
             <div v-if="section == 'dashboard'" class="flex items-center justify-center flex-wrap">
                 <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1">
-                    <a @click="switchTo('leads')" class="button-kma-xl" >
+                    <a @click="switchto('leads')" class="button-kma-xl" >
                         <svg class="fill-current h-8 mb-1" version="1.1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 55.867 55.867" style="enable-background:new 0 0 55.867 55.867;"
@@ -21,7 +21,7 @@
                         Leads</a>
                 </div>
                 <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1">
-                    <a @click="switchTo('reviews')" class="button-kma-xl" >
+                    <a @click="switchto('reviews')" class="button-kma-xl" >
                         <svg class="fill-current h-8 mb-1" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
@@ -50,7 +50,7 @@
                         Reviews</a>
                 </div>
                 <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1">
-                    <a @click="switchTo('services')" class="button-kma-xl" >
+                    <a @click="switchto('services')" class="button-kma-xl" >
                         <svg class="fill-current h-8 mb-1" version="1.1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
@@ -64,7 +64,7 @@
                         Services</a>
                 </div>
                 <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1">
-                    <a @click="switchTo('pages')" class="button-kma-xl" >
+                    <a @click="switchto('pages')" class="button-kma-xl" >
                         <svg class="fill-current h-8 mb-1" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve">
@@ -97,7 +97,7 @@
                         Home page</a>
                 </div>
                 <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1">
-                    <a @click="switchTo('pages')" class="button-kma-xl" >
+                    <a @click="switchto('pages')" class="button-kma-xl" >
                         <svg class="fill-current h-8 mb-1" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve">
@@ -130,7 +130,7 @@
                         About page</a>
                 </div>
                 <div class="h-32 w-1/2 sm:w-1/3 h-8 flex-grow p-1">
-                    <a @click="switchTo('contactinfo')" class="button-kma-xl" >
+                    <a @click="switchto('contactinfo')" class="button-kma-xl" >
                         <svg class="fill-current h-8 mb-1" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
@@ -152,35 +152,35 @@
             <div v-if="section == 'leads'">
                 <div class="flex pb-1 border-b border-grey-dark items-end justify-between">
                     <h1 class="text-white text-5xl font-normal mt-4">Leads</h1>
-                    <a @click="switchTo('dashboard')" class="button-kma-sm float-right mb-2" >Dashboard</a>
+                    <a @click="switchto('dashboard')" class="button-kma-sm float-right mb-2" >Dashboard</a>
                 </div>
-                <leads v-on:switchTo="switchTo('dashboard')"></leads>
+                <leads v-on:switchto="switchto('dashboard')"></leads>
             </div>
             <div v-if="section == 'services'">
                 <div class="flex pb-1 border-b border-grey-dark items-end justify-between">
                     <h1 class="text-white text-5xl font-normal mt-4">Services</h1>
-                    <a @click="switchTo('dashboard')" class="button-kma-sm float-right mb-2" >Dashboard</a>
+                    <a @click="switchto('dashboard')" class="button-kma-sm float-right mb-2" >Dashboard</a>
                 </div>
-                <services v-on:switchTo="switchTo('dashboard')"></services>
+                <services v-on:switchto="switchto('dashboard')"></services>
             </div>
             <div v-if="section == 'reviews'">
                 <div class="flex pb-1 border-b border-grey-dark items-end justify-between">
                     <h1 class="text-white text-5xl font-normal mt-4">Reviews</h1>
-                    <a @click="switchTo('dashboard')" class="button-kma-sm float-right mb-2" >Dashboard</a>
+                    <a @click="switchto('dashboard')" class="button-kma-sm float-right mb-2" >Dashboard</a>
                 </div>
-                <reviews v-on:switchTo="switchTo('dashboard')"></reviews>
+                <reviews v-on:switchto="switchto('dashboard')"></reviews>
             </div>
             <div v-if="section == 'contactinfo'">
                 <div class="flex pb-1 border-b border-grey-dark items-end justify-between">
                     <h1 class="text-white text-5xl font-normal mt-4">Contact Info</h1>
-                    <a @click="switchTo('dashboard')" class="button-kma-sm float-right mb-2" >Dashboard</a>
+                    <a @click="switchto('dashboard')" class="button-kma-sm float-right mb-2" >Dashboard</a>
                 </div>
-                <cotact-info v-on:switchTo="switchTo('dashboard')"></cotact-info>
+                <cotact-info v-on:switchto="switchto('dashboard')"></cotact-info>
             </div>
             <div v-if="section == 'pages'">
                 <div class="flex pb-1 border-b border-grey-dark items-end justify-between">
                     <h1 class="text-white text-5xl font-normal mt-4">Pages</h1>
-                    <a @click="switchTo('dashboard')" class="button-kma-sm float-right mb-2" >Dashboard</a>
+                    <a @click="switchto('dashboard')" class="button-kma-sm float-right mb-2" >Dashboard</a>
                 </div>
             </div>
         </div>
@@ -189,17 +189,15 @@
 
 <script>
     export default {
-        data(){
-            return {
-                section: ''
+        props: {
+            section: {
+                type: String,
+                default: 'dashboard'
             }
         },
-        mounted() {
-            this.section = 'dashboard';
-        },
         methods: {
-            switchTo(section) {
-                this.section = section;
+            switchto(section) {
+                this.$emit('switchto', section);
             }
         }
     }

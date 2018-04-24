@@ -1416,13 +1416,18 @@ var app = new Vue({
 
     data: function data() {
         return {
-            mobileMenuOpen: false
+            mobileMenuOpen: false,
+            section: 'dashboard'
         };
     },
 
     methods: {
         toggleMobileMenu: function toggleMobileMenu() {
             this.mobileMenuOpen = !this.mobileMenuOpen;
+        },
+        changesection: function changesection(section) {
+            this.mobileMenuOpen = false;
+            this.section = section;
         }
     }
 });
@@ -31663,7 +31668,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -31898,18 +31903,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            section: ''
-        };
+    props: {
+        section: {
+            type: String,
+            default: 'dashboard'
+        }
     },
-    mounted: function mounted() {
-        this.section = 'dashboard';
-    },
-
     methods: {
-        switchTo: function switchTo(section) {
-            this.section = section;
+        switchto: function switchto(section) {
+            this.$emit('switchto', section);
         }
     }
 });
@@ -31939,7 +31941,7 @@ var render = function() {
                       staticClass: "button-kma-xl",
                       on: {
                         click: function($event) {
-                          _vm.switchTo("leads")
+                          _vm.switchto("leads")
                         }
                       }
                     },
@@ -31986,7 +31988,7 @@ var render = function() {
                       staticClass: "button-kma-xl",
                       on: {
                         click: function($event) {
-                          _vm.switchTo("reviews")
+                          _vm.switchto("reviews")
                         }
                       }
                     },
@@ -32039,7 +32041,7 @@ var render = function() {
                       staticClass: "button-kma-xl",
                       on: {
                         click: function($event) {
-                          _vm.switchTo("services")
+                          _vm.switchto("services")
                         }
                       }
                     },
@@ -32084,7 +32086,7 @@ var render = function() {
                       staticClass: "button-kma-xl",
                       on: {
                         click: function($event) {
-                          _vm.switchTo("pages")
+                          _vm.switchto("pages")
                         }
                       }
                     },
@@ -32137,7 +32139,7 @@ var render = function() {
                       staticClass: "button-kma-xl",
                       on: {
                         click: function($event) {
-                          _vm.switchTo("pages")
+                          _vm.switchto("pages")
                         }
                       }
                     },
@@ -32190,7 +32192,7 @@ var render = function() {
                       staticClass: "button-kma-xl",
                       on: {
                         click: function($event) {
-                          _vm.switchTo("contactinfo")
+                          _vm.switchto("contactinfo")
                         }
                       }
                     },
@@ -32266,7 +32268,7 @@ var render = function() {
                       staticClass: "button-kma-sm float-right mb-2",
                       on: {
                         click: function($event) {
-                          _vm.switchTo("dashboard")
+                          _vm.switchto("dashboard")
                         }
                       }
                     },
@@ -32277,8 +32279,8 @@ var render = function() {
               _vm._v(" "),
               _c("leads", {
                 on: {
-                  switchTo: function($event) {
-                    _vm.switchTo("dashboard")
+                  switchto: function($event) {
+                    _vm.switchto("dashboard")
                   }
                 }
               })
@@ -32310,7 +32312,7 @@ var render = function() {
                       staticClass: "button-kma-sm float-right mb-2",
                       on: {
                         click: function($event) {
-                          _vm.switchTo("dashboard")
+                          _vm.switchto("dashboard")
                         }
                       }
                     },
@@ -32321,8 +32323,8 @@ var render = function() {
               _vm._v(" "),
               _c("services", {
                 on: {
-                  switchTo: function($event) {
-                    _vm.switchTo("dashboard")
+                  switchto: function($event) {
+                    _vm.switchto("dashboard")
                   }
                 }
               })
@@ -32354,7 +32356,7 @@ var render = function() {
                       staticClass: "button-kma-sm float-right mb-2",
                       on: {
                         click: function($event) {
-                          _vm.switchTo("dashboard")
+                          _vm.switchto("dashboard")
                         }
                       }
                     },
@@ -32365,8 +32367,8 @@ var render = function() {
               _vm._v(" "),
               _c("reviews", {
                 on: {
-                  switchTo: function($event) {
-                    _vm.switchTo("dashboard")
+                  switchto: function($event) {
+                    _vm.switchto("dashboard")
                   }
                 }
               })
@@ -32398,7 +32400,7 @@ var render = function() {
                       staticClass: "button-kma-sm float-right mb-2",
                       on: {
                         click: function($event) {
-                          _vm.switchTo("dashboard")
+                          _vm.switchto("dashboard")
                         }
                       }
                     },
@@ -32409,8 +32411,8 @@ var render = function() {
               _vm._v(" "),
               _c("cotact-info", {
                 on: {
-                  switchTo: function($event) {
-                    _vm.switchTo("dashboard")
+                  switchto: function($event) {
+                    _vm.switchto("dashboard")
                   }
                 }
               })
@@ -32440,7 +32442,7 @@ var render = function() {
                     staticClass: "button-kma-sm float-right mb-2",
                     on: {
                       click: function($event) {
-                        _vm.switchTo("dashboard")
+                        _vm.switchto("dashboard")
                       }
                     }
                   },
