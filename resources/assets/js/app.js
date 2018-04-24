@@ -17,5 +17,16 @@ window.Vue = require('vue');
 require('./load-components');
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+
+    data(){
+        return {
+            mobileMenuOpen: false
+        }
+    },
+    methods: {
+        toggleMobileMenu(){
+            this.mobileMenuOpen = !this.mobileMenuOpen;
+        }
+    }
 });

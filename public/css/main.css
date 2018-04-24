@@ -5228,7 +5228,7 @@ button,
   cursor: pointer;
 }
 
-.button-outlined {
+.button-brand-outlined {
   display: inline-block;
   background-color: transparent;
   color: #951727;
@@ -5242,7 +5242,37 @@ button,
   text-decoration: none;
   cursor: pointer;
   border-width: 1px;
+  border-color: #d0021b;
+}
+
+.button-brand-outlined:hover {
+  display: inline-block;
+  background-color: rgba(149, 23, 39, .9);
+  color: #fff;
+  border-color: #d0021b;
+}
+
+.button-outlined {
+  display: inline-block;
+  background-color: transparent;
+  color: #fff;
+  font-size: .875rem;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  border-width: 1px;
   border-color: #b8c2cc;
+}
+
+.button-outlined:hover {
+  background-color: #fff;
+  color: #606f7b;
+  border-color: #fff;
 }
 
 .border-kma {
@@ -5273,6 +5303,16 @@ button,
   padding: 0 1rem;
   line-height: 1em;
   margin-bottom: -2.5rem;
+}
+
+.mobile-menu {
+  width: 210px;
+}
+
+.site-wrapper.menu-open {
+  -webkit-transition: margin .25s linear;
+  transition: margin .25s linear;
+  margin-left: -210px;
 }
 
 @media (min-width: 576px) {

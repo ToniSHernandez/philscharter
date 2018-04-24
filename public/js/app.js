@@ -1412,7 +1412,19 @@ window.Vue = __webpack_require__(36);
 __webpack_require__(39);
 
 var app = new Vue({
-  el: '#app'
+    el: '#app',
+
+    data: function data() {
+        return {
+            mobileMenuOpen: false
+        };
+    },
+
+    methods: {
+        toggleMobileMenu: function toggleMobileMenu() {
+            this.mobileMenuOpen = !this.mobileMenuOpen;
+        }
+    }
 });
 
 /***/ }),
@@ -30826,7 +30838,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var _this = this;
 
-        window.axios.get('/services').then(function (response) {
+        window.axios.get('/api/services').then(function (response) {
             _this.services = response.data;
         });
     },
@@ -30854,7 +30866,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         addService: function addService() {
             this.services.push(this.newService);
 
-            axios.post('/services', this.newService).then(function (response) {
+            axios.post('/api/services', this.newService).then(function (response) {
                 console.log(response);
             }).catch(function (error) {
                 console.log(error);
@@ -31282,7 +31294,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var _this = this;
 
-        window.axios.get('/reviews').then(function (response) {
+        window.axios.get('/api/reviews').then(function (response) {
             _this.reviews = response.data;
         });
     },
@@ -31310,7 +31322,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         addReview: function addReview() {
             this.reviews.push(this.newReview);
 
-            axios.post('/reviews', this.newReview).then(function (response) {
+            axios.post('/api/reviews', this.newReview).then(function (response) {
                 console.log(response);
             }).catch(function (error) {
                 console.log(error);
@@ -32884,7 +32896,7 @@ var staticRenderFns = [
       _c(
         "a",
         {
-          staticClass: "button-outlined my-4",
+          staticClass: "button-brand-outlined my-4",
           attrs: { href: "/charters-rates#half-day-inshore-trip" }
         },
         [_vm._v("View Details")]
@@ -32905,7 +32917,7 @@ if (false) {
 /* 67 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed: ModuleBuildError: Module build failed: Unexpected format (inline) \"components/fonts.css\" (696:1)\n\n  694 |  * @import \"components/forms\";\n  695 |  */\n> 696 | @import (inline) \"components/fonts.css\";\n      | ^\n  697 | @import (inline) \"components/buttons.css\";\n  698 | @import (inline) \"components/dashboard.css\";\n  699 | \n\n    at runLoaders (D:\\dev\\philscharter\\node_modules\\webpack\\lib\\NormalModule.js:195:19)\n    at D:\\dev\\philscharter\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at D:\\dev\\philscharter\\node_modules\\loader-runner\\lib\\LoaderRunner.js:230:18\n    at context.callback (D:\\dev\\philscharter\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Object.<anonymous> (D:\\dev\\philscharter\\node_modules\\css-loader\\lib\\loader.js:50:18)\n    at D:\\dev\\philscharter\\node_modules\\css-loader\\lib\\processCss.js:234:4\n    at <anonymous>\n    at runMicrotasksCallback (internal/process/next_tick.js:86:5)\n    at _combinedTickCallback (internal/process/next_tick.js:95:7)\n    at process._tickCallback (internal/process/next_tick.js:161:9)");
 
 /***/ })
 /******/ ]);

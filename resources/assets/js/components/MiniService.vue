@@ -12,7 +12,7 @@
                 <p class="text-brand-darker font-bold mb-4">2 Person</p>
                 <p class="price text-grey-darkest text-2xl font-bold mb-2">$400</p>
                 <p class="italic text-xs text-grey-darkest mb-2">$50 each additional person</p>
-                <a class="button-outlined my-4" href="/charters-rates#half-day-inshore-trip">View Details</a>
+                <a class="button-brand-outlined my-4" href="/charters-rates#half-day-inshore-trip">View Details</a>
             </div>
         </div>
     </div>

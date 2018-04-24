@@ -15,7 +15,7 @@
             <p class="text-sm text-grey">I provide the experience, equipment, bait and license. All you need to bring is sunscreen, snacks, and drinks.
                 I’ll even clean your fish, if you want to take home dinner!</p>
             <div class="pt-4">
-                <button class="border border-grey text-grey hover:bg-white hover:text-blue-dark text-xs rounded-full px-4 py-2 ">MORE ABOUT US</button>
+                <button class="button-outlined py-2 ">MORE ABOUT US</button>
             </div>
         </div>
     </div>
