@@ -49,7 +49,7 @@
             }
         },
         mounted() {
-            window.axios.get('/reviews')
+            window.axios.get('/api/reviews')
                 .then(response => {
                     this.reviews = response.data
                 });
@@ -78,7 +78,7 @@
             addReview(){
                 this.reviews.push(this.newReview);
 
-                axios.post('/reviews', this.newReview)
+                axios.post('/api/reviews', this.newReview)
                     .then(function (response) {
                         console.log(response);
                     })

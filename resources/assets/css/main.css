@@ -1,90 +1,14 @@
-/**
- * This injects Tailwind's base styles, which is a combination of
- * Normalize.css and some additional base styles.
- *
- * You can see the styles here:
- * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
- */
-@tailwind preflight;
+@import "./preflight.css";
+@import "./components.css";
 
-/**
- * This injects any component classes registered by plugins.
- *
- * If using `postcss-import`, use this import instead:
- *
- * @import "tailwindcss/components";
- */
-@tailwind components;
+@import "./components/fonts.css";
+@import "./components/buttons.css";
+@import "./components/dashboard.css";
 
-/**
- * Here you would add any of your custom component classes; stuff that you'd
- * want loaded *before* the utilities so that the utilities could still
- * override them.
- *
- * Example:
- *
- * .btn { ... }
- * .form-input { ... }
- *
- * Or if using a preprocessor:
- *
- * @import "components/buttons";
- * @import "components/forms";
- */
-
-@import "fonts.css";
-
-/**
- * This injects all of Tailwind's utility classes, generated based on your
- * config file.
- *
- * If using `postcss-import`, use this import instead:
- *
- * @import "tailwindcss/utilities";
- */
-@tailwind utilities;
-
-/**
- * Here you would add any custom utilities you need that don't come out of the
- * box with Tailwind.
- *
- * Example :
- *
- * .bg-pattern-graph-paper { ... }
- * .skew-45 { ... }
- *
- * Or if using a preprocessor or `postcss-import`:
- *
- * @import "utilities/background-patterns";
- * @import "utilities/skew-transforms";
- */
+@import "./utilities.css";
 
 * {
     font-family: 'Montserrat';
-}
-
-.bg-kma {
-    background-color: #b4be35;
-}
-
-.text-kma {
-    color: #b4be35;
-}
-
-.button-kma-sm {
-    @apply .bg-kma .text-white .rounded-full .text-sm .py-1 .px-3 .no-underline .cursor-pointer
-}
-
-.button-kma {
-    @apply .bg-kma .text-white .rounded-full .py-2 .px-3 .no-underline .cursor-pointer
-}
-
-.button-kma-xl {
-    @apply .h-full .flex .flex-col .items-center .justify-center .bg-kma .text-white .text-lg .uppercase .no-underline .rounded .shadow .cursor-pointer
-}
-
-.border-kma {
-    border-color: #b4be35;
 }
 
 .bg-brand-90 {
@@ -92,7 +16,7 @@
 }
 
 .bg-secondary-80 {
-    background-color: rgba(0,43,96,.8)
+    background-color: rgba(0,43,96,.8);
 }
 
 .input-text {

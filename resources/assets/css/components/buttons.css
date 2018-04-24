@@ -1,0 +1,50 @@
+/*button*/
+.button {
+    display: inline-block;
+    text-transform: uppercase;
+    border-radius: 9999px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*button sizes*/
+.button-sm {
+    @apply .button .text-xs;
+    padding: .5rem .75rem;
+}
+
+.button-md {
+    @apply .button .text-sm;
+    padding: .75rem 1rem;
+}
+
+.button-lg {
+    @apply .button .text-base;
+    padding: 1rem 1.25rem;
+}
+
+/*button colors*/
+.button-outlined {
+    @apply .button-md .bg-transparent .text-grey-lighter .border .border-grey
+}
+
+.button-outlined:hover {
+    @apply .text-white .border-white
+}
+
+.button-brand-outlined {
+    @apply .button-md .bg-transparent .text-brand-darker .border .border-grey
+}
+
+.button-brand-outlined:hover {
+    @apply .text-brand .border-grey-dark
+}
+
+.button-secondary-outlined {
+    @apply .button-md .bg-transparent .text-secondary-darker .border .border-grey
+}
+
+.button-secondary-outlined:hover {
+    @apply .text-secondary .border-grey-dark
+}
+
