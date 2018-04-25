@@ -6,9 +6,7 @@
     </div>
     <div class="content">
         <div class="container mx-auto">
-        @foreach ($reviews as $review)
-            <p>{{ print_r($review->author) }}</p>
-        @endforeach
+        <reviews></reviews>
         </div>
     </div>
 @endsection

@@ -54,7 +54,8 @@ class ServicesController extends Controller
             'rate'              => $request->rate,
             'rate_info'         => $request->rate_info,
             'description'       => $request->description,
-            'photo_url'         => $request->photo
+            'photo_url'         => $request->photo,
+            'featured'          => $request->featured
         ]);
     }
 
