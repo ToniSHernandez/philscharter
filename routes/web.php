@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,13 +14,13 @@ Auth::routes();
 
 //public
 Route::get('/', 'FrontPageController@index')->name('frontpage');
-Route::get('/about', 'SupportPageController@index')->name('support');
-Route::get('/contact', 'SupportPageController@index')->name('support');
+Route::view('/contact', 'contact');
+Route::view('/about', 'about');
 Route::view('/trips-rates','StaticPages.services');
 Route::get('/trips-rates/{slug}','ShowServiceController@show');
 
 //dashboard
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::view('/dashboard', 'dashboard')->middleware('auth');
 
 Route::prefix('api/')->name('api.')->namespace('Backend')->group(function () {
     Route::resource('leads', 'LeadsController');
@@ -31,5 +30,3 @@ Route::prefix('api/')->name('api.')->namespace('Backend')->group(function () {
     Route::resource('service-requests', 'ServiceRequestsController');
 });
 
-// misc
-Route::post('quick-start', 'QuickStartController@init');

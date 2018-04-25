@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-if="hasServices">
-            <form action="/quick-start" method="POST">
+            <form action="" method="POST">
                 <input type="hidden" name="_token" :value="csrf">
                 <h2 class="font-bold text-white uppercase lg:text-3xl xl:text-4xl mb-4 text-center">Request a Trip</h2>
                 <div class="flex">
@@ -74,7 +74,6 @@
                 })
                 .catch(err => {
                     this.hasServices = false;
-                    console.log(err.response);
                 });
         },
         components: {
