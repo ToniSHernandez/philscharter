@@ -14,8 +14,9 @@ Auth::routes();
 
 //public
 Route::get('/', 'FrontPageController@index')->name('frontpage');
-Route::view('/contact', 'contact');
-Route::view('/about', 'about');
+Route::view('/contact', 'StaticPages.contact');
+Route::view('/about', 'StaticPages.support');
+Route::view('/reviews', 'StaticPages.reviews');
 Route::view('/trips-rates','StaticPages.services');
 Route::get('/trips-rates/{slug}','ShowServiceController@show');
 

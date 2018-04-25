@@ -76,7 +76,7 @@
                         <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-white" href="/photos">Photos</a>
                         <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-white" href="/reviews">Reviews</a>
                         <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-white" href="/contact">Contact</a>
-                        <a class="rounded-full bg-white py-3 px-4 no-underline font-bold text-brand-darker uppercase mx-3 my-2" href="/contact">Request a Trip</a>
+                        <a class="rounded-full bg-white py-3 px-4 no-underline font-bold text-brand-darker uppercase mx-3 my-2" href="/request-trip">Request a Trip</a>
                     </nav>
                 </div>
             </div>
