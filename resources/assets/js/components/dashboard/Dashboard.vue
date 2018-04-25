@@ -154,28 +154,28 @@
                     <h1 class="text-white text-5xl font-normal mt-4">Leads</h1>
                     <a @click="switchto('dashboard')" class="button-kma-sm float-right mb-2" >Dashboard</a>
                 </div>
-                <leads v-on:switchto="switchto('dashboard')"></leads>
+                <admin-leads v-on:switchto="switchto('dashboard')"></admin-leads>
             </div>
             <div v-if="section == 'services'">
                 <div class="flex pb-1 border-b border-grey-dark items-end justify-between">
                     <h1 class="text-white text-5xl font-normal mt-4">Services</h1>
                     <a @click="switchto('dashboard')" class="button-kma-sm float-right mb-2" >Dashboard</a>
                 </div>
-                <services v-on:switchto="switchto('dashboard')"></services>
+                <admin-services v-on:switchto="switchto('dashboard')"></admin-services>
             </div>
             <div v-if="section == 'reviews'">
                 <div class="flex pb-1 border-b border-grey-dark items-end justify-between">
                     <h1 class="text-white text-5xl font-normal mt-4">Reviews</h1>
                     <a @click="switchto('dashboard')" class="button-kma-sm float-right mb-2" >Dashboard</a>
                 </div>
-                <reviews v-on:switchto="switchto('dashboard')"></reviews>
+                <admin-reviews v-on:switchto="switchto('dashboard')"></admin-reviews>
             </div>
             <div v-if="section == 'contactinfo'">
                 <div class="flex pb-1 border-b border-grey-dark items-end justify-between">
                     <h1 class="text-white text-5xl font-normal mt-4">Contact Info</h1>
                     <a @click="switchto('dashboard')" class="button-kma-sm float-right mb-2" >Dashboard</a>
                 </div>
-                <cotact-info v-on:switchto="switchto('dashboard')"></cotact-info>
+                <admin-cotact-info v-on:switchto="switchto('dashboard')"></admin-cotact-info>
             </div>
             <div v-if="section == 'pages'">
                 <div class="flex pb-1 border-b border-grey-dark items-end justify-between">

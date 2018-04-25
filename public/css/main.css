@@ -722,6 +722,25 @@ button,
 
 /*button colors*/
 
+.button-brand {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .875rem;
+  padding: .75rem 1rem;
+  background-color: #951727;
+  color: #fff;
+  border-width: 1px;
+  border-color: #951727;
+}
+
+.button-brand:hover {
+  background-color: #d0021b;
+  border-color: #d0021b;
+}
+
 .button-outlined {
   display: inline-block;
   text-transform: uppercase;
