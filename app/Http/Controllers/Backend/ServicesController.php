@@ -49,6 +49,7 @@ class ServicesController extends Controller
         ]);
         $service = Service::create([
             'title'             => $request->title,
+            'slug'              => str_slug($request->title, '-'),
             'subtitle'          => $request->subtitle,
             'rate'              => $request->rate,
             'rate_info'         => $request->rate_info,

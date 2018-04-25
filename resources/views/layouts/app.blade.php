@@ -16,14 +16,14 @@
 <body class="bg-white h-screen">
     <div
         id="app"
-        class="flex min-h-full"
+        class="flex h-full"
         :class="{
             'flex-col': !mobileMenuOpen,
             'flex-row': mobileMenuOpen
         }"
     >
         <div
-            class="site-wrapper w-full"
+            class="site-wrapper w-full flex flex-col h-full"
             :class="{
                 'menu-open': mobileMenuOpen,
                 'overflow-hidden': mobileMenuOpen

@@ -17,6 +17,8 @@ Auth::routes();
 Route::get('/', 'FrontPageController@index')->name('frontpage');
 Route::get('/about', 'SupportPageController@index')->name('support');
 Route::get('/contact', 'SupportPageController@index')->name('support');
+Route::view('/trips-rates','StaticPages.services');
+Route::get('/trips-rates/{slug}','ShowServiceController@show');
 
 //dashboard
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
@@ -25,6 +27,7 @@ Route::prefix('api/')->name('api.')->namespace('Backend')->group(function () {
     Route::resource('leads', 'LeadsController');
     Route::resource('reviews', 'ReviewsController');
     Route::resource('services', 'ServicesController');
+    Route::get('featured-services', 'PopularServiceController@index');
     Route::resource('service-requests', 'ServiceRequestsController');
 });
 
