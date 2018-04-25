@@ -74,7 +74,6 @@
                 })
                 .catch(err => {
                     this.hasServices = false;
-                    console.log(err.response);
                 });
         },
         components: {

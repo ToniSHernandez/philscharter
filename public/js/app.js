@@ -33196,7 +33196,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             _this.services = response.data;
         }).catch(function (err) {
             _this.hasServices = false;
-            console.log(err.response);
         });
     },
 
