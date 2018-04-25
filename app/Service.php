@@ -13,15 +13,17 @@ class Service extends Model
         'rate_info',
         'description',
         'featured',
-        'photo_url'
+        'photo_url',
+        'slug'
     ];
 
     public function trips()
     {
         return $this->hasMany(TripRequest::class);
     }
-    public function scopePopular()
+
+    public function scopeFeatured()
     {
-        return Service::where('popular', 1)->orderBy('order', 'asc')->limit(4);
+        return Service::where('featured', true)->orderBy('id', 'asc')->limit(4)->get();
     }
 }

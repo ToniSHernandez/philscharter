@@ -566,33 +566,6 @@ function toComment(sourceMap) {
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -817,6 +790,33 @@ function applyToTag (styleElement, obj) {
     styleElement.appendChild(document.createTextNode(css))
   }
 }
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
 
 
 /***/ }),
@@ -1386,7 +1386,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(76);
+module.exports = __webpack_require__(81);
 
 
 /***/ }),
@@ -18580,7 +18580,7 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(16)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(16)(module)))
 
 /***/ }),
 /* 16 */
@@ -30462,7 +30462,7 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(37).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(37).setImmediate))
 
 /***/ }),
 /* 37 */
@@ -30529,7 +30529,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
 
 /***/ }),
 /* 38 */
@@ -30722,19 +30722,20 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(7)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(7)))
 
 /***/ }),
 /* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
-Vue.component('services', __webpack_require__(40));
-Vue.component('reviews', __webpack_require__(43));
-Vue.component('dashboard', __webpack_require__(46));
-Vue.component('contact-info', __webpack_require__(52));
-Vue.component('leads', __webpack_require__(57));
+Vue.component('admin-services', __webpack_require__(40));
+Vue.component('admin-reviews', __webpack_require__(43));
+Vue.component('admin-dashboard', __webpack_require__(46));
+Vue.component('admin-contact-info', __webpack_require__(52));
+Vue.component('admin-leads', __webpack_require__(57));
 Vue.component('mini-form', __webpack_require__(62));
 Vue.component('mini-service', __webpack_require__(71));
+Vue.component('services', __webpack_require__(76));
 
 /***/ }),
 /* 40 */
@@ -31946,7 +31947,7 @@ var content = __webpack_require__(48);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("07f1ff7c", content, false, {});
+var update = __webpack_require__(3)("07f1ff7c", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -32585,7 +32586,7 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _c("leads", {
+              _c("admin-leads", {
                 on: {
                   switchto: function($event) {
                     _vm.switchto("dashboard")
@@ -32629,7 +32630,7 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _c("services", {
+              _c("admin-services", {
                 on: {
                   switchto: function($event) {
                     _vm.switchto("dashboard")
@@ -32673,7 +32674,7 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _c("reviews", {
+              _c("admin-reviews", {
                 on: {
                   switchto: function($event) {
                     _vm.switchto("dashboard")
@@ -32717,7 +32718,7 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _c("cotact-info", {
+              _c("admin-cotact-info", {
                 on: {
                   switchto: function($event) {
                     _vm.switchto("dashboard")
@@ -32867,7 +32868,7 @@ var content = __webpack_require__(54);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("5c261fb0", content, false, {});
+var update = __webpack_require__(3)("5c261fb0", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -32996,7 +32997,7 @@ var content = __webpack_require__(59);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("f0101214", content, false, {});
+var update = __webpack_require__(3)("f0101214", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -36403,7 +36404,7 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-078a0ef7"
+var __vue_scopeId__ = "data-v-190197d8"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -36414,7 +36415,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/assets/js/components/MiniService.vue"
+Component.options.__file = "resources/assets/js/components/frontend/MiniService.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -36423,9 +36424,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-078a0ef7", Component.options)
+    hotAPI.createRecord("data-v-190197d8", Component.options)
   } else {
-    hotAPI.reload("data-v-078a0ef7", Component.options)
+    hotAPI.reload("data-v-190197d8", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -36446,13 +36447,13 @@ var content = __webpack_require__(73);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(4)("39818120", content, false, {});
+var update = __webpack_require__(3)("31d8d47a", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-078a0ef7\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./MiniService.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-078a0ef7\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./MiniService.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-190197d8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./MiniService.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-190197d8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./MiniService.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -36470,7 +36471,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -36501,9 +36502,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "MiniService"
+    name: "MiniService",
+
+    props: {
+        service: {
+            type: Object,
+            default: {}
+        }
+    }
 });
 
 /***/ }),
@@ -36520,14 +36529,44 @@ var render = function() {
       { staticClass: "rounded h-full bg-white overflow-hidden shadow" },
       [
         _c("div", {
-          staticClass: "photo h-48 bg-cover",
+          staticClass: "photo h-48 bg-cover bg-grey-lightest",
           style: {
-            "background-image":
-              "url(http://www.philscharterservice.com/wp-content/uploads/2017/11/Port-St-Joe-Redfish-4324-800x576.jpg)"
+            "background-image": "url(" + _vm.service.photo_url + ")"
           }
         }),
         _vm._v(" "),
-        _vm._m(0)
+        _c("div", { staticClass: "p-4 text-center" }, [
+          _c("p", { staticClass: "text-brand-darker font-bold mt-4" }, [
+            _vm._v(_vm._s(_vm.service.title))
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "text-brand-darker font-bold mb-4" }, [
+            _vm._v(_vm._s(_vm.service.subtitle))
+          ]),
+          _vm._v(" "),
+          _c(
+            "p",
+            { staticClass: "price text-grey-darkest text-2xl font-bold mb-2" },
+            [_vm._v("$" + _vm._s(_vm.service.rate))]
+          ),
+          _vm._v(" "),
+          _c("p", { staticClass: "italic text-xs text-grey-darkest mb-2" }, [
+            _vm._v(_vm._s(_vm.service.rate_info))
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "my-4" }, [
+            _c(
+              "a",
+              {
+                staticClass: "button-brand-outlined",
+                attrs: { href: "/trips-rates/" + _vm.service.slug }
+              },
+              [_vm._v("View Details")]
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(0)
+        ])
       ]
     )
   ])
@@ -36537,33 +36576,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "p-4 text-center" }, [
-      _c("p", { staticClass: "text-brand-darker font-bold mt-4" }, [
-        _vm._v("Half-Day Inshore Trip")
-      ]),
-      _vm._v(" "),
-      _c("p", { staticClass: "text-brand-darker font-bold mb-4" }, [
-        _vm._v("2 Person")
-      ]),
-      _vm._v(" "),
-      _c(
-        "p",
-        { staticClass: "price text-grey-darkest text-2xl font-bold mb-2" },
-        [_vm._v("$400")]
-      ),
-      _vm._v(" "),
-      _c("p", { staticClass: "italic text-xs text-grey-darkest mb-2" }, [
-        _vm._v("$50 each additional person")
-      ]),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "button-brand-outlined my-4",
-          attrs: { href: "/charters-rates#half-day-inshore-trip" }
-        },
-        [_vm._v("View Details")]
-      )
+    return _c("p", { staticClass: "mb-4" }, [
+      _c("a", { staticClass: "button-brand", attrs: { href: "#" } }, [
+        _vm._v("Book Now")
+      ])
     ])
   }
 ]
@@ -36572,12 +36588,173 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-078a0ef7", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-190197d8", module.exports)
   }
 }
 
 /***/ }),
 /* 76 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(77)
+}
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(79)
+/* template */
+var __vue_template__ = __webpack_require__(80)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-43913554"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/frontend/Services.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-43913554", Component.options)
+  } else {
+    hotAPI.reload("data-v-43913554", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(78);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(3)("4300cd4e", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-43913554\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Services.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-43913554\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Services.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 79 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: "Services",
+
+    props: {
+        filter: {
+            type: String,
+            default: null
+        }
+    },
+
+    data: function data() {
+        return {
+            services: [],
+            hasServices: true
+        };
+    },
+    mounted: function mounted() {
+        var _this = this;
+
+        axios.get('/api/' + (this.filter !== null ? this.filter + '-' : '') + 'services').then(function (response) {
+            _this.services = response.data;
+        }).catch(function (err) {
+            _this.hasServices = false;
+            console.log(err.response);
+        });
+    }
+});
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    _vm._l(_vm.services, function(service) {
+      return _c("mini-service", {
+        key: service.id,
+        staticClass: "w-full sm:w-1/2 lg:w-1/4 pb-4 px-4 sm:pt-4",
+        attrs: { service: service }
+      })
+    })
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-43913554", module.exports)
+  }
+}
+
+/***/ }),
+/* 81 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

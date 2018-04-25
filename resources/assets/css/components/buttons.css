@@ -24,6 +24,14 @@
 }
 
 /*button colors*/
+.button-brand {
+    @apply .button-md .bg-brand-darker .text-white .border .border-brand-darker
+}
+
+.button-brand:hover {
+    @apply .bg-brand .border-brand
+}
+
 .button-outlined {
     @apply .button-md .bg-transparent .text-grey-lighter .border .border-grey
 }
