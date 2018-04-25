@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,5 +27,3 @@ Route::prefix('api/')->name('api.')->namespace('Backend')->group(function () {
     Route::resource('service-requests', 'ServiceRequestsController');
 });
 
-// misc
-Route::post('quick-start', 'QuickStartController@init');

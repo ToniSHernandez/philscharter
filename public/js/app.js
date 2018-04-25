@@ -35903,7 +35903,7 @@ var render = function() {
   return _c("div", [
     _vm.hasServices
       ? _c("div", [
-          _c("form", { attrs: { action: "/quick-start", method: "POST" } }, [
+          _c("form", { attrs: { action: "", method: "POST" } }, [
             _c("input", {
               attrs: { type: "hidden", name: "_token" },
               domProps: { value: _vm.csrf }
