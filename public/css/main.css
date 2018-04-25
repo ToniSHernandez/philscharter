@@ -793,7 +793,6 @@ button,
   color: #fff;
   border-radius: 9999px;
   font-size: .75rem;
-  text-transform: uppercase;
   font-size: .875rem;
   padding-top: .25rem;
   padding-bottom: .25rem;
@@ -5316,6 +5315,16 @@ button,
 }
 
 .input-text {
+  padding: .5rem;
+  border-color: #b8c2cc;
+  border-width: 1px;
+  color: #3d4852;
+  background-color: #fff;
+  width: 100%;
+  margin-bottom: .25rem;
+}
+
+.input-textarea {
   padding: .5rem;
   border-color: #b8c2cc;
   border-width: 1px;
