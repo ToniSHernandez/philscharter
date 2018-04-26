@@ -12,3 +12,5 @@ Vue.component('reviews', require('./components/frontend/Reviews.vue'));
 Vue.component('review', require('./components/frontend/Review.vue'));
 Vue.component('photo-albums', require('./components/frontend/PhotoAlbums.vue'));
 Vue.component('image-upload', require('./components/dashboard/ImageUpload.vue'));
+Vue.component('google-map', require('./components/frontend/GoogleMap.vue'));
+Vue.component('pin', require('./components/frontend/GoogleMapPin.vue'));
