@@ -15,10 +15,11 @@ Auth::routes();
 //public
 Route::get('/', 'FrontPageController@index')->name('frontpage');
 Route::view('/contact', 'StaticPages.contact');
-Route::view('/about', 'StaticPages.support');
+Route::view('/about', 'StaticPages.about');
 Route::view('/reviews', 'StaticPages.reviews');
 Route::view('/trips-rates','StaticPages.services');
 Route::get('/trips-rates/{slug}','ShowServiceController@show');
+Route::view('/photos','StaticPages.photos');
 
 //dashboard
 Route::view('/dashboard', 'dashboard')->middleware('auth');

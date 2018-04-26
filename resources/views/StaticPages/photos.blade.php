@@ -6,7 +6,7 @@
             <div class="px-4 pb-4">
                 <p>Intro text would go here.</p>
             </div>
-            <services class="flex flex-wrap"></services>
+            <photo-albums class="flex flex-wrap"></photo-albums>
         </div>
     </div>
 @endsection
