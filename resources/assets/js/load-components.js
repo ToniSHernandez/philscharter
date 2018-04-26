@@ -8,4 +8,7 @@ Vue.component('mini-form', require('./components/frontend/MiniForm.vue'));
 Vue.component('trip-request', require('./components/frontend/TripRequest.vue'));
 Vue.component('mini-service', require('./components/frontend/MiniService.vue'));
 Vue.component('services', require('./components/frontend/Services.vue'));
+Vue.component('reviews', require('./components/frontend/Reviews.vue'));
+Vue.component('review', require('./components/frontend/Review.vue'));
+Vue.component('photo-albums', require('./components/frontend/PhotoAlbums.vue'));
 Vue.component('image-upload', require('./components/dashboard/ImageUpload.vue'));

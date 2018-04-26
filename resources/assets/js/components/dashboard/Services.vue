@@ -31,7 +31,7 @@
                     </div>
                     <div class="w-full px-1 py-4">
                         <div class="sm:max-w-sm">
-                            <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions">
+                            <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions" />
                             <!-- <image-upload :resource-path="newService.photo_url" :resource-name="newService.slug"></image-upload> -->
                         </div>
                     </div>
