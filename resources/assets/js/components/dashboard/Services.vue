@@ -31,7 +31,8 @@
                     </div>
                     <div class="w-full px-1 py-4">
                         <div class="sm:max-w-sm">
-                            <image-upload :resource-path="newService.photo_url" :resource-name="newService.slug"></image-upload>
+                            <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions">
+                            <!-- <image-upload :resource-path="newService.photo_url" :resource-name="newService.slug"></image-upload> -->
                         </div>
                     </div>
                 </form>
@@ -43,15 +44,19 @@
         </div>
     </div>
 </template>
-
 <script>
+    import vue2Dropzone from 'vue2-dropzone'
+    import 'vue2-dropzone/dist/vue2Dropzone.css'
     export default {
         data(){
             return {
                 services:  [],
                 addingService: false,
                 newService: {},
-                isInitial: true
+                isInitial: true,
+                dropzoneOptions: {
+                    url: ''
+                }
             }
         },
         mounted() {
@@ -86,7 +91,9 @@
                 console.log(name);
                 console.log(file);
             }
+        },
+        components: {
+            vueDropzone: vue2Dropzone
         }
-
     }
 </script>
