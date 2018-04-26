@@ -18,7 +18,7 @@ class WriteServicesTest extends TestCase
         $this->login();
         $service = factory(Service::class)->make();
         $this->post('api/services', $service->toArray())->assertSuccessful();
-        $this->assertDatabaseHas('services', $service->toArray());
+        $this->assertDatabaseHas('services', ['title' => $service->title]);
     }
 
     /** @test */

@@ -16,13 +16,13 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('slug');
+            $table->string('slug')->nullable();
             $table->string('subtitle')->nullable();
             $table->string('rate_info')->nullable();
             $table->string('photo_url')->nullable();
             $table->text('description')->nullable();
             $table->integer('rate')->default(0);
-            $table->boolean('featured')->default(false);
+            $table->boolean('featured')->default(0);
             $table->timestamps();
         });
     }

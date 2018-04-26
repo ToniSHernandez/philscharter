@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\ServiceRequest;
 use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
@@ -17,9 +18,9 @@ class Service extends Model
         'slug'
     ];
 
-    public function trips()
+    public function serviceRequests()
     {
-        return $this->hasMany(TripRequest::class);
+        return $this->hasMany(ServiceRequest::class);
     }
 
     public function scopeFeatured()
