@@ -11,7 +11,7 @@
                             v-model="date"
                             :config="config"
                             name="requested_date"
-                            class="rounded-full border border-brand w-full text-white h-10 my-1 px-4 bg-red-darker"
+                            class="rounded-full border border-brand text-sm w-full text-white h-10 my-1 px-4 bg-red-darker"
                             placeholder="Select a date"
                         />
                     </div>
@@ -19,7 +19,7 @@
                         <label class="text-white font-bold text-center block text-xs">Number of guests:</label>
                         <input
                             type="number"
-                            class="rounded-full border border-brand w-full text-white h-10 my-1 px-4 bg-red-darker"
+                            class="rounded-full border border-brand w-full text-sm text-white h-10 my-1 px-4 bg-red-darker"
                             name="guests"
                             value="1"
                         >
@@ -27,9 +27,16 @@
                 </div>
                 <div class="flex flex-wrap pt-2 pb-4 px2 lg:px-4 xl:px-6">
                     <div class="w-full md:w-1/2 lg:w-full flex text-white items-center font-bold my-2" v-for="service in services" :key="service.id">
-                        <label>
-                            <input type="radio" name="service_id" class="inline-block h-6 w-6 rounded-full border border-red bg-red-darker mx-3" :value="service.id">
-                            {{ service.title }}
+                        <label @click="selectedService = service.id" class="cursor-pointer flex items-center">
+                            <input type="radio" name="service_id" class="hidden" :value="service.id">
+                            <span
+                                class="inline-block rounded-full h-5 w-5 border border-brand mr-2"
+                                :class="{
+                                    'bg-white': selectedService === service.id,
+                                    'bg-brand-darkest': selectedService !== service.id
+                                }"
+                            ></span>
+                            <span>{{ service.title }}</span>
                         </label>
                     </div>
                 </div>
@@ -64,11 +71,12 @@
                 },
                 services: [],
                 hasServices: true,
-                errorMessage: ''
+                errorMessage: '',
+                selectedService: null
             }
         },
         mounted() {
-            axios.get('/api/services')
+            axios.get('/api/featured-services')
                 .then(response => {
                     this.services = response.data
                 })

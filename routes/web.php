@@ -30,6 +30,7 @@ Route::prefix('api/')->name('api.')->namespace('Backend')->group(function () {
     Route::resource('reviews', 'ReviewsController');
     Route::resource('services', 'ServicesController');
     Route::get('featured-services', 'PopularServiceController@index');
+    Route::get('featured-reviews', 'FeaturedReviewController@index');
     Route::resource('service-requests', 'ServiceRequestsController');
 });
 

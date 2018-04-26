@@ -3047,6 +3047,10 @@ button,
   height: 1rem;
 }
 
+.h-5 {
+  height: 1.25rem;
+}
+
 .h-6 {
   height: 1.5rem;
 }
@@ -5185,6 +5189,10 @@ button,
 
 .w-4 {
   width: 1rem;
+}
+
+.w-5 {
+  width: 1.25rem;
 }
 
 .w-6 {
@@ -7537,6 +7545,10 @@ button,
     height: 1rem;
   }
 
+  .sm\:h-5 {
+    height: 1.25rem;
+  }
+
   .sm\:h-6 {
     height: 1.5rem;
   }
@@ -9667,6 +9679,10 @@ button,
 
   .sm\:w-4 {
     width: 1rem;
+  }
+
+  .sm\:w-5 {
+    width: 1.25rem;
   }
 
   .sm\:w-6 {
@@ -11970,6 +11986,10 @@ button,
     height: 1rem;
   }
 
+  .md\:h-5 {
+    height: 1.25rem;
+  }
+
   .md\:h-6 {
     height: 1.5rem;
   }
@@ -14100,6 +14120,10 @@ button,
 
   .md\:w-4 {
     width: 1rem;
+  }
+
+  .md\:w-5 {
+    width: 1.25rem;
   }
 
   .md\:w-6 {
@@ -16403,6 +16427,10 @@ button,
     height: 1rem;
   }
 
+  .lg\:h-5 {
+    height: 1.25rem;
+  }
+
   .lg\:h-6 {
     height: 1.5rem;
   }
@@ -18533,6 +18561,10 @@ button,
 
   .lg\:w-4 {
     width: 1rem;
+  }
+
+  .lg\:w-5 {
+    width: 1.25rem;
   }
 
   .lg\:w-6 {
@@ -20836,6 +20868,10 @@ button,
     height: 1rem;
   }
 
+  .xl\:h-5 {
+    height: 1.25rem;
+  }
+
   .xl\:h-6 {
     height: 1.5rem;
   }
@@ -22966,6 +23002,10 @@ button,
 
   .xl\:w-4 {
     width: 1rem;
+  }
+
+  .xl\:w-5 {
+    width: 1.25rem;
   }
 
   .xl\:w-6 {
