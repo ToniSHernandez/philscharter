@@ -13,7 +13,6 @@
         <form
             action="/imageupload/"
             method="POST"
-            enctype="multipart/form-data"
             v-if="imageHover"
         >
             <label
@@ -28,6 +27,7 @@
                     :name="resourceName"
                     class="hidden"
                     :id="resourceName"
+                    enctype="multipart/form-data"
                     @change="fileChanged(
                         $event.target.name,
                         $event.target.files
