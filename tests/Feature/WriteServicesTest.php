@@ -43,50 +43,6 @@ class WriteServicesTest extends TestCase
         $this->post('api/services', $service->toArray())->assertSessionHasErrors();
     }
 
-    /** @test */
-    public function a_title_must_be_less_than_192_characters()
-    {
-        $this->login();
-        $service = factory(Service::class)->make();
-
-        $this->post('api/services', [
-            'title'             => str_repeat('a', 192),
-            'rate'              => $service->rate,
-            'short_description' => $service->short_description,
-            'long_description'  => $service->long_description
-        ])->assertSessionHasErrors();
-
-
-        $this->post('api/services', [
-            'title'             => str_repeat('a', 191),
-            'rate'              => $service->rate,
-            'short_description' => $service->short_description,
-            'long_description'  => $service->long_description
-        ])->assertSuccessful();
-    }
-
-    /** @test */
-    public function a_rate_must_be_numeric()
-    {
-        $this->login();
-        $service = factory(Service::class)->make();
-
-        $this->post('api/services', [
-            'title'             => $service->title,
-            'rate'              => 'Johnny Foureyes',
-            'short_description' => $service->short_description,
-            'long_description'  => $service->long_description
-        ])->assertSessionHasErrors();
-
-        $this->post('api/services', [
-            'title'             => $service->title,
-            'rate'              => 300,
-            'short_description' => $service->short_description,
-            'long_description'  => $service->long_description
-        ])->assertSuccessful();
-
-    }
-
     protected function login()
     {
         $user = factory(User::class)->create();

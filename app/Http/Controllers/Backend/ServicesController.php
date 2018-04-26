@@ -43,20 +43,12 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
+        $photo = $request->photo ?? null;
         $this->validate($request, [
             'title' => 'required|max:191',
             'rate' => 'required|numeric'
         ]);
-        $service = Service::create([
-            'title'             => $request->title,
-            'slug'              => str_slug($request->title, '-'),
-            'subtitle'          => $request->subtitle,
-            'rate'              => $request->rate,
-            'rate_info'         => $request->rate_info,
-            'description'       => $request->description,
-            'photo_url'         => $request->photo,
-            'featured'          => $request->featured
-        ]);
+        Service::create($request->all());
     }
 
     /**
