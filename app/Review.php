@@ -15,8 +15,8 @@ class Review extends Model
         'rating'
     ];
 
-    public function scopeLatest()
+    public function scopeFeatured()
     {
-        return Review::where('featured', 1)->orderBy('created_at', 'desc')->first();
+        return Review::where('featured', true)->orderBy('created_at', 'desc')->get();
     }
 }

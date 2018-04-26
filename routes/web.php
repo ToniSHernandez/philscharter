@@ -17,9 +17,10 @@ Route::get('/', 'FrontPageController@index')->name('frontpage');
 Route::get('/trips-rates/{slug}','ShowServiceController@show');
 Route::get('/trip-request','TripRequestController@create');
 Route::view('/contact', 'StaticPages.contact');
-Route::view('/about', 'StaticPages.support');
+Route::view('/about', 'StaticPages.about');
 Route::view('/reviews', 'StaticPages.reviews');
 Route::view('/trips-rates','StaticPages.services');
+Route::view('/photos','StaticPages.photos');
 
 //dashboard
 Route::view('/dashboard', 'dashboard')->middleware('auth');
@@ -29,6 +30,7 @@ Route::prefix('api/')->name('api.')->namespace('Backend')->group(function () {
     Route::resource('reviews', 'ReviewsController');
     Route::resource('services', 'ServicesController');
     Route::get('featured-services', 'PopularServiceController@index');
+    Route::get('featured-reviews', 'FeaturedReviewController@index');
     Route::resource('service-requests', 'ServiceRequestsController');
 });
 

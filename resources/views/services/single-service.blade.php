@@ -1,9 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="mast relative">
-        <section class="flex h-12 md:h-32 py-4 bg-cover" style="background-image:url('http://www.philscharterservice.com/wp-content/uploads/2016/01/cropped-BOFC_2015_FBBANNER1.jpg')">
-        </section>
-    </div>
+    @include('partials.supportheader')
     <div class="content">
         <div class="container mx-auto">
             <div class="flex flex-wrap p-4 md:my-10" >
