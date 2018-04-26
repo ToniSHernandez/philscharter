@@ -16,8 +16,9 @@ Auth::routes();
 Route::get('/', 'FrontPageController@index')->name('frontpage');
 Route::get('/trips-rates/{slug}','ShowServiceController@show');
 Route::get('/trip-request','TripRequestController@create');
-Route::view('/contact', 'contact');
-Route::view('/about', 'about');
+Route::view('/contact', 'StaticPages.contact');
+Route::view('/about', 'StaticPages.support');
+Route::view('/reviews', 'StaticPages.reviews');
 Route::view('/trips-rates','StaticPages.services');
 
 //dashboard
