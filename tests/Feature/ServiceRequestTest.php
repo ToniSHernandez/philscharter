@@ -25,9 +25,9 @@ class ServiceRequestTest extends TestCase
     /** @test */
     public function it_can_show_a_list_of_service_requests()
     {
-        $serviceRequest = factory(ServiceRequest::class)->create()->toArray();
+        $serviceRequest = factory(ServiceRequest::class)->create();
 
-        $this->get(route('api.service-requests.index'))->assertSuccessful()->assertJsonFragment($serviceRequest);
+        $this->get(route('api.service-requests.index'))->assertSuccessful()->assertJsonFragment(['id' => $serviceRequest->id]);
     }
 
     /** @test */

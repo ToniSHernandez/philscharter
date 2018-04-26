@@ -47,16 +47,32 @@ class ServicesController extends Controller
             'title' => 'required|max:191',
             'rate' => 'required|numeric'
         ]);
-        $service = Service::create([
-            'title'             => $request->title,
-            'slug'              => str_slug($request->title, '-'),
-            'subtitle'          => $request->subtitle,
-            'rate'              => $request->rate,
-            'rate_info'         => $request->rate_info,
-            'description'       => $request->description,
-            'photo_url'         => $request->photo,
-            'featured'          => $request->featured
+
+        $title = $request->title;
+        $slug = str_slug($title, '-');
+
+        Service::create([
+            'title' => $title,
+            'slug' => $slug,
+            'subtitle' => $request->subtitle,
+            'rate' => $request->rate,
+            'rate_info' => $request->rate_info,
+            'description' => $request->description,
+            'photo_url' => $request->photo,
+            'featured' => $request->featured
         ]);
+
+
+        // Service::create([
+        //     'title'             => $request->title,
+        //     'slug'              => str_slug($request->title, '-'),
+        //     'subtitle'          => $request->subtitle,
+        //     'rate'              => $request->rate,
+        //     'rate_info'         => $request->rate_info,
+        //     'description'       => $request->description,
+        //     'photo_url'         => $request->photo ?? null,
+        //     'featured'          => $request->featured
+        // ]);
     }
 
     /**

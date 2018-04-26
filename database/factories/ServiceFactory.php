@@ -12,6 +12,8 @@ $factory->define(Service::class, function (Faker $faker) {
         'subtitle' => $faker->sentence,
         'rate' => $faker->numberBetween(100, 400),
         'rate_info' => $faker->sentence,
-        'description' => $faker->paragraph
+        'description' => $faker->paragraph,
+        'photo_url' => $faker->url,
+        'featured' => $faker->boolean()
     ];
 });
