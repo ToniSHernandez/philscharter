@@ -9,7 +9,7 @@
                         <a @click="deleteService(service, index)" class="bg-red text-sm rounded-full no-underline py-1 px-2 cursor-pointer mx-1 text-white" >delete</a>
                     </div>
                 </div>
-                <div v-if="editingService === index" class="bg-grey-lightest rounded p-4 mb-1" >
+                <div v-if="editingService === index" class="bg-grey-lightest rounded p-4 mb-1">
                     <form class="form-inputs flex flex-wrap">
                         <div class="w-full px-1">
                             <input v-model="service.title" type="text" class="input-text w-full" name="service_title" placeholder="Service Name" >

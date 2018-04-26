@@ -14,10 +14,11 @@ Auth::routes();
 
 //public
 Route::get('/', 'FrontPageController@index')->name('frontpage');
+Route::get('/trips-rates/{slug}','ShowServiceController@show');
+Route::get('/trip-request','TripRequestController@create');
 Route::view('/contact', 'contact');
 Route::view('/about', 'about');
 Route::view('/trips-rates','StaticPages.services');
-Route::get('/trips-rates/{slug}','ShowServiceController@show');
 
 //dashboard
 Route::view('/dashboard', 'dashboard')->middleware('auth');
