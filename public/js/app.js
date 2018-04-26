@@ -36418,7 +36418,7 @@ var render = function() {
   return _c("div", [
     _vm.hasServices
       ? _c("div", [
-          _c("form", { attrs: { action: "", method: "POST" } }, [
+          _c("form", { attrs: { action: "/trip-request", method: "get" } }, [
             _c("input", {
               attrs: { type: "hidden", name: "_token" },
               domProps: { value: _vm.csrf }
