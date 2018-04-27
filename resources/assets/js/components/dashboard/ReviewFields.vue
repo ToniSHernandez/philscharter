@@ -13,12 +13,13 @@
                 </div>
                 <div class="w-full">
                     <input v-model="localReview.rating" type="hidden" class="input-text" />
-                    <div class="flex justify-start">
-                        <span class="w-auto" @click="localReview.rating = 1" >1</span>
-                        <span class="w-auto" @click="localReview.rating = 2" >2</span>
-                        <span class="w-auto" @click="localReview.rating = 3" >3</span>
-                        <span class="w-auto" @click="localReview.rating = 4" >4</span>
-                        <span class="w-auto" @click="localReview.rating = 5" >5</span>
+                    <div class="flex justify-start items-center">
+                        <span class="inline-block font-bold">Rating: </span>
+                        <span class="inline-block h-8 w-8 pt-1 border border-grey-darker my-3 mx-1 cursor-pointer rounded-full text-center leading-normal" @click="localReview.rating = 1" >1</span>
+                        <span class="inline-block h-8 w-8 pt-1 border border-grey-darker my-3 mx-1 cursor-pointer rounded-full text-center leading-normal" @click="localReview.rating = 2" >2</span>
+                        <span class="inline-block h-8 w-8 pt-1 border border-grey-darker my-3 mx-1 cursor-pointer rounded-full text-center leading-normal" @click="localReview.rating = 3" >3</span>
+                        <span class="inline-block h-8 w-8 pt-1 border border-grey-darker my-3 mx-1 cursor-pointer rounded-full text-center leading-normal" @click="localReview.rating = 4" >4</span>
+                        <span class="inline-block h-8 w-8 pt-1 border border-grey-darker my-3 mx-1 cursor-pointer rounded-full text-center leading-normal" @click="localReview.rating = 5" >5</span>
                     </div>
                 </div>
                 <div class="w-full">
