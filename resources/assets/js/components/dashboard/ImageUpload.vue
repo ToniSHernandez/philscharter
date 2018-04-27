@@ -14,6 +14,7 @@
             action="/imageupload/"
             method="POST"
             v-if="imageHover"
+            enctype="multipart/form-data"
         >
             <label
                 :for="resourceName"
@@ -21,13 +22,12 @@
                 :class="{'pin': imageHover, 'opacity-75': imageHover}"
                 @mouseout="imageHover = false"
             >
-                <span class="opacity-100 text-sm cursor-pointer">Click here to upload a new photo</span>
+                <!-- <span class="opacity-100 text-sm cursor-pointer">Click here to upload a new photo</span> -->
                 <input
                     type="file"
                     :name="resourceName"
                     class="hidden"
                     :id="resourceName"
-                    enctype="multipart/form-data"
                     @change="fileChanged(
                         $event.target.name,
                         $event.target.files
