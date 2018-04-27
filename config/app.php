@@ -150,6 +150,7 @@ return [
         /*
          * Package Service Providers...
          */
+        KeriganSolutions\FacebookFeed\FacebookServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -174,7 +175,6 @@ return [
     */
 
     'aliases' => [
-
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
@@ -188,6 +188,7 @@ return [
         'DB' => Illuminate\Support\Facades\DB::class,
         'Eloquent' => Illuminate\Database\Eloquent\Model::class,
         'Event' => Illuminate\Support\Facades\Event::class,
+        'Facebook' => KeriganSolutions\FacebookFeed\FacebookPhotoGallery::class,
         'File' => Illuminate\Support\Facades\File::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,

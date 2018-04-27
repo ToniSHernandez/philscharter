@@ -35,7 +35,8 @@
                                     'bg-white': selectedService === service.id,
                                     'bg-brand-darkest': selectedService !== service.id
                                 }"
-                            ></span>
+                            >
+                            </span>
                             <span>{{ service.title }}</span>
                         </label>
                     </div>

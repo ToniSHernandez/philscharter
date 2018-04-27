@@ -49,7 +49,7 @@
                             <nav class="hidden lg:flex text-center justify-end flex-wrap items-center">
                                 <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-grey-dark text-sm xl:text-base" href="/about" >About</a>
                                 <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-grey-dark text-sm xl:text-base" href="/trips-rates">Trips & Rates</a>
-                                <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-grey-dark text-sm xl:text-base" href="/photos">Photos</a>
+                                <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-grey-dark text-sm xl:text-base" href="/albums">Photos</a>
                                 <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-grey-dark text-sm xl:text-base" href="/reviews">Reviews</a>
                                 <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-grey-dark text-sm xl:text-base" href="/contact">Contact</a>
                                 <a class="rounded-full bg-brand-darker py-3 px-4 no-underline font-bold text-white uppercase mx-3 my-2 text-sm xl:text-base" href="/trip-request">Request a Trip</a>
@@ -74,7 +74,7 @@
                     <nav class="text-center flex justify-center flex-wrap items-center">
                         <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-white" href="/about" >About</a>
                         <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-white" href="/trips-rates">Trips & Rates</a>
-                        <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-white" href="/photos">Photos</a>
+                        <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-white" href="/albums">Photos</a>
                         <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-white" href="/reviews">Reviews</a>
                         <a class="block w-full sm:inline-block sm:w-auto my-2 px-3 no-underline uppercase font-bold text-white" href="/contact">Contact</a>
                         <a class="rounded-full bg-white py-3 px-4 no-underline font-bold text-brand-darker uppercase mx-3 my-2" href="/trip-request">Request a Trip</a>
