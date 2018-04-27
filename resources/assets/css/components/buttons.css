@@ -8,6 +8,12 @@
 }
 
 /*button sizes*/
+.button-xs {
+    @apply .button;
+    font-size: .75em;
+    padding: .5rem .75rem;
+}
+
 .button-sm {
     @apply .button .text-xs;
     padding: .5rem .75rem;
@@ -56,3 +62,77 @@
     @apply .text-secondary .border-grey-dark
 }
 
+/* Grey Button */
+.button-grey {
+    @apply .button-md .bg-grey .text-white
+}
+
+.button-grey:hover {
+    @apply .bg-grey-dark
+}
+
+/* Delete Button */
+.button-delete-xs {
+    @apply .button-xs .bg-red .text-white
+}
+
+.button-delete-sm {
+    @apply .button-sm .bg-red .text-white
+}
+
+.button-delete {
+    @apply .button-md .bg-red .text-white
+}
+
+.button-delete-lg {
+    @apply .button-lg .bg-grey-darker .text-white
+}
+
+.button-delete-xs:hover {
+    @apply .button-xs .bg-red-dark
+}
+
+.button-delete-sm:hover {
+    @apply .button-sm .bg-red-dark
+}
+
+.button-delete:hover {
+    @apply .button-md .bg-red-dark
+}
+
+.button-delete-lg:hover {
+    @apply .button-lg .bg-red-dark
+}
+
+/* Edit Button */
+.button-edit-xs {
+    @apply .button-xs .bg-grey-darker .text-white
+}
+
+.button-edit-sm {
+    @apply .button-sm .bg-grey-darker .text-white
+}
+
+.button-edit {
+    @apply .button-md .bg-grey-darker .text-white
+}
+
+.button-edit-lg {
+    @apply .button-lg .bg-red .text-white
+}
+
+.button-edit-xs:hover {
+    @apply .button-xs .bg-grey-darkest .text-white
+}
+
+.button-edit-sm:hover {
+    @apply .button-sm .bg-grey-darkest .text-white
+}
+
+.button-edit:hover {
+    @apply .button-md .bg-grey-darkest .text-white
+}
+
+.button-edit-lg:hover {
+    @apply .button-lg .bg-grey-darkest .text-white
+}

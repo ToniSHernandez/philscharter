@@ -35,11 +35,12 @@
             <div class="container mx-auto h-full">
                 <div class="flex items-center justify-center h-12 px-2">
                     <div class="mr-6">
+                        <a href="/dashboard" class="block no-underline text-grey-dark">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.5 8.7" class="h-3 mr-3 ml-1">
                             <path fill="#b4be35"
                                   d="M6.4,0.1c0,0,0.1,0.3,0.2,0.9c1,3,3,5.6,5.7,7.2l-0.1,0.5c0,0-0.4-0.2-1-0.4C7.7,7,3.7,7,0.2,8.5L0.1,8.1 c2.8-1.5,4.8-4.2,5.7-7.2C6,0.4,6.1,0.1,6.1,0.1H6.4L6.4,0.1z"></path>
                         </svg>
-                        Dashboard
+                            Dashboard</a>
                     </div>
                     <div class="flex-1 text-right">
                         <div class="inline-block lg:hidden">
@@ -77,7 +78,6 @@
             <a class="block w-full sm:inline-block my-3 p-3 no-underline uppercase font-bold cursor-pointer text-white" @click="changesection('dashboard')" >Dashboard</a>
             <a class="block w-full sm:inline-block my-3 p-3 no-underline uppercase font-bold cursor-pointer text-white" @click="changesection('leads')" >Leads</a>
             <a class="block w-full sm:inline-block my-3 p-3 no-underline uppercase font-bold cursor-pointer text-white" @click="changesection('services')" >Services</a>
-            <a class="block w-full sm:inline-block my-3 p-3 no-underline uppercase font-bold cursor-pointer text-white" @click="changesection('photoalbums')" >Photo Albums</a>
             <a class="block w-full sm:inline-block my-3 p-3 no-underline uppercase font-bold cursor-pointer text-white" @click="changesection('pages')" >Pages</a>
             <a class="block w-full sm:inline-block my-3 p-3 no-underline uppercase font-bold cursor-pointer text-white" @click="changesection('contactinfo')" >Contact Info</a>
         </nav>

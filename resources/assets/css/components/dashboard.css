@@ -2,18 +2,42 @@
     background-color: #b4be35;
 }
 
+.bg-kma-dark {
+    background-color: #9ba51c;
+}
+
 .text-kma {
     color: #b4be35;
 }
 
 .button-kma-sm {
-    @apply .inline-block .bg-kma .text-white .rounded-full .text-xs .text-sm .py-1 .px-3 .no-underline .cursor-pointer
+    @apply .button-sm .bg-kma .text-white
 }
 
 .button-kma {
-    @apply .inline-block .bg-kma .text-white .text-sm .uppercase .rounded-full .py-2 .px-3 .no-underline .cursor-pointer
+    @apply .button-md .bg-kma .text-white
+}
+
+.button-kma-lg {
+    @apply .button-lg .bg-kma .text-white
 }
 
 .button-kma-xl {
     @apply .inline-block .h-full .flex .flex-col .items-center .justify-center .bg-kma .text-white .text-lg .uppercase .no-underline .rounded .shadow .cursor-pointer
+}
+
+.button-kma-sm:hover {
+    @apply .button-sm .bg-kma-dark .text-white
+}
+
+.button-kma:hover {
+    @apply .button-md .bg-kma-dark .text-white
+}
+
+.button-kma-lg:hover {
+    @apply .button-lg .bg-kma-dark .text-white
+}
+
+.button-kma-xl:hover {
+    @apply .inline-block .h-full .flex .flex-col .items-center .justify-center .bg-kma-dark .text-white .text-lg .uppercase .no-underline .rounded .shadow .cursor-pointer
 }
