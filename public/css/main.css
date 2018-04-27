@@ -690,6 +690,16 @@ button,
 
 /*button sizes*/
 
+.button-xs {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .75em;
+  padding: .5rem .75rem;
+}
+
 .button-sm {
   display: inline-block;
   text-transform: uppercase;
@@ -798,8 +808,222 @@ button,
   border-color: #8795a1;
 }
 
+/* Grey Button */
+
+.button-grey {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .875rem;
+  padding: .75rem 1rem;
+  background-color: #b8c2cc;
+  color: #fff;
+}
+
+.button-grey:hover {
+  background-color: #8795a1;
+}
+
+/* Delete Button */
+
+.button-delete-xs {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .75em;
+  padding: .5rem .75rem;
+  background-color: #d0021b;
+  color: #fff;
+}
+
+.button-delete-sm {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .75rem;
+  padding: .5rem .75rem;
+  background-color: #d0021b;
+  color: #fff;
+}
+
+.button-delete {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .875rem;
+  padding: .75rem 1rem;
+  background-color: #d0021b;
+  color: #fff;
+}
+
+.button-delete-lg {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 1rem 1.25rem;
+  background-color: #606f7b;
+  color: #fff;
+}
+
+.button-delete-xs:hover {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .75em;
+  padding: .5rem .75rem;
+  background-color: #b21024;
+}
+
+.button-delete-sm:hover {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .75rem;
+  padding: .5rem .75rem;
+  background-color: #b21024;
+}
+
+.button-delete:hover {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .875rem;
+  padding: .75rem 1rem;
+  background-color: #b21024;
+}
+
+.button-delete-lg:hover {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 1rem 1.25rem;
+  background-color: #b21024;
+}
+
+/* Edit Button */
+
+.button-edit-xs {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .75em;
+  padding: .5rem .75rem;
+  background-color: #606f7b;
+  color: #fff;
+}
+
+.button-edit-sm {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .75rem;
+  padding: .5rem .75rem;
+  background-color: #606f7b;
+  color: #fff;
+}
+
+.button-edit {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .875rem;
+  padding: .75rem 1rem;
+  background-color: #606f7b;
+  color: #fff;
+}
+
+.button-edit-lg {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 1rem 1.25rem;
+  background-color: #d0021b;
+  color: #fff;
+}
+
+.button-edit-xs:hover {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .75em;
+  padding: .5rem .75rem;
+  background-color: #3d4852;
+  color: #fff;
+}
+
+.button-edit-sm:hover {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .75rem;
+  padding: .5rem .75rem;
+  background-color: #3d4852;
+  color: #fff;
+}
+
+.button-edit:hover {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .875rem;
+  padding: .75rem 1rem;
+  background-color: #3d4852;
+  color: #fff;
+}
+
+.button-edit-lg:hover {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 1rem 1.25rem;
+  background-color: #3d4852;
+  color: #fff;
+}
+
 .bg-kma {
   background-color: #b4be35;
+}
+
+.bg-kma-dark {
+  background-color: #9ba51c;
 }
 
 .text-kma {
@@ -808,32 +1032,38 @@ button,
 
 .button-kma-sm {
   display: inline-block;
-  background-color: #b4be35;
-  color: #fff;
+  text-transform: uppercase;
   border-radius: 9999px;
-  font-size: .75rem;
-  font-size: .875rem;
-  padding-top: .25rem;
-  padding-bottom: .25rem;
-  padding-left: .75rem;
-  padding-right: .75rem;
   text-decoration: none;
   cursor: pointer;
+  font-size: .75rem;
+  padding: .5rem .75rem;
+  background-color: #b4be35;
+  color: #fff;
 }
 
 .button-kma {
   display: inline-block;
-  background-color: #b4be35;
-  color: #fff;
-  font-size: .875rem;
   text-transform: uppercase;
   border-radius: 9999px;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-  padding-left: .75rem;
-  padding-right: .75rem;
   text-decoration: none;
   cursor: pointer;
+  font-size: .875rem;
+  padding: .75rem 1rem;
+  background-color: #b4be35;
+  color: #fff;
+}
+
+.button-kma-lg {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 1rem 1.25rem;
+  background-color: #b4be35;
+  color: #fff;
 }
 
 .button-kma-xl {
@@ -853,6 +1083,69 @@ button,
       -ms-flex-pack: center;
           justify-content: center;
   background-color: #b4be35;
+  color: #fff;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: .25rem;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  cursor: pointer;
+}
+
+.button-kma-sm:hover {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .75rem;
+  padding: .5rem .75rem;
+  background-color: #9ba51c;
+  color: #fff;
+}
+
+.button-kma:hover {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .875rem;
+  padding: .75rem 1rem;
+  background-color: #9ba51c;
+  color: #fff;
+}
+
+.button-kma-lg:hover {
+  display: inline-block;
+  text-transform: uppercase;
+  border-radius: 9999px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 1rem 1.25rem;
+  background-color: #9ba51c;
+  color: #fff;
+}
+
+.button-kma-xl:hover {
+  display: inline-block;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #9ba51c;
   color: #fff;
   font-size: 1.125rem;
   text-transform: uppercase;

@@ -1,6 +1,8 @@
 Vue.component('admin-services', require('./components/dashboard/Services.vue'));
 Vue.component('admin-service', require('./components/dashboard/Service.vue'));
 Vue.component('admin-reviews', require('./components/dashboard/Reviews.vue'));
+Vue.component('admin-review', require('./components/dashboard/Review.vue'));
+Vue.component('admin-review-fields', require('./components/dashboard/Reviewfields.vue'));
 Vue.component('admin-dashboard', require('./components/dashboard/Dashboard.vue'));
 Vue.component('admin-contact-info', require('./components/dashboard/ContactInfo.vue'));
 Vue.component('admin-leads', require('./components/dashboard/Leads.vue'));
