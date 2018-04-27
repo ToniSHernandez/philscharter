@@ -2219,7 +2219,7 @@ if(false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(17);
-module.exports = __webpack_require__(110);
+module.exports = __webpack_require__(116);
 
 
 /***/ }),
@@ -31547,6 +31547,8 @@ Vue.component('reviews', __webpack_require__(91));
 Vue.component('review', __webpack_require__(96));
 Vue.component('photo-albums', __webpack_require__(101));
 Vue.component('image-upload', __webpack_require__(106));
+Vue.component('google-map', __webpack_require__(110));
+Vue.component('pin', __webpack_require__(113));
 
 /***/ }),
 /* 43 */
@@ -37803,6 +37805,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -41826,6 +41829,261 @@ if (false) {
 
 /***/ }),
 /* 110 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(111)
+/* template */
+var __vue_template__ = __webpack_require__(112)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/frontend/GoogleMap.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-8babc846", Component.options)
+  } else {
+    hotAPI.reload("data-v-8babc846", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 111 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+function initMap() {
+    console.log('google maps api loaded.');
+}
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['name', 'latitude', 'longitude', 'zoom'],
+
+    data: function data() {
+        return {
+            mapName: this.name + "-map",
+            markers: [],
+            pins: []
+        };
+    },
+
+    // created() {
+    //     let googleMapsApi = document.createElement('script');
+    //     googleMapsApi.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCRXeRhZCIYcKhtc-rfHCejAJsEW9rYtt4&callback=initMap';
+    //     document.getElementsByTagName('head')[0].appendChild(googleMapsApi);
+    // },
+
+    mounted: function mounted() {
+        var _this = this;
+
+        var element = document.getElementById(this.mapName);
+        var options = {
+            zoom: this.zoom,
+            center: new google.maps.LatLng(this.latitude, this.longitude),
+            disableDefaultUI: true,
+            zoomControl: true,
+            scaleControl: true
+        };
+        var map = new google.maps.Map(element, options);
+        var bounds = new google.maps.LatLngBounds();
+        this.markers = this.$children;
+
+        var _loop = function _loop(i) {
+            var pin = _this.markers[i];
+            _this.pins.push({
+                latitude: pin._data.markerCoordinates.latitude,
+                longitude: pin._data.markerCoordinates.longitude
+            });
+
+            var position = new google.maps.LatLng(pin.latitude, pin.longitude);
+            var marker = new google.maps.Marker({
+                position: position,
+                map: map
+                // icon: '/wp-content/themes/kma-slim/img/map-pin.png'
+            });
+
+            var infowindow = new google.maps.InfoWindow({
+                maxWidth: 279,
+                content: pin.$refs.infowindow,
+                title: pin._data.name
+            });
+
+            marker.addListener('click', function () {
+                infowindow.open(map, marker);
+            });
+
+            bounds.extend(position);
+            map.fitBounds(bounds);
+        };
+
+        for (var i = 0; i < this.markers.length; i++) {
+            _loop(i);
+        }
+    }
+
+});
+
+/***/ }),
+/* 112 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "google-map", attrs: { id: _vm.mapName } },
+    [_vm._t("default")],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-8babc846", module.exports)
+  }
+}
+
+/***/ }),
+/* 113 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(114)
+/* template */
+var __vue_template__ = __webpack_require__(115)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/frontend/GoogleMapPin.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-1a2b7e28", Component.options)
+  } else {
+    hotAPI.reload("data-v-1a2b7e28", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 114 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['latitude', 'longitude', 'title'],
+
+    data: function data() {
+        return {
+            pinName: this.title.toLowerCase().replace(/ /g, '-'),
+            markerCoordinates: {
+                latitude: this.latitude,
+                longitude: this.longitude
+            }
+        };
+    }
+
+});
+
+/***/ }),
+/* 115 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { ref: "infowindow", staticClass: "pop-up", attrs: { id: _vm.pinName } },
+    [_vm._t("default")],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-1a2b7e28", module.exports)
+  }
+}
+
+/***/ }),
+/* 116 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

@@ -19,7 +19,7 @@
                 bring is sunscreen, snacks, and drinks.
                 I’ll even clean your fish, if you want to take home dinner!</p>
             <div class="pt-4">
-                <button class="button-outlined py-2 ">MORE ABOUT US</button>
+                <a class="button-outlined" href="/about">MORE ABOUT US</a>
             </div>
         </div>
     </div>
