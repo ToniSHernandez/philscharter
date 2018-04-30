@@ -38,7 +38,8 @@
                 </div>
                 <div class="w-full px-1 py-4">
                     <div class="sm:max-w-sm">
-                        <image-upload :resource-path="service.photo_url" :resource-name="service.slug"></image-upload>
+                        <input type="file" name="" id="">
+                        <!-- <image-upload :resource-path="service.photo_url" :resource-name="service.slug"></image-upload> -->
                     </div>
                 </div>
             </form>
