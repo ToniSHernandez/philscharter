@@ -13,7 +13,7 @@
                 <p class="price text-grey-darkest text-2xl font-bold mb-2">${{service.rate}}</p>
                 <p class="italic text-xs text-grey-darkest mb-2">{{service.rate_info}}</p>
                 <p class="my-4"><a class="button-brand-outlined" :href="'/trips-rates/' + service.slug">View Details</a></p>
-                <p class="mb-4"><a class="button-brand" href="#">Book Now</a></p>
+                <p class="mb-4"><a class="button-brand" :href="'/trip-request?service_id=' + service.id">Book Now</a></p>
             </div>
         </div>
     </div>
