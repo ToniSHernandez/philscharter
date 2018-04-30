@@ -11,7 +11,7 @@
             </div>
         </div>
         <div v-if="editingService === index" class="bg-grey-lightest rounded p-4 mb-1">
-            <form class="form-inputs flex flex-wrap">
+            <form class="form-inputs flex flex-wrap" enctype="multipart/form-data">
                 <div class="w-full px-1">
                     <input v-model="service.title" type="text" class="input-text w-full" name="service_title"
                            placeholder="Service Name">
@@ -33,12 +33,12 @@
                               class="input-textarea w-full block h-24" placeholder="Description"></textarea>
                 </div>
                 <div class="w-full px-1 py-4">
-                    <input type="checkbox" id="featured" name="service_featured" v-model="service.featured">
+                    <input type="checkbox" id="featured" name="service_featured" v-model="service.featured" value="1">
                     <label for="featured">Feature on the Home page?</label>
                 </div>
                 <div class="w-full px-1 py-4">
                     <div class="sm:max-w-sm">
-                        <image-upload :resource-path="service.photo_url" :resource-name="service.slug"></image-upload>
+                        <input type="file" name="photo" @change="photoUploaded($event)" />
                     </div>
                 </div>
             </form>
@@ -77,7 +77,7 @@
                 this.editingService = index;
             },
             editService(service){
-                axios.patch('/api/services', service)
+                axios.patch('/api/services/' + service.id, service)
                     .then(function (response) {
                         console.log(response);
                     })
@@ -92,10 +92,15 @@
             deleteService(service){
                 this.services.splice(service, 1)
             },
-            filesChange(name,file){
-                this.isInitial = false;
-                console.log(name);
-                console.log(file);
+            photoUploaded(event) {
+                const formData = new FormData();
+                if (! fileList.length) {
+                    return;
+                }
+                Array.from(Array(fileList.length).keys())
+                    .map(x => {
+                        formData.append(fieldName, fileList[x], fileList[x].name);
+                    });
             }
         }
     }

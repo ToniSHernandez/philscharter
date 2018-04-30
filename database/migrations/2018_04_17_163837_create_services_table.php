@@ -22,7 +22,7 @@ class CreateServicesTable extends Migration
             $table->string('photo_url')->nullable();
             $table->text('description')->nullable();
             $table->integer('rate')->default(0);
-            $table->boolean('featured')->default(0);
+            $table->boolean('featured')->default(false);
             $table->timestamps();
         });
     }
