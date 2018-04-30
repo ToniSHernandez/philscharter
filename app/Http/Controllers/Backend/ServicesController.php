@@ -47,7 +47,7 @@ class ServicesController extends Controller
             'title' => 'required|max:191',
             'rate' => 'required|numeric'
         ]);
-        $photoUrl = $request->file('photo')->store('service_photos');
+        $photoUrl = $request->file('photo') ? $request->file('photo')->store('service_photos') : null;
 
         $title = $request->title;
         $slug = str_slug($title, '-');

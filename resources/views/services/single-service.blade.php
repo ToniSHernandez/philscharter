@@ -6,7 +6,7 @@
             <div class="flex flex-wrap p-4 md:my-10" >
                 <div class="w-full md:w-1/4 py-2" >
                     <div class="photo-container bg-grey-lightest mb-4">
-                    <img src="/{{ $service->photo_url }}" >
+                    <img src="/storage/{{ $service->photo_url }}" >
                     </div>
                 </div>
                 <div class="w-full md:w-3/4 px-4 md:px-10">
