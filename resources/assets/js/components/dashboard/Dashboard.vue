@@ -117,7 +117,6 @@
             </div>
 
             <div v-if="section == 'leads'">
-                <h1 class="text-white text-5xl font-normal mt-4 pb-1 border-b border-grey-dark">Leads</h1>
                 <admin-leads v-on:switchto="switchto('dashboard')"></admin-leads>
             </div>
             <div v-if="section == 'services'">
@@ -134,6 +133,7 @@
             </div>
             <div v-if="section == 'pages'">
                 <h1 class="text-white text-5xl font-normal mt-4 pb-1 border-b border-grey-dark">Pages</h1>
+                <admin-pages></admin-pages>
             </div>
         </div>
     </div>
