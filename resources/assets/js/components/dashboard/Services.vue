@@ -7,7 +7,7 @@
             <a v-if="!addingService" class="inline-block bg-kma text-white rounded-full py-2 px-3 no-underline cursor-pointer" @click="openNewServicePanel" >Add a Service</a>
             <div v-if="addingService" class="bg-grey-lightest rounded p-4" >
                 <h2 class="font-normal mb-2">New Service</h2>
-                <form class="form-inputs flex flex-wrap">
+                <form class="form-inputs flex flex-wrap" enctype="multipart/form-data">
                     <div class="w-full px-1">
                         <input v-model="newService.title" type="text" class="input-text w-full" name="service_title" placeholder="Service Name" >
                     </div>
@@ -25,13 +25,13 @@
                     </div>
                     <div class="w-full px-1 py-4">
                         <label>
-                            <input type="checkbox" name="service_featured" v-model="newService.featured">
+                            <input type="checkbox" name="service_featured" v-model="newService.featured" value="1" unchecked-value="0" />
                             Feature on the Home page?
                         </label>
                     </div>
                     <div class="w-full px-1 py-4">
                         <div class="sm:max-w-sm">
-                            <vue-dropzone ref="myVueDropzone" id="dropzone" :options="dropzoneOptions" />
+                            <input type="file" name="photo" @change="photoUploaded($event.target.files[0])" />
                             <!-- <image-upload :resource-path="newService.photo_url" :resource-name="newService.slug"></image-upload> -->
                         </div>
                     </div>
@@ -45,12 +45,11 @@
     </div>
 </template>
 <script>
-    import vue2Dropzone from 'vue2-dropzone'
-    import 'vue2-dropzone/dist/vue2Dropzone.css'
     export default {
         data(){
             return {
                 services:  [],
+                file: {},
                 addingService: false,
                 newService: {},
                 isInitial: true,
@@ -75,10 +74,15 @@
             },
             addService(){
                 this.services.push(this.newService);
-
-                axios.post('/api/services', this.newService)
+                let vm = this;
+                let formData = new FormData();
+                Array.from(Object.keys(this.newService)).map(x => {
+                    formData.append(x, this.newService[x])
+                });
+                axios.post('/api/services', formData)
                     .then(function (response) {
-                        this.newService = null;
+                        console.log(response);
+                        vm.newService = {};
                     })
                     .catch(function (error) {
                         console.log(error);
@@ -86,14 +90,9 @@
 
                 this.closeNewServicePanel();
             },
-            filesChange(name,file){
-                this.isInitial = false;
-                console.log(name);
-                console.log(file);
+            photoUploaded(file) {
+                this.newService.photo = file;
             }
-        },
-        components: {
-            vueDropzone: vue2Dropzone
         }
     }
 </script>

@@ -7,6 +7,9 @@ use App\Service;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Http\File;
 
 class WriteServicesTest extends TestCase
 {
@@ -41,6 +44,23 @@ class WriteServicesTest extends TestCase
         ]);
 
         $this->post('api/services', $service->toArray())->assertSessionHasErrors();
+    }
+
+    /** @test */
+    public function a_service_can_have_a_photo()
+    {
+        Storage::fake('public');
+
+        $photo = UploadedFile::fake()->image('service_photo.jpg');
+
+        $service = factory(Service::class)->make([
+            'photo' => $photo
+        ]);
+
+        $this->post('api/services', $service->toArray())->assertSuccessful();
+
+        Storage::disk('public')->assertExists('service_photos/'. $photo->hashName());
+        $this->assertDatabaseHas('services', ['photo_url' => 'service_photos/'. $photo->hashName()]);
     }
 
     protected function login()
