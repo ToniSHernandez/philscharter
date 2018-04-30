@@ -1,11 +1,18 @@
-Vue.component('admin-services', require('./components/dashboard/Services.vue'));
-Vue.component('admin-service', require('./components/dashboard/Service.vue'));
-Vue.component('admin-reviews', require('./components/dashboard/Reviews.vue'));
-Vue.component('admin-review', require('./components/dashboard/Review.vue'));
+/*Dashboard*/
+Vue.component('admin-contact-info', require('./components/dashboard/AdminContactInfo.vue'));
+Vue.component('admin-lead', require('./components/dashboard/AdminLead.vue'));
+Vue.component('admin-leads', require('./components/dashboard/AdminLeads.vue'));
+Vue.component('admin-lead-filters', require('./components/dashboard/AdminLeadFilters.vue'));
+Vue.component('admin-lead-pagination', require('./components/dashboard/AdminLeadPagination.vue'));
+Vue.component('admin-pages', require('./components/dashboard/AdminPages.vue'));
+Vue.component('admin-review', require('./components/dashboard/AdminReview.vue'));
+Vue.component('admin-reviews', require('./components/dashboard/AdminReviews.vue'));
 Vue.component('admin-review-fields', require('./components/dashboard/Reviewfields.vue'));
+Vue.component('admin-service', require('./components/dashboard/Service.vue'));
+Vue.component('admin-services', require('./components/dashboard/Services.vue'));
 Vue.component('admin-dashboard', require('./components/dashboard/Dashboard.vue'));
-Vue.component('admin-contact-info', require('./components/dashboard/ContactInfo.vue'));
-Vue.component('admin-leads', require('./components/dashboard/Leads.vue'));
+
+/*Front-end*/
 Vue.component('mini-form', require('./components/frontend/MiniForm.vue'));
 Vue.component('trip-request', require('./components/frontend/TripRequest.vue'));
 Vue.component('mini-service', require('./components/frontend/MiniService.vue'));
