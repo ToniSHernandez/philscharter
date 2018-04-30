@@ -21,7 +21,13 @@
             return {
                 reviews:  [],
                 addingReview: false,
-                newReview: {},
+                newReview: {
+                    author: '',
+                    body: '',
+                    featured: 0,
+                    rating: null,
+                    source: ''
+                },
             }
         },
         mounted() {

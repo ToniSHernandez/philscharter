@@ -5540,6 +5540,10 @@ button,
   width: 16rem;
 }
 
+.w-80 {
+  width: 20rem;
+}
+
 .w-auto {
   width: auto;
 }
@@ -10046,6 +10050,10 @@ button,
     width: 16rem;
   }
 
+  .sm\:w-80 {
+    width: 20rem;
+  }
+
   .sm\:w-auto {
     width: auto;
   }
@@ -14501,6 +14509,10 @@ button,
 
   .md\:w-64 {
     width: 16rem;
+  }
+
+  .md\:w-80 {
+    width: 20rem;
   }
 
   .md\:w-auto {
@@ -18960,6 +18972,10 @@ button,
     width: 16rem;
   }
 
+  .lg\:w-80 {
+    width: 20rem;
+  }
+
   .lg\:w-auto {
     width: auto;
   }
@@ -23415,6 +23431,10 @@ button,
 
   .xl\:w-64 {
     width: 16rem;
+  }
+
+  .xl\:w-80 {
+    width: 20rem;
   }
 
   .xl\:w-auto {
