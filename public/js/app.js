@@ -39219,24 +39219,22 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _vm._m(0)
+          _c("p", { staticClass: "mb-4" }, [
+            _c(
+              "a",
+              {
+                staticClass: "button-brand",
+                attrs: { href: "/trip-request?service_id=" + _vm.service.id }
+              },
+              [_vm._v("Book Now")]
+            )
+          ])
         ])
       ]
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "mb-4" }, [
-      _c("a", { staticClass: "button-brand", attrs: { href: "#" } }, [
-        _vm._v("Book Now")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
