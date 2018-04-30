@@ -11,7 +11,7 @@
                             v-model="date"
                             :config="config"
                             name="requested_date"
-                            class="rounded-full border border-brand text-sm w-full text-white h-10 my-1 px-4 bg-red-darker"
+                            class="rounded-full appearance-none border border-brand text-sm w-full text-white h-10 my-1 px-4 bg-red-darker"
                             placeholder="Select a date"
                         />
                     </div>

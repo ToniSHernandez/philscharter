@@ -38359,7 +38359,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("flat-pickr", {
                     staticClass:
-                      "rounded-full border border-brand text-sm w-full text-white h-10 my-1 px-4 bg-red-darker",
+                      "rounded-full appearance-none border border-brand text-sm w-full text-white h-10 my-1 px-4 bg-red-darker",
                     attrs: {
                       config: _vm.config,
                       name: "requested_date",
@@ -40161,7 +40161,7 @@ var render = function() {
                   "div",
                   {
                     staticClass:
-                      "flex justify-center items-center justify-center h-85p w-full",
+                      "flex justify-center items-center justify-center flex-grow w-full",
                     on: {
                       click: function($event) {
                         _vm.closeViewer()
@@ -40183,7 +40183,7 @@ var render = function() {
                   "div",
                   {
                     staticClass:
-                      "flex justify-center items-center p-4 justify-center flex-grow"
+                      "flex justify-center items-start p-4 justify-center h-8 flex-no-grow"
                   },
                   [
                     _c(
@@ -40232,7 +40232,7 @@ var render = function() {
                       "a",
                       {
                         staticClass:
-                          "bg-white cursor-pointer py-3 px-4 rounded-full h-12 w-12 text-secondary text-center m-2 relative z-50",
+                          "bg-white cursor-pointer py-3 px-4 rounded-full h-12 w-12 text-secondary text-center m-2 relative z-50 flex-no-shrink",
                         on: {
                           click: function($event) {
                             _vm.nextPhoto(_vm.activePhoto.index)

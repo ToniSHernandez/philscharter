@@ -18,17 +18,17 @@
     </div>
     <div class="fixed gallery-viewer bg-secondary-80 pin z-50" v-if="galleryIsOpen" >
         <div class="flex justify-center items-center p-4 flex-col">
-            <div class="flex justify-center items-center justify-center h-85p w-full" @click="closeViewer()" >
+            <div class="flex justify-center items-center justify-center flex-grow w-full" @click="closeViewer()" >
                 <img :src="activePhoto.images[0].source" :alt="album_name" class="block max-w-full max-h-full" />
             </div>
-            <div class="flex justify-center items-center p-4 justify-center flex-grow" >
+            <div class="flex justify-center items-start p-4 justify-center h-8 flex-no-grow" >
                 <a class="bg-white cursor-pointer py-3 px-4 rounded-full h-12 w-12 text-secondary text-center m-2 relative z-50" style="transform: rotate(180deg)" @click="prevPhoto(activePhoto.index)">
                     <svg class="fill-current h-6 w-6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	                    viewBox="0 0 306 306" style="enable-background:new 0 0 306 306;"  xml:space="preserve">
                         <polygon points="94.35,0 58.65,35.7 175.95,153 58.65,270.3 94.35,306 247.35,153"></polygon>
                     </svg>
                 </a>
-                <a class="bg-white cursor-pointer py-3 px-4 rounded-full h-12 w-12 text-secondary text-center m-2 relative z-50" @click="nextPhoto(activePhoto.index)">
+                <a class="bg-white cursor-pointer py-3 px-4 rounded-full h-12 w-12 text-secondary text-center m-2 relative z-50 flex-no-shrink" @click="nextPhoto(activePhoto.index)">
                     <svg class="fill-current h-6 w-6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	                    viewBox="0 0 306 306" style="enable-background:new 0 0 306 306;"  xml:space="preserve">
                         <polygon points="94.35,0 58.65,35.7 175.95,153 58.65,270.3 94.35,306 247.35,153"></polygon>
