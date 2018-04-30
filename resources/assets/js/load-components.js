@@ -10,6 +10,7 @@ Vue.component('admin-reviews', require('./components/dashboard/AdminReviews.vue'
 Vue.component('admin-review-fields', require('./components/dashboard/Reviewfields.vue'));
 Vue.component('admin-service', require('./components/dashboard/Service.vue'));
 Vue.component('admin-services', require('./components/dashboard/Services.vue'));
+Vue.component('admin-service-fields', require('./components/dashboard/ServiceFields.vue'));
 Vue.component('admin-dashboard', require('./components/dashboard/Dashboard.vue'));
 
 /*Front-end*/

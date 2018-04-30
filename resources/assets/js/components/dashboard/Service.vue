@@ -11,42 +11,7 @@
             </div>
         </div>
         <div v-if="editingService === index" class="bg-grey-lightest rounded p-4 mb-1">
-            <form class="form-inputs flex flex-wrap" enctype="multipart/form-data">
-                <div class="w-full px-1">
-                    <input v-model="service.title" type="text" class="input-text w-full" name="service_title"
-                           placeholder="Service Name">
-                </div>
-                <div class="w-full px-1">
-                    <input v-model="service.subtitle" type="text" class="input-text w-full" name="service_subtitle"
-                           placeholder="Subtitle">
-                </div>
-                <div class="w-full md:w-1/4 px-1">
-                    <input v-model="service.rate" type="text" class="input-text w-8" name="service_price"
-                           placeholder="Rate">
-                </div>
-                <div class="w-full md:w-3/4 px-1">
-                    <input v-model="service.rate_info" type="text" class="input-text w-full" name="service_rate_info"
-                           placeholder="Additional rate information">
-                </div>
-                <div class="w-full px-1">
-                    <textarea v-model="service.description" name="service_description"
-                              class="input-textarea w-full block h-24" placeholder="Description"></textarea>
-                </div>
-                <div class="w-full px-1 py-4">
-                    <input type="checkbox" id="featured" name="service_featured" v-model="service.featured" value="1">
-                    <label for="featured">Feature on the Home page?</label>
-                </div>
-                <div class="w-full px-1 py-4">
-                    <div class="sm:max-w-sm">
-                        <input type="file" name="photo" @change="photoUploaded($event)" />
-                    </div>
-                </div>
-            </form>
-            <div class="flex justify-between items-center pt-2">
-                <a class="inline-block bg-grey text-white rounded-full py-2 px-3 no-underline cursor-pointer"
-                   @click="closeService">nevermind</a>
-                <a class="button-kma" @click="editService(service)">Edit Service</a>
-            </div>
+            <admin-service-fields :service="service" @submitForm="editService($event)" @closeForm="closeService()" ></admin-service-fields>
         </div>
     </div>
 </template>
@@ -66,18 +31,22 @@
         data(){
             return {
                 editingService: null,
-                isInitial: true
+                isInitial: true,
+                localService: {}
             }
-        },
-        mounted() {
-
         },
         methods: {
             openService(index){
                 this.editingService = index;
             },
             editService(service){
-                axios.patch('/api/services/' + service.id, service)
+                let vm = this;
+                let formData = new FormData();
+                console.log(service);
+                Array.from(Object.keys(service)).map(serviceName => {
+                    formData.append(serviceName, service[serviceName])
+                });
+                axios.patch('/api/services/' + formData.id, formData)
                     .then(function (response) {
                         console.log(response);
                     })
@@ -91,16 +60,6 @@
             },
             deleteService(service){
                 this.services.splice(service, 1)
-            },
-            photoUploaded(event) {
-                const formData = new FormData();
-                if (! fileList.length) {
-                    return;
-                }
-                Array.from(Array(fileList.length).keys())
-                    .map(x => {
-                        formData.append(fieldName, fileList[x], fileList[x].name);
-                    });
             }
         }
     }
