@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.0.0/masonry.pkgd.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRXeRhZCIYcKhtc-rfHCejAJsEW9rYtt4" ></script>
 </head>
 <body class="bg-white h-screen">
@@ -30,7 +31,7 @@
                 'overflow-hidden': mobileMenuOpen
             }"
         >
-            <nav class="w-full bg-white h-16 shadow px-6 md:px-0 relative lg:fixed z-20">
+            <nav class="w-full bg-white h-16 shadow px-6 py-2 md:px-0 relative lg:fixed z-20">
                 <div class="container mx-auto h-full">
                     <div class="flex items-center justify-center h-full">
                         <div class="text-left">
