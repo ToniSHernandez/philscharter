@@ -3404,6 +3404,22 @@ button,
   height: 100vh;
 }
 
+.h-80p {
+  height: 80vh;
+}
+
+.h-85p {
+  height: 85vh;
+}
+
+.h-90p {
+  height: 90vh;
+}
+
+.h-95p {
+  height: 95vh;
+}
+
 .leading-none {
   line-height: 1;
 }
@@ -7902,6 +7918,22 @@ button,
     height: 100vh;
   }
 
+  .sm\:h-80p {
+    height: 80vh;
+  }
+
+  .sm\:h-85p {
+    height: 85vh;
+  }
+
+  .sm\:h-90p {
+    height: 90vh;
+  }
+
+  .sm\:h-95p {
+    height: 95vh;
+  }
+
   .sm\:leading-none {
     line-height: 1;
   }
@@ -12341,6 +12373,22 @@ button,
 
   .md\:h-screen {
     height: 100vh;
+  }
+
+  .md\:h-80p {
+    height: 80vh;
+  }
+
+  .md\:h-85p {
+    height: 85vh;
+  }
+
+  .md\:h-90p {
+    height: 90vh;
+  }
+
+  .md\:h-95p {
+    height: 95vh;
   }
 
   .md\:leading-none {
@@ -16784,6 +16832,22 @@ button,
     height: 100vh;
   }
 
+  .lg\:h-80p {
+    height: 80vh;
+  }
+
+  .lg\:h-85p {
+    height: 85vh;
+  }
+
+  .lg\:h-90p {
+    height: 90vh;
+  }
+
+  .lg\:h-95p {
+    height: 95vh;
+  }
+
   .lg\:leading-none {
     line-height: 1;
   }
@@ -21223,6 +21287,22 @@ button,
 
   .xl\:h-screen {
     height: 100vh;
+  }
+
+  .xl\:h-80p {
+    height: 80vh;
+  }
+
+  .xl\:h-85p {
+    height: 85vh;
+  }
+
+  .xl\:h-90p {
+    height: 90vh;
+  }
+
+  .xl\:h-95p {
+    height: 95vh;
   }
 
   .xl\:leading-none {
