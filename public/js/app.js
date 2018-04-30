@@ -39185,7 +39185,7 @@ var render = function() {
         _c("div", {
           staticClass: "photo h-48 bg-cover bg-grey-lightest",
           style: {
-            "background-image": "url(" + _vm.service.photo_url + ")"
+            "background-image": "url(/storage/" + _vm.service.photo_url + ")"
           }
         }),
         _vm._v(" "),
