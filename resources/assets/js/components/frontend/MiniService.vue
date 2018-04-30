@@ -4,7 +4,7 @@
             <div
                 class="photo h-48 bg-cover bg-grey-lightest"
                 :style="{
-                    'background-image':'url(' + service.photo_url + ')'
+                    'background-image':'url(/storage/' + service.photo_url + ')'
                 }"
             ></div>
             <div class="p-4 text-center">
