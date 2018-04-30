@@ -60,7 +60,7 @@
             </div>
         </div>
         <div class="flex justify-between items-center pt-2">
-            <a class="button-kma" @click="$emit('submitForm',localReview)" >Edit Review</a>
+            <a class="button-kma" @click="$emit('submitForm',localReview)" >Save Review</a>
             <a class="button-grey" @click="$emit('closeForm')" >nevermind</a>
         </div>
     </div>
