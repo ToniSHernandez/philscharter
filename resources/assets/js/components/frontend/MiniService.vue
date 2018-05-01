@@ -6,7 +6,8 @@
                 :style="{
                     'background-image':'url(/storage/' + service.photo_url + ')'
                 }"
-            ></div>
+            >
+            </div>
             <div class="p-4 text-center">
                 <p class="text-brand-darker font-bold mt-4">{{service.title}}</p>
                 <p class="text-brand-darker font-bold mb-4">{{service.subtitle}}</p>
@@ -21,8 +22,6 @@
 
 <script>
     export default {
-        name: "MiniService",
-
         props: {
             service: {
                 type: Object,
@@ -31,7 +30,3 @@
         }
     }
 </script>
-
-<style scoped>
-
-</style>
