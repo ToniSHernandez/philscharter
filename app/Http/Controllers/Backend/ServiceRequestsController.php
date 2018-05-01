@@ -6,6 +6,7 @@ use App\TripRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\ServiceRequest;
+use App\Lead;
 
 class ServiceRequestsController extends Controller
 {
@@ -20,16 +21,6 @@ class ServiceRequestsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create(Request $request)
-    {
-        dd($request->all());
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -37,6 +28,18 @@ class ServiceRequestsController extends Controller
      */
     public function store(Request $request)
     {
+        // TODO: Move to a Job
+        Lead::create([
+            'service_id' => $request->service_id,
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'message' => $request->comments,
+            'requested_date' => $request->requested_date,
+            'active' => true,
+            'important' => false
+        ]);
+
         return ServiceRequest::create($request->all());
     }
 
@@ -49,17 +52,6 @@ class ServiceRequestsController extends Controller
     public function show(ServiceRequest $serviceRequest)
     {
         return $serviceRequest;
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\TripRequest  $tripRequest
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(TripRequest $tripRequest)
-    {
-        //
     }
 
     /**
