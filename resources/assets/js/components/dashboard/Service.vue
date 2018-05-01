@@ -11,7 +11,7 @@
             </div>
         </div>
         <div v-if="editingService === index" class="bg-grey-lightest rounded p-4 mb-1">
-            <admin-service-fields :service="service" @submitForm="editService($event)" @closeForm="closeService()" ></admin-service-fields>
+            <admin-service-fields :service="service" @submitForm="editService($event)" @closeForm="closeService()"></admin-service-fields>
         </div>
     </div>
 </template>
@@ -40,15 +40,13 @@
                 this.editingService = index;
             },
             editService(service){
-                let vm = this;
                 let formData = new FormData();
-                console.log(service);
                 Array.from(Object.keys(service)).map(serviceName => {
                     formData.append(serviceName, service[serviceName])
                 });
-                axios.patch('/api/services/' + formData.id, formData)
+                axios.patch('/api/services/' + service.id, formData)
                     .then(function (response) {
-                        console.log(response);
+                        console.log(response.data);
                     })
                     .catch(function (error) {
                         console.log(error);
