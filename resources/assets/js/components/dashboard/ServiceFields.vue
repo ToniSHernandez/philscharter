@@ -55,6 +55,7 @@
 
         mounted(){
             this.localService = this.service;
+            this.localService.photo = {};
         },
 
         methods: {

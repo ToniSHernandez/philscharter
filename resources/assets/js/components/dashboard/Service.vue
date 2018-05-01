@@ -39,14 +39,15 @@
             openService(index){
                 this.editingService = index;
             },
-            editService(service){
+            editService(serviceData){
                 let formData = new FormData();
-                Array.from(Object.keys(service)).map(serviceName => {
-                    formData.append(serviceName, service[serviceName])
+                formData.append('_method', 'PATCH');
+                Array.from(Object.keys(serviceData)).map(serviceName => {
+                    formData.append(serviceName, serviceData[serviceName]);
                 });
-                axios.patch('/api/services/' + service.id, formData)
+                axios.post('/api/services/' + serviceData.id, formData)
                     .then(function (response) {
-                        console.log(response.data);
+                        console.log(response);
                     })
                     .catch(function (error) {
                         console.log(error);
