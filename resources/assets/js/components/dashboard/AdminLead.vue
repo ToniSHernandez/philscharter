@@ -11,18 +11,28 @@
                 <div class="w-auto flex-grow">
                     <p class="mb-2 text-grey-dark text-4xl ">{{lead.name}}</p>
                     <div class="flex flex-wrap">
-                        <p class="mb-2 mr-4 p-1 text-grey-dark"><a class="text-grey-darkest"
-                                                                   :href="'tel:' + lead.phone">{{lead.phone}}</a></p>
-                        <p class="mb-2 mr-4 p-1 text-grey-dark"><a class="text-grey-darkest"
-                                                                   :href="'mailto:' + lead.email">{{lead.email}}</a></p>
+                        <p class="mb-2 mr-4 p-1 text-grey-dark">
+                            <a class="text-grey-darkest"
+                               :href="'tel:' + lead.phone"
+                            >
+                                {{lead.phone}}
+                            </a>
+                        </p>
+                        <p class="mb-2 mr-4 p-1 text-grey-dark">
+                            <a class="text-grey-darkest"
+                               :href="'mailto:' + lead.email"
+                            >
+                                {{lead.email}}
+                            </a>
+                        </p>
                     </div>
                     <p class="text-grey-darker leading-normal">{{lead.message}}</p>
                 </div>
                 <div class="w-full lg:w-80 p-4 mt-4 flex justify-between relative items-center text-grey-darker">
                     <a
-                            @click="toggleImportant(lead.id)"
-                            class="cursor-pointer text-center mr-4 w-16 h-16"
-                            :class="{'text-red': lead.important}"
+                        @click="toggleImportant(lead.id)"
+                        class="cursor-pointer text-center mr-4 w-16 h-16"
+                        :class="{'text-red': lead.important}"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -32,9 +42,9 @@
                         <span class="block text-xs">Important</span>
                     </a>
                     <a
-                            class="cursor-pointer hover:text-green text-center mr-4 w-16 h-16"
-                            @click="getNotes(lead.id)"
-                            v-if="!notesExpanded"
+                        class="cursor-pointer hover:text-green text-center mr-4 w-16 h-16"
+                        @click="getNotes(lead.id)"
+                        v-if="!notesExpanded"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -48,9 +58,9 @@
                         <span class="block text-xs">Show&nbsp;Notes</span>
                     </a>
                     <a
-                            class="cursor-pointer text-green hover:text-grey-darker text-center mr-4 w-16 h-16"
-                            @click="notesExpanded = false"
-                            v-if="notesExpanded"
+                        class="cursor-pointer text-green hover:text-grey-darker text-center mr-4 w-16 h-16"
+                        @click="notesExpanded = false"
+                        v-if="notesExpanded"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -61,9 +71,9 @@
                         <span class="block text-xs">Hide&nbsp;Notes</span>
                     </a>
                     <a
-                            @click="archive(lead.id)"
-                            class="cursor-pointer hover:text-red text-center mr-4 w-16 h-16"
-                            v-if="lead.active"
+                        @click="archive(lead.id)"
+                        class="cursor-pointer hover:text-red text-center mr-4 w-16 h-16"
+                        v-if="lead.active"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -75,9 +85,9 @@
                         <span class="block text-xs">Archive</span>
                     </a>
                     <a
-                            @click="unarchive(lead.id)"
-                            class="cursor-pointer hover:text-red text-center mr-4 w-16 h-16"
-                            v-else
+                        @click="unarchive(lead.id)"
+                        class="cursor-pointer hover:text-red text-center mr-4 w-16 h-16"
+                        v-else
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -98,15 +108,16 @@
 
 <script>
     export default {
-        name: "Lead",
-
         props: {
             lead: {
                 type: Object,
-                default: this.lead
+                default: () => { return this.lead }
+            },
+            currentPage: {
+                type: Number,
+                default: this.currentPage
             }
         },
-
         data(){
             return {
                 notes: [],
@@ -114,8 +125,33 @@
                 leadPath: '/api/leads/' + this.lead.id
             }
         },
-
         methods: {
+            archive(id) {
+                axios.patch(this.leadPath, { active: 0 })
+                        .then(() => {
+                        this.$emit('archived', this.viewActiveLeads, this.viewImportantLeads, this.currentPage);
+                });
+            },
+            unarchive(id) {
+                axios.patch(this.leadPath, { active: 1 })
+                    .then(response => {
+                        this.$emit('unarchived', this.viewActiveLeads, this.viewImportantLeads, this.currentPage);
+                    });
+            },
+            toggleImportant(id) {
+                this.lead.important = ! this.lead.important;
+                axios({
+                    method: 'patch',
+                    url: '/api/leads/' + id,
+                    data: {
+                        important: this.lead.important
+                    }
+                })
+                    .then(() => {
+                        let status = this.lead.active === 1;
+                        this.$emit('important', status, this.currentPage);
+                    })
+            },
             getNotes(id) {
                 let url = this.leadPath + '/notes';
                 axios.get(url)
@@ -127,7 +163,3 @@
         }
     }
 </script>
-
-<style scoped>
-
-</style>

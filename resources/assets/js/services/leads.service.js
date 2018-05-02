@@ -1,7 +1,7 @@
 export default class LeadService {
     constructor () {
-        this.active = 'api/leads?important=';
-        this.archived = 'api/archivedleads?important=';
+        this.active = '/api/leads?important=';
+        this.archived = '/api/archivedleads?important=';
     }
     getPage (url) {
         return window.axios.get(url).then(response => response);

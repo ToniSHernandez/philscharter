@@ -7,7 +7,7 @@
                 :active-filter="activeFilter"
                 :important-filter="importantFilter"
                 class="flex w-auto flex-wrap justify-center"
-            ></admin-lead-filters>
+            />
         </div>
         <div class="leads-list pt-4 pb-3">
             <admin-lead
@@ -16,7 +16,11 @@
                 :lead="lead"
                 class="mb-2"
                 :index="index"
-            ></admin-lead>
+                :current-page="pagination.current_page"
+                @archived="onArchived"
+                @unarchived="onUnarchived"
+                @important="refresh"
+            />
         </div>
         <admin-lead-pagination
                 v-if="pagination.total != 0"
@@ -31,8 +35,6 @@ import Pagination from '../../models/pagination';
 import LeadService from '../../services/leads.service';
 
 export default {
-    props: {},
-
     data() {
         return {
             pagination: new Pagination({
@@ -82,6 +84,14 @@ export default {
         },
         filter(attribute) {
             this[attribute] = !this[attribute];
+        },
+        onArchived () {
+            this.getActive(this.importantFilter, this.pagination.current_page);
+            this.$emit('update-leads-count');
+        },
+        onUnarchived () {
+            this.getArchived(this.importantFilter, this.pagination.current_page);
+            this.$emit('update-leads-count');
         },
         getActive(important = this.importantFilter, page = 1) {
             this.leadService.activeLeads(important, page)
