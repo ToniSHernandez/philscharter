@@ -1,5 +1,7 @@
 <?php
 
+use App\ServiceRequest;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +14,13 @@
 */
 
 Auth::routes();
+
+//testing
+Route::get('/mailable', function () {
+    $sr = ServiceRequest::find(1);
+
+    return new App\Mail\TripRequested($sr);
+});
 
 //public
 Route::get('/', 'FrontPageController@index')->name('frontpage');

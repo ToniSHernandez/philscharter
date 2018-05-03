@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\ServiceRequest;
 use App\Lead;
+use App\Mail\TripRequested;
+use App\User;
+use Illuminate\Support\Facades\Mail;
 
 class ServiceRequestsController extends Controller
 {
@@ -40,7 +43,12 @@ class ServiceRequestsController extends Controller
             'important' => false
         ]);
 
-        return ServiceRequest::create($request->all());
+       $serviceRequest = ServiceRequest::create($request->all());
+
+       Mail::to(env('CLIENT_EMAIL'))
+            ->send(new TripRequested($serviceRequest));
+
+        return $serviceRequest;
     }
 
     /**
