@@ -10,6 +10,7 @@ use App\Lead;
 use App\Mail\TripRequested;
 use App\User;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\App;
 
 class ServiceRequestsController extends Controller
 {
@@ -45,8 +46,10 @@ class ServiceRequestsController extends Controller
 
        $serviceRequest = ServiceRequest::create($request->all());
 
-       Mail::to(env('CLIENT_EMAIL'))
-            ->send(new TripRequested($serviceRequest));
+       if (config('app.env') !== 'testing') {
+            Mail::to(env('CLIENT_EMAIL'))
+                ->send(new TripRequested($serviceRequest));
+       }
 
         return $serviceRequest;
     }
