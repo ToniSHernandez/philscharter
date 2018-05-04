@@ -16,7 +16,7 @@
                     <span class="block md:inline-block italic text-xs text-grey-darkest mb-4">{{$service->rate_info}}</span>
                     <p class="text-grey-darker leading-loose">{{$service->description}}</p>
                     <div class="text-center md:text-left py-4" >
-                        <span class="block sm:inline-block px-1"><a class="button-brand" href="#">Book Now</a></span>
+                        <span class="block sm:inline-block px-1"><a class="button-brand" href="/trip-request?service_id={{ $service->id }}">Book Now</a></span>
                         <span class="block sm:inline-block px-1 pt-2"><a class="button-brand-outlined" href="/trips-rates/">More Services</a></span>
                     </div>
                 </div>
