@@ -1,13 +1,19 @@
 <template>
     <div>
         <div class="services-list border-b border-grey-dark pt-4 pb-3">
-            <admin-service v-for="(service, index) in services" :key="service.id" :service="service" :index="index" ></admin-service>
+            <admin-service
+                v-for="(service, index) in services"
+                :key="service.id"
+                :service="service"
+                :index="index"
+                @updated="getServicesList"
+            />
         </div>
         <div class="new-service py-4">
             <a v-if="!addingService" class="inline-block bg-kma text-white rounded-full py-2 px-3 no-underline cursor-pointer" @click="openNewServicePanel" >Add a Service</a>
             <div v-if="addingService" class="bg-grey-lightest rounded p-4" >
                 <h2 class="font-normal mb-2">New Service</h2>
-                <admin-service-fields :service="newService" @submitForm="addService()" @closeForm="closeNewServicePanel()" ></admin-service-fields>
+                <admin-service-fields :service="{}" @submitForm="addService($event)" @closeForm="closeNewServicePanel()" ></admin-service-fields>
             </div>
         </div>
     </div>
@@ -19,7 +25,6 @@
                 services:  [],
                 file: {},
                 addingService: false,
-                newService: {},
                 isInitial: true,
                 dropzoneOptions: {
                     url: ''
@@ -27,10 +32,7 @@
             }
         },
         mounted() {
-            window.axios.get('/api/services')
-                .then(response => {
-                    this.services = response.data
-                });
+            this.getServicesList();
         },
         methods: {
             openNewServicePanel(){
@@ -39,23 +41,27 @@
             closeNewServicePanel(){
                 this.addingService = false;
             },
-            addService(){
-                this.services.push(this.newService);
-                let vm = this;
+            addService(serviceData){
+                this.services.push(serviceData);
                 let formData = new FormData();
-                Array.from(Object.keys(this.newService)).map(serviceName => {
-                    formData.append(serviceName, this.newService[serviceName])
+                Array.from(Object.keys(serviceData)).map(serviceName => {
+                    formData.append(serviceName, serviceData[serviceName])
                 });
                 axios.post('/api/services', formData)
                     .then(function (response) {
                         console.log(response);
-                        vm.newService = {};
                     })
                     .catch(function (error) {
                         console.log(error);
                     });
 
                 this.closeNewServicePanel();
+            },
+            getServicesList() {
+                window.axios.get('/api/services')
+                    .then(response => {
+                        this.services = response.data
+                    });
             }
         }
     }

@@ -34114,21 +34114,17 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(85)
-}
 var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = __webpack_require__(87)
 /* template */
-var __vue_template__ = __webpack_require__(88)
+var __vue_template__ = __webpack_require__(155)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = injectStyle
+var __vue_styles__ = null
 /* scopeId */
-var __vue_scopeId__ = "data-v-26f497da"
+var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -34161,46 +34157,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 85 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(86);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(3)("02adc5a3", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-26f497da\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Service.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-26f497da\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Service.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 86 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(2)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 85 */,
+/* 86 */,
 /* 87 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -34248,13 +34206,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         openService: function openService(index) {
             this.editingService = index;
         },
-        editService: function editService(service) {
+        editService: function editService(serviceData) {
             var formData = new FormData();
-            Array.from(Object.keys(service)).map(function (serviceName) {
-                formData.append(serviceName, service[serviceName]);
+            var vm = this;
+            formData.append('_method', 'PATCH');
+            Array.from(Object.keys(serviceData)).map(function (serviceName) {
+                formData.append(serviceName, serviceData[serviceName]);
             });
-            axios.patch('/api/services/' + service.id, formData).then(function (response) {
-                console.log(response.data);
+            axios.post('/api/services/' + serviceData.id, formData).then(function (response) {
+                vm.$emit('updated');
             }).catch(function (error) {
                 console.log(error);
             });
@@ -34270,92 +34230,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 88 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm.editingService !== _vm.index
-      ? _c(
-          "div",
-          {
-            staticClass:
-              "p-2 mb-1 bg-grey-lighter rounded flex flex-wrap justify-between items-center"
-          },
-          [
-            _c("p", { staticClass: "text-grey-darkest" }, [
-              _vm._v(_vm._s(_vm.service.title))
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "actions flex items-center" }, [
-              _c(
-                "a",
-                {
-                  staticClass:
-                    "bg-grey-darker text-sm rounded-full no-underline py-1 px-2 cursor-pointer mx-1 text-white",
-                  on: {
-                    click: function($event) {
-                      _vm.openService(_vm.index)
-                    }
-                  }
-                },
-                [_vm._v("edit")]
-              ),
-              _vm._v(" "),
-              _c(
-                "a",
-                {
-                  staticClass:
-                    "bg-red text-sm rounded-full no-underline py-1 px-2 cursor-pointer mx-1 text-white",
-                  on: {
-                    click: function($event) {
-                      _vm.deleteService(_vm.index)
-                    }
-                  }
-                },
-                [_vm._v("delete")]
-              )
-            ])
-          ]
-        )
-      : _vm._e(),
-    _vm._v(" "),
-    _vm.editingService === _vm.index
-      ? _c(
-          "div",
-          { staticClass: "bg-grey-lightest rounded p-4 mb-1" },
-          [
-            _c("admin-service-fields", {
-              attrs: { service: _vm.service },
-              on: {
-                submitForm: function($event) {
-                  _vm.editService($event)
-                },
-                closeForm: function($event) {
-                  _vm.closeService()
-                }
-              }
-            })
-          ],
-          1
-        )
-      : _vm._e()
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-26f497da", module.exports)
-  }
-}
-
-/***/ }),
+/* 88 */,
 /* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -34422,6 +34297,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -34429,7 +34310,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             services: [],
             file: {},
             addingService: false,
-            newService: {},
             isInitial: true,
             dropzoneOptions: {
                 url: ''
@@ -34437,11 +34317,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     mounted: function mounted() {
-        var _this = this;
-
-        window.axios.get('/api/services').then(function (response) {
-            _this.services = response.data;
-        });
+        this.getServicesList();
     },
 
     methods: {
@@ -34451,23 +34327,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         closeNewServicePanel: function closeNewServicePanel() {
             this.addingService = false;
         },
-        addService: function addService() {
-            var _this2 = this;
-
-            this.services.push(this.newService);
-            var vm = this;
+        addService: function addService(serviceData) {
+            this.services.push(serviceData);
             var formData = new FormData();
-            Array.from(Object.keys(this.newService)).map(function (serviceName) {
-                formData.append(serviceName, _this2.newService[serviceName]);
+            Array.from(Object.keys(serviceData)).map(function (serviceName) {
+                formData.append(serviceName, serviceData[serviceName]);
             });
             axios.post('/api/services', formData).then(function (response) {
                 console.log(response);
-                vm.newService = {};
             }).catch(function (error) {
                 console.log(error);
             });
 
             this.closeNewServicePanel();
+        },
+        getServicesList: function getServicesList() {
+            var _this = this;
+
+            window.axios.get('/api/services').then(function (response) {
+                _this.services = response.data;
+            });
         }
     }
 });
@@ -34487,7 +34366,8 @@ var render = function() {
       _vm._l(_vm.services, function(service, index) {
         return _c("admin-service", {
           key: service.id,
-          attrs: { service: service, index: index }
+          attrs: { service: service, index: index },
+          on: { updated: _vm.getServicesList }
         })
       })
     ),
@@ -34515,10 +34395,10 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("admin-service-fields", {
-                attrs: { service: _vm.newService },
+                attrs: { service: {} },
                 on: {
                   submitForm: function($event) {
-                    _vm.addService()
+                    _vm.addService($event)
                   },
                   closeForm: function($event) {
                     _vm.closeNewServicePanel()
@@ -34628,7 +34508,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -34677,26 +34557,33 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "ServiceFields",
-
     props: {
         service: {
             type: Object,
             default: {}
         }
     },
-
     data: function data() {
         return {
-            localService: {}
+            localService: {},
+            preview: null
         };
     },
     mounted: function mounted() {
         this.localService = this.service;
     },
-
 
     methods: {
         photoUploaded: function photoUploaded(file) {
@@ -34908,18 +34795,47 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "w-full px-1 py-4" }, [
-          _c("div", { staticClass: "sm:max-w-sm" }, [
-            _c("input", {
-              attrs: { type: "file", name: "photo" },
-              on: {
-                change: function($event) {
-                  _vm.photoUploaded($event.target.files[0])
-                }
-              }
-            })
-          ])
-        ])
+        _vm.localService.photo_url !== null
+          ? _c("div", { staticClass: "w-full px-1 py-4" }, [
+              _c("div", { staticClass: "sm:max-w-sm" }, [
+                _c("img", {
+                  attrs: {
+                    src: "/storage/" + _vm.localService.photo_url,
+                    alt: ""
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "sm:max-w-sm" }, [
+                _c("input", {
+                  attrs: { type: "file", name: "photo" },
+                  on: {
+                    change: function($event) {
+                      _vm.photoUploaded($event.target.files[0])
+                    }
+                  }
+                })
+              ])
+            ])
+          : _c("div", { staticClass: "w-full px-1 py-4" }, [
+              _c("div", { staticClass: "sm:max-w-sm" }, [
+                _c("img", {
+                  ref: _vm.preview,
+                  attrs: { src: _vm.preview, alt: "Your image" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "sm:max-w-sm" }, [
+                _c("input", {
+                  attrs: { type: "file", name: "photo" },
+                  on: {
+                    change: function($event) {
+                      _vm.photoUploaded($event.target.files[0])
+                    }
+                  }
+                })
+              ])
+            ])
       ]
     ),
     _vm._v(" "),
@@ -43375,6 +43291,93 @@ return ImagesLoaded;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 154 */,
+/* 155 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _vm.editingService !== _vm.index
+      ? _c(
+          "div",
+          {
+            staticClass:
+              "p-2 mb-1 bg-grey-lighter rounded flex flex-wrap justify-between items-center"
+          },
+          [
+            _c("p", { staticClass: "text-grey-darkest" }, [
+              _vm._v(_vm._s(_vm.service.title))
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "actions flex items-center" }, [
+              _c(
+                "a",
+                {
+                  staticClass:
+                    "bg-grey-darker text-sm rounded-full no-underline py-1 px-2 cursor-pointer mx-1 text-white",
+                  on: {
+                    click: function($event) {
+                      _vm.openService(_vm.index)
+                    }
+                  }
+                },
+                [_vm._v("edit")]
+              ),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass:
+                    "bg-red text-sm rounded-full no-underline py-1 px-2 cursor-pointer mx-1 text-white",
+                  on: {
+                    click: function($event) {
+                      _vm.deleteService(_vm.index)
+                    }
+                  }
+                },
+                [_vm._v("delete")]
+              )
+            ])
+          ]
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.editingService === _vm.index
+      ? _c(
+          "div",
+          { staticClass: "bg-grey-lightest rounded p-4 mb-1" },
+          [
+            _c("admin-service-fields", {
+              attrs: { service: _vm.service },
+              on: {
+                submitForm: function($event) {
+                  _vm.editService($event)
+                },
+                closeForm: function($event) {
+                  _vm.closeService()
+                }
+              }
+            })
+          ],
+          1
+        )
+      : _vm._e()
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-26f497da", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
