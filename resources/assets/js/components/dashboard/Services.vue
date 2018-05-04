@@ -1,7 +1,13 @@
 <template>
     <div>
         <div class="services-list border-b border-grey-dark pt-4 pb-3">
-            <admin-service v-for="(service, index) in services" :key="service.id" :service="service" :index="index" ></admin-service>
+            <admin-service
+                v-for="(service, index) in services"
+                :key="service.id"
+                :service="service"
+                :index="index"
+                @updated="getServicesList"
+            />
         </div>
         <div class="new-service py-4">
             <a v-if="!addingService" class="inline-block bg-kma text-white rounded-full py-2 px-3 no-underline cursor-pointer" @click="openNewServicePanel" >Add a Service</a>
@@ -26,10 +32,7 @@
             }
         },
         mounted() {
-            window.axios.get('/api/services')
-                .then(response => {
-                    this.services = response.data
-                });
+            this.getServicesList();
         },
         methods: {
             openNewServicePanel(){
@@ -53,6 +56,12 @@
                     });
 
                 this.closeNewServicePanel();
+            },
+            getServicesList() {
+                window.axios.get('/api/services')
+                    .then(response => {
+                        this.services = response.data
+                    });
             }
         }
     }

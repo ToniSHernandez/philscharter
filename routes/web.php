@@ -1,5 +1,7 @@
 <?php
 
+use App\ServiceRequest;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +14,13 @@
 */
 
 Auth::routes();
+
+//testing
+Route::get('/mailable', function () {
+    $sr = ServiceRequest::find(1);
+
+    return new App\Mail\TripRequested($sr);
+});
 
 //public
 Route::get('/', 'FrontPageController@index')->name('frontpage');
@@ -29,6 +38,7 @@ Route::view('/dashboard', 'dashboard')->middleware('auth');
 
 Route::prefix('api/')->name('api.')->namespace('Backend')->group(function () {
     Route::resource('leads', 'LeadsController');
+    Route::get('archivedleads', 'ArchivedLeadsController@index');
     Route::resource('reviews', 'ReviewsController');
     Route::resource('services', 'ServicesController');
     Route::get('featured-services', 'PopularServiceController@index');

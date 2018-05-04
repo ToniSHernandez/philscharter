@@ -91,6 +91,8 @@ class ServicesController extends Controller
             'featured'    => $featured
 
         ]);
+
+        return Service::find($service->id);
     }
 
     /**

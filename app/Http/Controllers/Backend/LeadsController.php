@@ -47,7 +47,8 @@ class LeadsController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|max:190',
             'phone' => 'required|max:15',
-            'message' => 'required'
+            'message' => 'required',
+            'requested_date' => 'required'
         ]);
 
         // $admin = User::admin();

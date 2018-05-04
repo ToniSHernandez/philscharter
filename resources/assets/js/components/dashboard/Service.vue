@@ -41,13 +41,14 @@
             },
             editService(serviceData){
                 let formData = new FormData();
+                let vm = this;
                 formData.append('_method', 'PATCH');
                 Array.from(Object.keys(serviceData)).map(serviceName => {
                     formData.append(serviceName, serviceData[serviceName]);
                 });
                 axios.post('/api/services/' + serviceData.id, formData)
                     .then(function (response) {
-                        console.log(response);
+                        vm.$emit('updated');
                     })
                     .catch(function (error) {
                         console.log(error);
@@ -63,7 +64,3 @@
         }
     }
 </script>
-
-<style scoped>
-
-</style>

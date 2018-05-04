@@ -2,11 +2,12 @@
 
 namespace Tests\Feature;
 
+use App\Lead;
+use App\Service;
 use Tests\TestCase;
 use App\ServiceRequest;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use App\Service;
 
 class ServiceRequestTest extends TestCase
 {
@@ -67,5 +68,21 @@ class ServiceRequestTest extends TestCase
         $this->assertDatabaseHas('service_requests', ['id' => $serviceRequest->id]);
         $this->delete(route('api.service-requests.destroy', $serviceRequest->id))->assertSuccessful();
         $this->assertDatabaseMissing('service_requests', ['id' => $serviceRequest->id]);
+    }
+
+    /** @test */
+    public function a_lead_is_generated_when_a_service_is_requested()
+    {
+        $serviceRequest = factory(ServiceRequest::class)->make()->toArray();
+        $leads = Lead::all();
+
+        $this->assertEmpty($leads);
+
+        $this->post(route('api.service-requests.store'), $serviceRequest)->assertSuccessful();
+
+        $leads = Lead::all();
+
+        $this->assertNotEmpty($leads);
+        $this->assertDatabaseHas('leads', ['message' => $serviceRequest['comments']]);
     }
 }

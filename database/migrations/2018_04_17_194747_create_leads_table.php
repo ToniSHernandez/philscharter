@@ -15,10 +15,12 @@ class CreateLeadsTable extends Migration
     {
         Schema::create('leads', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('service_id');
             $table->string('name');
             $table->string('phone');
             $table->string('email');
             $table->text('message');
+            $table->date('requested_date');
             $table->boolean('active')->default(1);
             $table->boolean('important')->default(0);
             $table->timestamps();

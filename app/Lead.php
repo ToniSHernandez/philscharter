@@ -19,6 +19,8 @@ class Lead extends Model
         'active',
         'message',
         'important',
+        'requested_date',
+        'service_id'
     ];
 
     /**
