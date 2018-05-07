@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\TripRequest;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\ServiceRequest;
 use App\Lead;
-use App\Mail\TripRequested;
 use App\User;
-use Illuminate\Support\Facades\Mail;
+use App\TripRequest;
+use App\ServiceRequest;
+use App\Mail\TripRequested;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 
 class ServiceRequestsController extends Controller
 {
@@ -34,21 +34,21 @@ class ServiceRequestsController extends Controller
     {
         // TODO: Move to a Job
         Lead::create([
-            'service_id' => $request->service_id,
-            'name' => $request->name,
-            'phone' => $request->phone,
-            'email' => $request->email,
-            'message' => $request->comments,
-            'requested_date' => $request->requested_date,
-            'active' => true,
-            'important' => false
+            'service_id'     => $request->service_id,
+            'name'           => $request->name,
+            'phone'          => $request->phone,
+            'email'          => $request->email,
+            'message'        => $request->comments,
+            'active'         => true,
+            'important'      => false,
+            'requested_date' => $request->requested_date
         ]);
 
        $serviceRequest = ServiceRequest::create($request->all());
 
        if (config('app.env') !== 'testing') {
             Mail::to(env('CLIENT_EMAIL'))
-                ->cc('daron@kerigan.com')
+                ->bcc(['daron@kerigan.com', 'jack@kerigan.com'])
                 ->send(new TripRequested($serviceRequest));
        }
 
