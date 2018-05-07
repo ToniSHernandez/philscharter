@@ -144,6 +144,7 @@
                     this.readyToSubmit = false;
                 })
                 .catch(err => {
+                    console.log(err);
                     alert('an error occured');
                 })
             },

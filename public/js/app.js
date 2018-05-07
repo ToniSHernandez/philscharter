@@ -38681,6 +38681,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.message = 'Thank you for requesting a trip with us. Please allow 24 hours for us to find the closest time slot available and get back with you.';
                 _this2.readyToSubmit = false;
             }).catch(function (err) {
+                console.log(err);
                 alert('an error occured');
             });
         },
