@@ -10,6 +10,7 @@ class ShowServiceController extends Controller
     public function show($slug)
     {
         $service = Service::where('slug', $slug)->first();
+
         return view('services.single-service', compact('service'));
     }
 }
