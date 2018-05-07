@@ -38448,7 +38448,7 @@ var staticRenderFns = [
       _c("input", {
         staticClass:
           "rounded-full border border-brand w-full text-sm text-white h-10 my-1 px-4 bg-red-darker",
-        attrs: { type: "number", name: "guests", value: "1" }
+        attrs: { type: "number", name: "guests", value: "2" }
       })
     ])
   },
@@ -38957,7 +38957,7 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "w-full md:w-2/3 p-4" }, [
           _c("label", { staticClass: "block text-grey-darker my-1" }, [
-            _vm._v("What else should we know?")
+            _vm._v("Anything else should we know?")
           ]),
           _vm._v(" "),
           _c("textarea", {

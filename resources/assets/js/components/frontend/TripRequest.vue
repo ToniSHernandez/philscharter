@@ -52,7 +52,7 @@
             />
         </div>
         <div class="w-full md:w-2/3 p-4" >
-            <label class="block text-grey-darker my-1">What else should we know?</label>
+            <label class="block text-grey-darker my-1">Anything else should we know?</label>
             <textarea v-model="comments" cols="30" rows="5" class="input-textarea" @keyup="checkFormStatus()"></textarea>
         </div>
     </div>

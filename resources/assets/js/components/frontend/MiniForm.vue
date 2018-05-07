@@ -21,7 +21,7 @@
                             type="number"
                             class="rounded-full border border-brand w-full text-sm text-white h-10 my-1 px-4 bg-red-darker"
                             name="guests"
-                            value="1"
+                            value="2"
                         >
                     </div>
                 </div>
