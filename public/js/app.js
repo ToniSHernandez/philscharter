@@ -38678,7 +38678,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this2.requested_date = '';
                 _this2.guests = '';
                 _this2.comments = '';
-                _this2.message = 'Thank you for requesting a trip with us. Please allow 24 hours for us to find the closest time slot available and get back with you.';
+                _this2.message = 'Thank you! Your request has been received. We review email each afternoon and will reply to you within 24 hours to confirm your time or provide the closest available.';
                 _this2.readyToSubmit = false;
             }).catch(function (err) {
                 console.log(err);
