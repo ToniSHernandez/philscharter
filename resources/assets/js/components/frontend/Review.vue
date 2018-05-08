@@ -5,7 +5,7 @@
                 &ldquo;
             </div>
             <div class="max-w-full lg:max-w-lg px-2">
-                <p class="review-post">
+                <p class="review-post text-grey-dark font-medium text-lg leading-normal">
                     {{ review.body }}
                 </p>
             </div>
@@ -14,7 +14,7 @@
             </div>
         </div>
         <p class="reviewer font-semibold italic pb-6">
-            {{ review.author }}
+            {{ authorString }}
         </p>
     </div>
 </template>
@@ -28,7 +28,55 @@
                 type: Object,
                 default: {}
             }
+        },
+
+        data(){
+            return {
+                postedOn: '',
+                authorString: ''
+            }
+        },
+
+        mounted(){
+            this.postedOn = this.convertDate(this.review.submitted_on);
+            this.authorString = this.buildByLine();
+        },
+
+        methods:{
+            convertDate(timestamp){
+                let jsDate = new Date(timestamp);
+                let options = {
+                    year: 'numeric',
+                    month: 'long'
+                };
+
+                return jsDate.toLocaleDateString('en-US', options);
+            },
+            buildByLine(){
+                let newString = this.review.author;
+
+                if(this.review.rating !== 0){
+                    newString = newString + ' rated ' + this.review.rating + ' stars ';
+                }
+
+                if(this.review.source !== ''){
+                    newString = newString + ' on ' + this.review.source;
+                }
+
+                if(this.postedOn !== ''){
+                    if(this.review.source !== ''){
+                        newString = newString + ' in ';
+                    }else{
+                        newString = newString + ', ';
+                    }
+                    newString = newString + this.postedOn;
+                }
+
+                return newString;
+            }
         }
+
+
     }
 </script>
 
