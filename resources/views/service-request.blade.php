@@ -5,7 +5,7 @@
         <div class="container mx-auto p-4 md:my-10">
             <div class="px-4 pb-4">
                 <h1 class="text-brand-darker mb-3">Request a Trip</h1>
-                <p class="leading-normal text-grey-darker">
+                <p class="leading-normal text-grey-darkest font-medium">
                     Our online trip request function is a convenient way for you to secure your spot.
                     <strong>By submitting the info below you are not booking a trip but rather requesting that time.</strong> We review email each afternoon and will reply to you within 24 hours to confirm.
                     <hr>
