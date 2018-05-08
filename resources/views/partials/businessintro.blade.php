@@ -7,15 +7,15 @@
                  alt="Phil's Charter Service">
         </div>
         <div class="flex-auto max-w-full lg:max-w-lg mx-auto pt-4 px-2 text-center leading-loose text-white">
-            <h1 class="text-2xl font-medium">Voted Best Charter Captain on the Forgotten Coast, 2015 & 2017!</h1>
-            <p class="text-sm text-grey py-4">Welcome to Phil’s Charter Service. With over 1,000 successful trips on
+            <h1 class="text-3xl font-bold leading-normal">Voted Best Charter Captain on the Forgotten Coast, 2015 & 2017!</h1>
+            <p class="text-white font-medium py-4">Welcome to Phil’s Charter Service. With over 1,000 successful trips on
                 St. Joseph Bay and surrounding waters, I feel
                 confident I can provide you and your family and friends, a safe, enjoyable trip you’ll remember for
                 a lifetime. The
                 variety of fish we catch in St Joe Bay is amazing, including speckled sea trout, red drum, black
                 drum, flounder,
                 sheepshead, Spanish mackerel, pompano, shark and many others. </p>
-            <p class="text-sm text-grey">I provide the experience, equipment, bait and license. All you need to
+            <p class="text-white font-medium">I provide the experience, equipment, bait and license. All you need to
                 bring is sunscreen, snacks, and drinks.
                 I’ll even clean your fish, if you want to take home dinner!</p>
             <div class="pt-4">

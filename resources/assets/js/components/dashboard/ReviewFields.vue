@@ -12,6 +12,9 @@
                     <input v-model="localReview.source" type="text" class="input-text" placeholder="Review source (Google, Facebook, etc)" />
                 </div>
                 <div class="w-full">
+                    <input v-model="localReview.submitted_on" type="text" class="input-text" placeholder="Date of Review" />
+                </div>
+                <div class="w-full">
                     <input v-model="localReview.rating" type="hidden" class="input-text" />
                     <div class="flex justify-start items-center">
                         <span class="inline-block font-bold mr-3">Rating: </span>
