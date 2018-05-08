@@ -38984,7 +38984,7 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "w-full md:w-2/3 p-4" }, [
           _c("label", { staticClass: "block text-grey-darker my-1" }, [
-            _vm._v("Anything else should we know?")
+            _vm._v("Anything else should we know? (optional)")
           ]),
           _vm._v(" "),
           _c("textarea", {
