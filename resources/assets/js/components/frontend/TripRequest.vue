@@ -140,7 +140,7 @@
                     this.requested_date = '';
                     this.guests = '';
                     this.comments = '';
-                    this.message = 'Thank you for requesting a trip with us. Please allow 24 hours for us to find the closest time slot available and get back with you.'
+                    this.message = 'Thank you! Your request has been received. We review email each afternoon and will reply to you within 24 hours to confirm your time or provide the closest available.'
                     this.readyToSubmit = false;
                 })
                 .catch(err => {
