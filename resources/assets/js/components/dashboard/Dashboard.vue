@@ -127,14 +127,14 @@
                 <h1 class="text-white text-5xl font-normal mt-4 pb-1 border-b border-grey-dark">Reviews</h1>
                 <admin-reviews v-on:switchto="switchto('dashboard')"></admin-reviews>
             </div>
-            <div v-if="section == 'contactinfo'">
-                <h1 class="text-white text-5xl font-normal mt-4 pb-1 border-b border-grey-dark">Contact Info</h1>
-                <admin-cotact-info v-on:switchto="switchto('dashboard')"></admin-cotact-info>
-            </div>
-            <div v-if="section == 'pages'">
-                <h1 class="text-white text-5xl font-normal mt-4 pb-1 border-b border-grey-dark">Pages</h1>
-                <admin-pages></admin-pages>
-            </div>
+            <!--<div v-if="section == 'contactinfo'">-->
+                <!--<h1 class="text-white text-5xl font-normal mt-4 pb-1 border-b border-grey-dark">Contact Info</h1>-->
+                <!--<admin-cotact-info v-on:switchto="switchto('dashboard')"></admin-cotact-info>-->
+            <!--</div>-->
+            <!--<div v-if="section == 'pages'">-->
+                <!--<h1 class="text-white text-5xl font-normal mt-4 pb-1 border-b border-grey-dark">Pages</h1>-->
+                <!--<admin-pages></admin-pages>-->
+            <!--</div>-->
         </div>
     </div>
 </template>
