@@ -22,6 +22,7 @@
                     Feature on the Home page?
                 </label>
             </div>
+            <input type="hidden" v-model="localService.photo_url" >
             <div class="w-full px-1 py-4" v-if="localService.photo_url !== null">
                 <div class="sm:max-w-sm">
                     <img :src="'/storage/' + localService.photo_url" alt="">
@@ -66,6 +67,7 @@
         methods: {
             photoUploaded(file) {
                 this.localService.photo = file;
+                console.log(this.localService.photo);
             }
         }
     }

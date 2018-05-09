@@ -34428,10 +34428,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             services: [],
             file: {},
             addingService: false,
-            isInitial: true,
-            dropzoneOptions: {
-                url: ''
-            }
+            isInitial: true
         };
     },
     mounted: function mounted() {
@@ -34464,6 +34461,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             window.axios.get('/api/services').then(function (response) {
                 _this.services = response.data;
+                console.log(_this.services);
             });
         }
     }
@@ -34641,6 +34639,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
@@ -34662,6 +34661,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         photoUploaded: function photoUploaded(file) {
             this.localService.photo = file;
+            console.log(this.localService.photo);
         }
     }
 });
@@ -34868,6 +34868,27 @@ var render = function() {
             _vm._v("\n                Feature on the Home page?\n            ")
           ])
         ]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.localService.photo_url,
+              expression: "localService.photo_url"
+            }
+          ],
+          attrs: { type: "hidden" },
+          domProps: { value: _vm.localService.photo_url },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.localService, "photo_url", $event.target.value)
+            }
+          }
+        }),
         _vm._v(" "),
         _vm.localService.photo_url !== null
           ? _c("div", { staticClass: "w-full px-1 py-4" }, [

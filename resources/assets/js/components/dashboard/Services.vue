@@ -25,10 +25,7 @@
                 services:  [],
                 file: {},
                 addingService: false,
-                isInitial: true,
-                dropzoneOptions: {
-                    url: ''
-                }
+                isInitial: true
             }
         },
         mounted() {
@@ -61,6 +58,7 @@
                 window.axios.get('/api/services')
                     .then(response => {
                         this.services = response.data
+                        console.log(this.services);
                     });
             }
         }

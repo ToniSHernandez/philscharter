@@ -75,7 +75,10 @@ class ServicesController extends Controller
      */
     public function update(Request $request, Service $service)
     {
-        $photoUrl = $request->file('photo') ? $request->file('photo')->store('service_photos'): null;
+
+        $newPhoto = $request->file('photo') ? $request->file('photo')->store('service_photos'): null;
+        $photoUrl = $newPhoto ? $newPhoto : $request->photo_url;
+
         $title    = $request->title ?? $service->title;
         $slug     = str_slug($title, '-');
         $featured = $request->featured ?? $service->featured;
