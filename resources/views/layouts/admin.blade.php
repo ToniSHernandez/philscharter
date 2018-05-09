@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0" >
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" >
     <meta name="robots" content="none">
 
     <!-- CSRF Token -->
@@ -15,22 +15,8 @@
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 <body class="h-screen text-grey-darkest bg-grey-darkest">
-<div
-        id="app"
-        class="flex min-h-full"
-        :class="{
-            'flex-col': !mobileMenuOpen,
-            'flex-row': mobileMenuOpen
-        }"
->
-    <div
-            class="site-wrapper w-full"
-            :class="{
-                'menu-open': mobileMenuOpen,
-                'overflow-hidden': mobileMenuOpen
-            }"
-    >
-
+<div id="app" class="flex min-h-full flex-col" >
+    <div class="site-wrapper w-full" >
         <nav class="bg-white h-12 shadow px-0">
             <div class="container mx-auto h-full">
                 <div class="flex items-center justify-center h-12 px-2">
@@ -72,15 +58,6 @@
             @yield('content')
         </div>
 
-    </div>
-    <div v-if="mobileMenuOpen" class="mobile-menu bg-grey-darker py-6 relative z-30">
-        <nav>
-            <a class="block w-full sm:inline-block my-3 p-3 no-underline uppercase font-bold cursor-pointer text-white" @click="changesection('dashboard')" >Dashboard</a>
-            <a class="block w-full sm:inline-block my-3 p-3 no-underline uppercase font-bold cursor-pointer text-white" @click="changesection('leads')" >Leads</a>
-            <a class="block w-full sm:inline-block my-3 p-3 no-underline uppercase font-bold cursor-pointer text-white" @click="changesection('services')" >Services</a>
-            <a class="block w-full sm:inline-block my-3 p-3 no-underline uppercase font-bold cursor-pointer text-white" @click="changesection('pages')" >Pages</a>
-            <a class="block w-full sm:inline-block my-3 p-3 no-underline uppercase font-bold cursor-pointer text-white" @click="changesection('contactinfo')" >Contact Info</a>
-        </nav>
     </div>
 </div>
 <!-- Scripts -->
