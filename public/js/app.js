@@ -31880,6 +31880,26 @@ var _this = this;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
@@ -31898,8 +31918,12 @@ var _this = this;
         return {
             notes: [],
             notesExpanded: false,
-            leadPath: '/api/leads/' + this.lead.id
+            leadPath: '/api/leads/' + this.lead.id,
+            humanTime: ''
         };
+    },
+    mounted: function mounted() {
+        this.humanTime = this.lead.created_at;
     },
 
     methods: {
@@ -31963,305 +31987,388 @@ var render = function() {
         }
       },
       [
-        _c("div", { staticClass: "flex flex-wrap" }, [
-          _c("div", { staticClass: "w-auto flex-grow" }, [
-            _c("p", { staticClass: "mb-2 text-grey-dark text-4xl " }, [
-              _vm._v(_vm._s(_vm.lead.name))
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "flex flex-wrap" }, [
-              _c("p", { staticClass: "mb-2 mr-4 p-1 text-grey-dark" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "text-grey-darkest",
-                    attrs: { href: "tel:" + _vm.lead.phone }
-                  },
-                  [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(_vm.lead.phone) +
-                        "\n                        "
-                    )
-                  ]
-                )
+        _c(
+          "div",
+          { staticClass: "flex flex-wrap lg:flex-no-wrap items-start" },
+          [
+            _c("div", { staticClass: "w-full flex-grow" }, [
+              _c("p", { staticClass: "mb-2 mr-4 p-1 text-grey-dark italic" }, [
+                _vm._v(_vm._s(_vm.humanTime))
               ]),
               _vm._v(" "),
-              _c("p", { staticClass: "mb-2 mr-4 p-1 text-grey-dark" }, [
+              _c("p", { staticClass: "mb-2 text-kma text-4xl " }, [
+                _vm._v(_vm._s(_vm.lead.name))
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex flex-wrap" }, [
+                _c("p", { staticClass: "mb-2 mr-4 pb-4 text-grey-dark" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "text-grey-darkest",
+                      attrs: { href: "tel:" + _vm.lead.phone }
+                    },
+                    [
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(_vm.lead.phone) +
+                          "\n                        "
+                      )
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "mb-2 mr-4 pb-4 text-grey-dark" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "text-grey-darkest",
+                      attrs: { href: "mailto:" + _vm.lead.email }
+                    },
+                    [
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(_vm.lead.email) +
+                          "\n                        "
+                      )
+                    ]
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _vm.lead.service_request !== null
+                ? _c("div", { staticClass: "border-t border-b border-grey" }, [
+                    _c(
+                      "p",
+                      {
+                        staticClass: "text-grey-dark font-bold uppercase mt-4"
+                      },
+                      [_vm._v("Request details:")]
+                    ),
+                    _vm._v(" "),
+                    _c("table", { staticClass: "py-4" }, [
+                      _c("tr", [
+                        _c(
+                          "td",
+                          {
+                            staticClass: "py-1 pr-4 font-bold text-grey-darker"
+                          },
+                          [_vm._v("Trip Type")]
+                        ),
+                        _c("td", [_vm._v(_vm._s(_vm.lead.service.title))])
+                      ]),
+                      _vm._v(" "),
+                      _c("tr", [
+                        _c(
+                          "td",
+                          {
+                            staticClass: "py-1 pr-4 font-bold text-grey-darker"
+                          },
+                          [_vm._v("Trip Date")]
+                        ),
+                        _c("td", [
+                          _vm._v(
+                            _vm._s(_vm.lead.service_request.requested_date)
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("tr", [
+                        _c(
+                          "td",
+                          {
+                            staticClass: "py-1 pr-4 font-bold text-grey-darker"
+                          },
+                          [_vm._v("Guests")]
+                        ),
+                        _c("td", [
+                          _vm._v(_vm._s(_vm.lead.service_request.guests))
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("tr", [
+                        _c(
+                          "td",
+                          {
+                            staticClass: "py-1 pr-4 font-bold text-grey-darker"
+                          },
+                          [_vm._v("Message")]
+                        ),
+                        _c("td", [
+                          _vm._v(_vm._s(_vm.lead.service_request.comments))
+                        ])
+                      ])
+                    ])
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.lead.service_request === null
+                ? _c("div", [
+                    _c(
+                      "p",
+                      { staticClass: "text-grey-darker leading-normal" },
+                      [_vm._v(_vm._s(_vm.lead.message))]
+                    )
+                  ])
+                : _vm._e()
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "w-full lg:w-80 p-4 mt-4 flex justify-between relative items-center text-grey-darker"
+              },
+              [
                 _c(
                   "a",
                   {
-                    staticClass: "text-grey-darkest",
-                    attrs: { href: "mailto:" + _vm.lead.email }
+                    staticClass: "cursor-pointer text-center mr-4 w-16 h-12",
+                    class: { "text-red": _vm.lead.important },
+                    on: {
+                      click: function($event) {
+                        _vm.toggleImportant(_vm.lead.id)
+                      }
+                    }
                   },
                   [
-                    _vm._v(
-                      "\n                            " +
-                        _vm._s(_vm.lead.email) +
-                        "\n                        "
-                    )
-                  ]
-                )
-              ])
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-grey-darker leading-normal" }, [
-              _vm._v(_vm._s(_vm.lead.message))
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass:
-                "w-full lg:w-80 p-4 mt-4 flex justify-between relative items-center text-grey-darker"
-            },
-            [
-              _c(
-                "a",
-                {
-                  staticClass: "cursor-pointer text-center mr-4 w-16 h-16",
-                  class: { "text-red": _vm.lead.important },
-                  on: {
-                    click: function($event) {
-                      _vm.toggleImportant(_vm.lead.id)
-                    }
-                  }
-                },
-                [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "feather feather-bookmark h-6",
-                      attrs: {
-                        xmlns: "http://www.w3.org/2000/svg",
-                        viewBox: "0 0 24 24",
-                        fill: "none",
-                        stroke: "currentColor",
-                        "stroke-width": "2",
-                        "stroke-linecap": "round",
-                        "stroke-linejoin": "round"
-                      }
-                    },
-                    [
-                      _c("path", {
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "feather feather-bookmark h-6",
                         attrs: {
-                          d: "M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
+                          xmlns: "http://www.w3.org/2000/svg",
+                          viewBox: "0 0 24 24",
+                          fill: "none",
+                          stroke: "currentColor",
+                          "stroke-width": "2",
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round"
                         }
-                      })
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("span", { staticClass: "block text-xs" }, [
-                    _vm._v("Important")
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              !_vm.notesExpanded
-                ? _c(
-                    "a",
-                    {
-                      staticClass:
-                        "cursor-pointer hover:text-green text-center mr-4 w-16 h-16",
-                      on: {
-                        click: function($event) {
-                          _vm.getNotes(_vm.lead.id)
-                        }
-                      }
-                    },
-                    [
-                      _c(
-                        "svg",
-                        {
-                          staticClass: "feather feather-file-text h-6",
+                      },
+                      [
+                        _c("path", {
                           attrs: {
-                            xmlns: "http://www.w3.org/2000/svg",
-                            viewBox: "0 0 24 24",
-                            fill: "none",
-                            stroke: "currentColor",
-                            "stroke-width": "2",
-                            "stroke-linecap": "round",
-                            "stroke-linejoin": "round"
+                            d:
+                              "M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
                           }
-                        },
-                        [
-                          _c("path", {
-                            attrs: {
-                              d:
-                                "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("polyline", {
-                            attrs: { points: "14 2 14 8 20 8" }
-                          }),
-                          _vm._v(" "),
-                          _c("line", {
-                            attrs: { x1: "16", y1: "13", x2: "8", y2: "13" }
-                          }),
-                          _vm._v(" "),
-                          _c("line", {
-                            attrs: { x1: "16", y1: "17", x2: "8", y2: "17" }
-                          }),
-                          _vm._v(" "),
-                          _c("polyline", { attrs: { points: "10 9 9 9 8 9" } })
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "block text-xs" }, [
-                        _vm._v("Show Notes")
-                      ])
-                    ]
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.notesExpanded
-                ? _c(
-                    "a",
-                    {
-                      staticClass:
-                        "cursor-pointer text-green hover:text-grey-darker text-center mr-4 w-16 h-16",
-                      on: {
-                        click: function($event) {
-                          _vm.notesExpanded = false
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "block text-xs" }, [
+                      _vm._v("Important")
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                !_vm.notesExpanded
+                  ? _c(
+                      "a",
+                      {
+                        staticClass:
+                          "cursor-pointer hover:text-green text-center mr-4 w-16 h-12",
+                        on: {
+                          click: function($event) {
+                            _vm.getNotes(_vm.lead.id)
+                          }
                         }
-                      }
-                    },
-                    [
-                      _c(
-                        "svg",
-                        {
-                          staticClass: "feather feather-file h-6",
-                          attrs: {
-                            xmlns: "http://www.w3.org/2000/svg",
-                            viewBox: "0 0 24 24",
-                            fill: "none",
-                            stroke: "currentColor",
-                            "stroke-width": "2",
-                            "stroke-linecap": "round",
-                            "stroke-linejoin": "round"
-                          }
-                        },
-                        [
-                          _c("path", {
+                      },
+                      [
+                        _c(
+                          "svg",
+                          {
+                            staticClass: "feather feather-file-text h-6",
                             attrs: {
-                              d:
-                                "M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"
+                              xmlns: "http://www.w3.org/2000/svg",
+                              viewBox: "0 0 24 24",
+                              fill: "none",
+                              stroke: "currentColor",
+                              "stroke-width": "2",
+                              "stroke-linecap": "round",
+                              "stroke-linejoin": "round"
                             }
-                          }),
-                          _vm._v(" "),
-                          _c("polyline", {
-                            attrs: { points: "13 2 13 9 20 9" }
-                          })
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "block text-xs" }, [
-                        _vm._v("Hide Notes")
-                      ])
-                    ]
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.lead.active
-                ? _c(
-                    "a",
-                    {
-                      staticClass:
-                        "cursor-pointer hover:text-red text-center mr-4 w-16 h-16",
-                      on: {
-                        click: function($event) {
-                          _vm.archive(_vm.lead.id)
+                          },
+                          [
+                            _c("path", {
+                              attrs: {
+                                d:
+                                  "M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("polyline", {
+                              attrs: { points: "14 2 14 8 20 8" }
+                            }),
+                            _vm._v(" "),
+                            _c("line", {
+                              attrs: { x1: "16", y1: "13", x2: "8", y2: "13" }
+                            }),
+                            _vm._v(" "),
+                            _c("line", {
+                              attrs: { x1: "16", y1: "17", x2: "8", y2: "17" }
+                            }),
+                            _vm._v(" "),
+                            _c("polyline", {
+                              attrs: { points: "10 9 9 9 8 9" }
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "block text-xs" }, [
+                          _vm._v("Show Notes")
+                        ])
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.notesExpanded
+                  ? _c(
+                      "a",
+                      {
+                        staticClass:
+                          "cursor-pointer text-green hover:text-grey-darker text-center mr-4 w-16 h-12",
+                        on: {
+                          click: function($event) {
+                            _vm.notesExpanded = false
+                          }
                         }
-                      }
-                    },
-                    [
-                      _c(
-                        "svg",
-                        {
-                          staticClass: "feather feather-folder-plus h-6",
-                          attrs: {
-                            xmlns: "http://www.w3.org/2000/svg",
-                            viewBox: "0 0 24 24",
-                            fill: "none",
-                            stroke: "currentColor",
-                            "stroke-width": "2",
-                            "stroke-linecap": "round",
-                            "stroke-linejoin": "round"
-                          }
-                        },
-                        [
-                          _c("path", {
+                      },
+                      [
+                        _c(
+                          "svg",
+                          {
+                            staticClass: "feather feather-file h-6",
                             attrs: {
-                              d:
-                                "M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                              xmlns: "http://www.w3.org/2000/svg",
+                              viewBox: "0 0 24 24",
+                              fill: "none",
+                              stroke: "currentColor",
+                              "stroke-width": "2",
+                              "stroke-linecap": "round",
+                              "stroke-linejoin": "round"
                             }
-                          }),
-                          _vm._v(" "),
-                          _c("line", {
-                            attrs: { x1: "12", y1: "11", x2: "12", y2: "17" }
-                          }),
-                          _vm._v(" "),
-                          _c("line", {
-                            attrs: { x1: "9", y1: "14", x2: "15", y2: "14" }
-                          })
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "block text-xs" }, [
-                        _vm._v("Archive")
-                      ])
-                    ]
-                  )
-                : _c(
-                    "a",
-                    {
-                      staticClass:
-                        "cursor-pointer hover:text-red text-center mr-4 w-16 h-16",
-                      on: {
-                        click: function($event) {
-                          _vm.unarchive(_vm.lead.id)
+                          },
+                          [
+                            _c("path", {
+                              attrs: {
+                                d:
+                                  "M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("polyline", {
+                              attrs: { points: "13 2 13 9 20 9" }
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "block text-xs" }, [
+                          _vm._v("Hide Notes")
+                        ])
+                      ]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.lead.active
+                  ? _c(
+                      "a",
+                      {
+                        staticClass:
+                          "cursor-pointer hover:text-red text-center mr-4 w-16 h-12",
+                        on: {
+                          click: function($event) {
+                            _vm.archive(_vm.lead.id)
+                          }
                         }
-                      }
-                    },
-                    [
-                      _c(
-                        "svg",
-                        {
-                          staticClass: "feather feather-folder-minus h-6",
-                          attrs: {
-                            xmlns: "http://www.w3.org/2000/svg",
-                            viewBox: "0 0 24 24",
-                            fill: "none",
-                            stroke: "currentColor",
-                            "stroke-width": "2",
-                            "stroke-linecap": "round",
-                            "stroke-linejoin": "round"
-                          }
-                        },
-                        [
-                          _c("path", {
+                      },
+                      [
+                        _c(
+                          "svg",
+                          {
+                            staticClass: "feather feather-folder-plus h-6",
                             attrs: {
-                              d:
-                                "M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                              xmlns: "http://www.w3.org/2000/svg",
+                              viewBox: "0 0 24 24",
+                              fill: "none",
+                              stroke: "currentColor",
+                              "stroke-width": "2",
+                              "stroke-linecap": "round",
+                              "stroke-linejoin": "round"
                             }
-                          }),
-                          _vm._v(" "),
-                          _c("line", {
-                            attrs: { x1: "9", y1: "14", x2: "15", y2: "14" }
-                          })
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "block text-xs" }, [
-                        _vm._v("Unarchive")
-                      ])
-                    ]
-                  )
-            ]
-          )
-        ]),
+                          },
+                          [
+                            _c("path", {
+                              attrs: {
+                                d:
+                                  "M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("line", {
+                              attrs: { x1: "12", y1: "11", x2: "12", y2: "17" }
+                            }),
+                            _vm._v(" "),
+                            _c("line", {
+                              attrs: { x1: "9", y1: "14", x2: "15", y2: "14" }
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "block text-xs" }, [
+                          _vm._v("Archive")
+                        ])
+                      ]
+                    )
+                  : _c(
+                      "a",
+                      {
+                        staticClass:
+                          "cursor-pointer hover:text-red text-center mr-4 w-16 h-12",
+                        on: {
+                          click: function($event) {
+                            _vm.unarchive(_vm.lead.id)
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "svg",
+                          {
+                            staticClass: "feather feather-folder-minus h-6",
+                            attrs: {
+                              xmlns: "http://www.w3.org/2000/svg",
+                              viewBox: "0 0 24 24",
+                              fill: "none",
+                              stroke: "currentColor",
+                              "stroke-width": "2",
+                              "stroke-linecap": "round",
+                              "stroke-linejoin": "round"
+                            }
+                          },
+                          [
+                            _c("path", {
+                              attrs: {
+                                d:
+                                  "M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("line", {
+                              attrs: { x1: "9", y1: "14", x2: "15", y2: "14" }
+                            })
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "block text-xs" }, [
+                          _vm._v("Unarchive")
+                        ])
+                      ]
+                    )
+              ]
+            )
+          ]
+        ),
         _vm._v(" "),
         _vm.notesExpanded
           ? _c("div", [
@@ -32948,7 +33055,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['pagination'],
@@ -32979,11 +33085,10 @@ var render = function() {
             "button",
             {
               staticClass:
-                "text-grey-darker px-4 py-2 text-center cursor-pointer shadow rounded-sm",
+                "text-grey-darker bg-grey-lightest px-4 py-2 text-center cursor-pointer shadow rounded-sm",
               class: {
                 "cursor-not-allowed": _vm.pagination.prev_page_url == null,
-                "bg-brand-lightest": _vm.pagination.prev_page_url == null,
-                "bg-tan-lightest": _vm.pagination.prev_page_url != null
+                "opacity-50": _vm.pagination.prev_page_url != null
               },
               attrs: { disabled: _vm.pagination.prev_page_url == null },
               on: {
@@ -33001,7 +33106,7 @@ var render = function() {
             "a",
             {
               staticClass:
-                "text-grey-darker bg-brand-lightest px-4 py-2 text-center flex shadow items-center rounded-sm"
+                "text-grey-darker bg-grey-lightest px-4 py-2 text-center flex shadow items-center rounded-sm"
             },
             [
               _vm._v(
@@ -33018,7 +33123,7 @@ var render = function() {
             "button",
             {
               staticClass:
-                "text-grey-darker bg-tan-lightest px-4 py-2 text-center cursor-pointer shadow rounded-sm",
+                "text-grey-darker bg-grey-lightest px-4 py-2 text-center cursor-pointer shadow rounded-sm",
               class: {
                 "cursor-not-allowed": _vm.pagination.next_page_url == null,
                 "opacity-50": _vm.pagination.next_page_url == null
@@ -33045,8 +33150,7 @@ var render = function() {
                 _c(
                   "p",
                   {
-                    staticClass:
-                      "m-2 align-middle font-thin text-dbblue-darkest"
+                    staticClass: "m-2 align-middle font-thin text-grey-lighter"
                   },
                   [
                     _vm._v(

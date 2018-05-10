@@ -2,7 +2,9 @@
 namespace App;
 
 use App\Note;
+use App\Service;
 use Carbon\Carbon;
+use App\ServiceRequest;
 use Illuminate\Database\Eloquent\Model;
 
 class Lead extends Model
@@ -20,7 +22,8 @@ class Lead extends Model
         'message',
         'important',
         'requested_date',
-        'service_id'
+        'service_id',
+        'service_request_id'
     ];
 
     /**
@@ -29,6 +32,26 @@ class Lead extends Model
      * @var array
      */
     protected $appends = ['diff'];
+
+    /**
+    * A lead has one service.
+    *
+    * @return \Illuminate\Database\Eloquent\Relations\HasOne;
+    */
+    public function service()
+    {
+        return $this->hasOne(Service::class, 'id', 'service_id');
+    }
+
+    /**
+    * A lead has one service request.
+    *
+    * @return \Illuminate\Database\Eloquent\Relations\HasOne;
+    */
+    public function serviceRequest()
+    {
+        return $this->hasOne(ServiceRequest::class, 'id', 'service_request_id');
+    }
 
     /**
      * A lead has many notes.

@@ -26,11 +26,13 @@ class LeadsController extends Controller
             function ($query) {
                 return $query->where('important', 1);
             }
-        )->latest()->paginate(5);
+        )->with(['service', 'serviceRequest'])->latest()->paginate(5);
     }
 
     public function show(Lead $lead)
     {
+        $lead = Lead::where('id', $lead->id)->with(['service', 'serviceRequest'])->first();
+
         return $lead;
     }
 

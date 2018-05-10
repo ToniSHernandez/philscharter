@@ -23,6 +23,11 @@ class Service extends Model
         return $this->hasMany(ServiceRequest::class);
     }
 
+    public function lead()
+    {
+        return $this->belongsTo(Lead::class);
+    }
+
     public function scopeFeatured()
     {
         return Service::where('featured', true)->orderBy('id', 'asc')->limit(4)->get();

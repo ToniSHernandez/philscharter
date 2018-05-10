@@ -7,18 +7,19 @@
                 'border-red': lead.important === 1
             }"
         >
-            <div class="flex flex-wrap">
-                <div class="w-auto flex-grow">
-                    <p class="mb-2 text-grey-dark text-4xl ">{{lead.name}}</p>
+            <div class="flex flex-wrap lg:flex-no-wrap items-start">
+                <div class="w-full flex-grow">
+                    <p class="mb-2 mr-4 p-1 text-grey-dark italic" >{{humanTime}}</p>
+                    <p class="mb-2 text-kma text-4xl ">{{lead.name}}</p>
                     <div class="flex flex-wrap">
-                        <p class="mb-2 mr-4 p-1 text-grey-dark">
+                        <p class="mb-2 mr-4 pb-4 text-grey-dark">
                             <a class="text-grey-darkest"
                                :href="'tel:' + lead.phone"
                             >
                                 {{lead.phone}}
                             </a>
                         </p>
-                        <p class="mb-2 mr-4 p-1 text-grey-dark">
+                        <p class="mb-2 mr-4 pb-4 text-grey-dark">
                             <a class="text-grey-darkest"
                                :href="'mailto:' + lead.email"
                             >
@@ -26,12 +27,31 @@
                             </a>
                         </p>
                     </div>
-                    <p class="text-grey-darker leading-normal">{{lead.message}}</p>
+                    <div v-if="lead.service_request !== null" class="border-t border-b border-grey">
+                        <p class="text-grey-dark font-bold uppercase mt-4">Request details:</p>
+                        <table class="py-4">
+                            <tr>
+                                <td class="py-1 pr-4 font-bold text-grey-darker">Trip Type</td><td>{{lead.service.title}}</td>
+                            </tr>
+                            <tr>
+                                <td class="py-1 pr-4 font-bold text-grey-darker">Trip Date</td><td>{{lead.service_request.requested_date}}</td>
+                            </tr>
+                            <tr>
+                                <td class="py-1 pr-4 font-bold text-grey-darker">Guests</td><td>{{lead.service_request.guests}}</td>
+                            </tr>
+                            <tr>
+                                <td class="py-1 pr-4 font-bold text-grey-darker">Message</td><td>{{lead.service_request.comments}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div v-if="lead.service_request === null">
+                        <p class="text-grey-darker leading-normal">{{lead.message}}</p>
+                    </div>
                 </div>
                 <div class="w-full lg:w-80 p-4 mt-4 flex justify-between relative items-center text-grey-darker">
                     <a
                         @click="toggleImportant(lead.id)"
-                        class="cursor-pointer text-center mr-4 w-16 h-16"
+                        class="cursor-pointer text-center mr-4 w-16 h-12"
                         :class="{'text-red': lead.important}"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -42,7 +62,7 @@
                         <span class="block text-xs">Important</span>
                     </a>
                     <a
-                        class="cursor-pointer hover:text-green text-center mr-4 w-16 h-16"
+                        class="cursor-pointer hover:text-green text-center mr-4 w-16 h-12"
                         @click="getNotes(lead.id)"
                         v-if="!notesExpanded"
                     >
@@ -58,7 +78,7 @@
                         <span class="block text-xs">Show&nbsp;Notes</span>
                     </a>
                     <a
-                        class="cursor-pointer text-green hover:text-grey-darker text-center mr-4 w-16 h-16"
+                        class="cursor-pointer text-green hover:text-grey-darker text-center mr-4 w-16 h-12"
                         @click="notesExpanded = false"
                         v-if="notesExpanded"
                     >
@@ -72,7 +92,7 @@
                     </a>
                     <a
                         @click="archive(lead.id)"
-                        class="cursor-pointer hover:text-red text-center mr-4 w-16 h-16"
+                        class="cursor-pointer hover:text-red text-center mr-4 w-16 h-12"
                         v-if="lead.active"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -86,7 +106,7 @@
                     </a>
                     <a
                         @click="unarchive(lead.id)"
-                        class="cursor-pointer hover:text-red text-center mr-4 w-16 h-16"
+                        class="cursor-pointer hover:text-red text-center mr-4 w-16 h-12"
                         v-else
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
@@ -122,8 +142,12 @@
             return {
                 notes: [],
                 notesExpanded: false,
-                leadPath: '/api/leads/' + this.lead.id
+                leadPath: '/api/leads/' + this.lead.id,
+                humanTime: ''
             }
+        },
+        mounted(){
+            this.humanTime = this.lead.created_at;
         },
         methods: {
             archive(id) {
