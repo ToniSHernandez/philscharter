@@ -31,10 +31,10 @@
                         <p class="text-grey-dark font-bold uppercase mt-4">Request details:</p>
                         <table class="py-4">
                             <tr>
-                                <td class="py-1 pr-4 font-bold text-grey-darker">Trip Type</td><td>{{lead.service.title}}</td>
+                                <td class="py-1 pr-4 font-bold text-grey-darker">Trip&nbsp;Type</td><td>{{lead.service.title}}</td>
                             </tr>
                             <tr>
-                                <td class="py-1 pr-4 font-bold text-grey-darker">Trip Date</td><td>{{lead.service_request.requested_date}}</td>
+                                <td class="py-1 pr-4 font-bold text-grey-darker">Trip&nbsp;Date</td><td>{{lead.service_request.requested_date}}</td>
                             </tr>
                             <tr>
                                 <td class="py-1 pr-4 font-bold text-grey-darker">Guests</td><td>{{lead.service_request.guests}}</td>

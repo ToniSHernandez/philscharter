@@ -32053,7 +32053,7 @@ var render = function() {
                           {
                             staticClass: "py-1 pr-4 font-bold text-grey-darker"
                           },
-                          [_vm._v("Trip Type")]
+                          [_vm._v("Trip Type")]
                         ),
                         _c("td", [_vm._v(_vm._s(_vm.lead.service.title))])
                       ]),
@@ -32064,7 +32064,7 @@ var render = function() {
                           {
                             staticClass: "py-1 pr-4 font-bold text-grey-darker"
                           },
-                          [_vm._v("Trip Date")]
+                          [_vm._v("Trip Date")]
                         ),
                         _c("td", [
                           _vm._v(
