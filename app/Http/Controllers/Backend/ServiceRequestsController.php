@@ -33,7 +33,7 @@ class ServiceRequestsController extends Controller
     public function store(Request $request)
     {
         // TODO: Move to a Job
-        Lead::create([
+        $lead = Lead::create([
             'service_id'     => $request->service_id,
             'name'           => $request->name,
             'phone'          => $request->phone,
@@ -45,6 +45,8 @@ class ServiceRequestsController extends Controller
         ]);
 
        $serviceRequest = ServiceRequest::create($request->all());
+       $lead->service_request_id = $serviceRequest->id;
+       $lead->save();
 
        if (config('app.env') !== 'testing') {
             Mail::to(env('CLIENT_EMAIL'))

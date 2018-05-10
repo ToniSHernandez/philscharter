@@ -20,7 +20,7 @@ class ArchivedLeadsController extends Controller
 
         $leads = Lead::archived()->when($important, function ($query) {
             return $query->where('important', 1);
-        })->orderBy('created_at', 'DESC')->paginate(5);
+        })->with(['service', 'serviceRequest'])->orderBy('created_at', 'DESC')->paginate(5);
 
         foreach ($leads as $lead) {
             $lead->diff = Carbon::parse($lead->created_at)->diffForHumans();
