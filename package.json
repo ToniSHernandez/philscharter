@@ -24,6 +24,7 @@
     },
     "dependencies": {
         "autoprefixer": "^8.4.1",
+        "babel-polyfill": "^6.26.0",
         "glob": "^7.1.2",
         "postcss-import": "^11.1.0",
         "vue-flatpickr-component": "^7.0.1",
