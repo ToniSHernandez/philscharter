@@ -40,7 +40,7 @@
             },
             addService(serviceData){
                 this.services.push(serviceData);
-                let formData = new FormData();
+                var formData = new FormData();
                 Array.from(Object.keys(serviceData)).map(serviceName => {
                     formData.append(serviceName, serviceData[serviceName])
                 });

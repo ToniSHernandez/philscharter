@@ -25,7 +25,7 @@
         },
 
         // created() {
-        //     let googleMapsApi = document.createElement('script');
+        //     var googleMapsApi = document.createElement('script');
         //     googleMapsApi.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCRXeRhZCIYcKhtc-rfHCejAJsEW9rYtt4&callback=initMap';
         //     document.getElementsByTagName('head')[0].appendChild(googleMapsApi);
         // },
@@ -43,8 +43,8 @@
             const bounds = new google.maps.LatLngBounds();
             this.markers = this.$children;
 
-            for(let i = 0; i < this.markers.length; i++){
-                let pin = this.markers[i];
+            for(var i = 0; i < this.markers.length; i++){
+                var pin = this.markers[i];
                 this.pins.push({
                     latitude: pin._data.markerCoordinates.latitude,
                     longitude: pin._data.markerCoordinates.longitude,

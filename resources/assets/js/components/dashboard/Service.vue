@@ -40,8 +40,8 @@
                 this.editingService = index;
             },
             editService(serviceData){
-                let formData = new FormData();
-                let vm = this;
+                var formData = new FormData();
+                var vm = this;
                 formData.append('_method', 'PATCH');
                 Array.from(Object.keys(serviceData)).map(serviceName => {
                     formData.append(serviceName, serviceData[serviceName]);
