@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0" >
     <meta name="description" content="With over 1,000 successful St. Joseph Bay fishing trips, we can provide you and your family a safe, enjoyable fishing trip you will remember for a lifetime.">
+    <meta property="og:title" content="Phil's Charter Service" />
+    <meta property="og:url" content="https://philscharterservice.com" />
+    <meta property="og:image" content="https://philscharterservice.com/img/header-photos/home.png" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
