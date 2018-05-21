@@ -172,12 +172,12 @@
                     }
                 })
                     .then(() => {
-                        var status = this.lead.active === 1;
+                        let status = this.lead.active === 1;
                         this.$emit('important', status, this.currentPage);
                     })
             },
             getNotes(id) {
-                var url = this.leadPath + '/notes';
+                let url = this.leadPath + '/notes';
                 axios.get(url)
                     .then(response => {
                         this.notes = response.data;
