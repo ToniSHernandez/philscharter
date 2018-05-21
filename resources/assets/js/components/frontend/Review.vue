@@ -44,8 +44,8 @@
 
         methods:{
             convertDate(timestamp){
-                var jsDate = new Date(timestamp);
-                var options = {
+                let jsDate = new Date(timestamp);
+                let options = {
                     year: 'numeric',
                     month: 'long'
                 };
@@ -53,7 +53,7 @@
                 return jsDate.toLocaleDateString('en-US', options);
             },
             buildByLine(){
-                var newString = this.review.author;
+                let newString = this.review.author;
 
                 if(this.review.rating !== 0){
                     newString = newString + ' rated ' + this.review.rating + ' stars ';

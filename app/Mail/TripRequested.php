@@ -32,7 +32,7 @@ class TripRequested extends Mailable
     public function build()
     {
         $service = Service::find($this->serviceRequest->service_id);
-        return $this->from('info@philscharterservice.com')
+        return $this->from('noreply@mg.philscharterservice.com')
                     ->markdown('emails.trips.requested')
                     ->with([
                         'service' => $service

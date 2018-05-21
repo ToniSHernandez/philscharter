@@ -84,12 +84,12 @@
                 this.galleryIsOpen = false;
             },
             nextPhoto(index){
-                var newNum = (index !== this.numPhotos-1 ? index+1 : 0);
+                let newNum = (index !== this.numPhotos-1 ? index+1 : 0);
                 this.activePhoto = this.photos[newNum];
                 this.activePhoto.index = newNum;
             },
             prevPhoto(index){
-                var newNum = (index !== 0 ? index-1 : this.numPhotos-1);
+                let newNum = (index !== 0 ? index-1 : this.numPhotos-1);
                 this.activePhoto = this.photos[newNum];
                 this.activePhoto.index = newNum;
             }
