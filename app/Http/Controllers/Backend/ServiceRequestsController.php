@@ -51,7 +51,6 @@ class ServiceRequestsController extends Controller
        if (config('app.env') !== 'testing') {
             Mail::to(env('CLIENT_EMAIL'))
                 ->bcc(['daron@kerigan.com', 'jack@kerigan.com'])
-                ->replyTo(env('CLIENT_EMAIL'))
                 ->send(new TripRequested($serviceRequest));
        }
 
